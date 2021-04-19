@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="de.tuchemnitz.armadillogin.ui.home.HomeFragment"
+        android:name="de.tuchemnitz.armadillogin.ui.welcome.WelcomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
