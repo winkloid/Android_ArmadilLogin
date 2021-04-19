@@ -9,17 +9,16 @@
         android:id="@+id/navigation_home"
         android:name="de.tuchemnitz.armadillogin.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_help"
+            app:destination="@id/navigation_help" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="de.tuchemnitz.armadillogin.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_help"
+        android:name="de.tuchemnitz.armadillogin.ui.help.HelpFragment"
+        android:label="@string/title_help"
+        tools:layout="@layout/fragment_help" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="de.tuchemnitz.armadillogin.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
