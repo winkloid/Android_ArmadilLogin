@@ -17,4 +17,6 @@
     <string name="register_email">E-Mail-Adresse</string>
     <string name="register_input_email">E-Mail-Adresse</string>
     <string name="register_button_next">Weiter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

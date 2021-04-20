@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterLoginFragment">
+    tools:context=".RegisterFragment">
 
     <data>
 
         <variable
-            name="registerLoginFragment"
-            type="de.tuchemnitz.armadillogin.ui.registerlogin.RegisterLoginFragment" />
+            name="registerFragment"
+            type="de.tuchemnitz.armadillogin.ui.register.RegisterFragment" />
     </data>
 
     <ScrollView
