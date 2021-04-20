@@ -7,4 +7,14 @@
     <string name="register_login_explanation">Möchtest du ein neues Konto anlegen oder dich in ein Konto einloggen, das bereits vorhanden ist?</string>
     <string name="register_login_registerbutton">Registrieren</string>
     <string name="register_login_loginbutton">Login</string>
+    <string name="register_title">Wer bist du?</string>
+    <string name="register_explanation">Bitte trage in den nachfolgenden Feldern deinen Vornamen, Nachnamen und deine E-Mail-Adresse ein.</string>
+    <string name="register_registerbutton">Registrieren</string>
+    <string name="register_firstname">Vorname</string>
+    <string name="register_lastname">Nachname</string>
+    <string name="register_input_firstname">Vorname</string>
+    <string name="register_input_lastname">Nachname</string>
+    <string name="register_email">E-Mail-Adresse</string>
+    <string name="register_input_email">E-Mail-Adresse</string>
+    <string name="register_button_next">Weiter</string>
 </resources>
