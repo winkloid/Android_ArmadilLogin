@@ -70,7 +70,6 @@
                 android:id="@+id/textview_register_lastname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_constraintTop_toBottomOf="@id/textview_register_lastname"
                 android:paddingTop="20dp"
                 android:text="@string/register_lastname"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"

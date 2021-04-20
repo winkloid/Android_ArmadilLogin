@@ -7,8 +7,8 @@
     <data>
 
         <variable
-            name="registerFragment"
-            type="de.tuchemnitz.armadillogin.ui.register.RegisterFragment" />
+            name="registerLoginFragment"
+            type="de.tuchemnitz.armadillogin.ui.registerlogin.RegisterLoginFragment" />
     </data>
 
     <ScrollView
