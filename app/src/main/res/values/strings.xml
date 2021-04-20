@@ -3,6 +3,8 @@
     <string name="title_home">Login</string>
     <string name="title_help">Hilfe</string>
     <string name="welcome_title">Willkommen!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register_login_title">Registrieren oder einloggen?</string>
+    <string name="register_login_explanation">Möchtest du ein neues Konto anlegen oder dich in ein Konto einloggen, das bereits vorhanden ist?</string>
+    <string name="register_login_registerbutton">Registrieren</string>
+    <string name="register_login_loginbutton">Login</string>
 </resources>
