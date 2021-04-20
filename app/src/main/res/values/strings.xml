@@ -17,6 +17,8 @@
     <string name="register_email">E-Mail-Adresse</string>
     <string name="register_input_email">E-Mail-Adresse</string>
     <string name="register_button_next">Weiter</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register_username_title">Wie soll dein neues Konto heißen?</string>
+    <string name="register_username_explanation">Das wird dein Benutzername sein, mit dem du dich später wieder in deinem Konto anmelden kannst. Merke ihn dir also gut oer schreibe ihn auf.</string>
+    <string name="register_input_username">Benutzername</string>
+    <string name="register_switch_save_username">Benutzernamen speichern</string>
 </resources>
