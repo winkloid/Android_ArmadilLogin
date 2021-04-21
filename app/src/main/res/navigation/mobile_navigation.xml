@@ -3,23 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_welcome">
+
+    <fragment
+        android:id="@+id/navigation_welcome"
+        android:name="de.tuchemnitz.armadillogin.ui.welcome.WelcomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_navigation_welcome_to_navigation_register_login"
+            app:destination="@id/navigation_register_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_help"
+        android:name="de.tuchemnitz.armadillogin.ui.help.HelpFragment"
+        android:label="@string/title_help"
+        tools:layout="@layout/fragment_help" />
 
     <fragment
         android:id="@+id/navigation_home"
         android:name="de.tuchemnitz.armadillogin.ui.home.HomeFragment"
-        android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="de.tuchemnitz.armadillogin.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_register_login"
+        android:name="de.tuchemnitz.armadillogin.ui.registerlogin.RegisterLoginFragment"
+        tools:layout="@layout/fragment_register_login" >
+        <action
+            android:id="@+id/action_navigation_register_login_to_navigation_register1"
+            app:destination="@id/navigation_register1" />
+        <action
+            android:id="@+id/action_navigation_register_login_to_navigation_login1"
+            app:destination="@id/navigation_login1" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="de.tuchemnitz.armadillogin.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_register1"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterFragment"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_navigation_register1_to_navigation_register2"
+            app:destination="@id/navigation_register2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register2"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterUserNameFragment"
+        tools:layout="@layout/fragment_register_user_name" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login1"
+        android:name="de.tuchemnitz.armadillogin.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
+
 </navigation>

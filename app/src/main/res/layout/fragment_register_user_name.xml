@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegisterFragment">
+
+    <data>
+
+        <variable
+            name="registerUserNameFragment"
+            type="de.tuchemnitz.armadillogin.ui.register.RegisterUserNameFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp" >
+
+            <TextView
+                android:id="@+id/textview_register_username_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/register_username_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textview_register_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_username_explanation"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textview_register_username_title"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_username_title" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/register_textinput_username"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/register_input_username"
+                app:layout_constraintStart_toStartOf="@+id/textview_register_explanation"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_explanation">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/register_input_username_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/register_switch_save_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/register_switch_save_username"
+                android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_textinput_username" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_login_registerbutton"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@+id/register_switch_save_username"
+                app:layout_constraintTop_toBottomOf="@+id/register_switch_save_username" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
