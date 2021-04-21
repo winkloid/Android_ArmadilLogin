@@ -35,6 +35,6 @@ class LoginFragment : Fragment() {
     }
 
     fun goToNextView() {
-        findNavController().navigate(R.id.)
+        // findNavController().navigate(R.id.)
     }
 }

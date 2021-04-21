@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_navigation_register_login_to_navigation_register1"
             app:destination="@id/navigation_register1" />
+        <action
+            android:id="@+id/action_navigation_register_login_to_navigation_login1"
+            app:destination="@id/navigation_login1" />
     </fragment>
 
     <fragment
@@ -50,5 +53,10 @@
         tools:layout="@layout/fragment_register_user_name" >
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_login1"
+        android:name="de.tuchemnitz.armadillogin.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
 
 </navigation>

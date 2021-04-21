@@ -40,4 +40,8 @@ class RegisterLoginFragment : Fragment() {
     fun goToRegisterFragment() {
         findNavController().navigate(R.id.action_navigation_register_login_to_navigation_register1)
     }
+
+    fun goToLoginFragment() {
+        findNavController().navigate(R.id.action_navigation_register_login_to_navigation_login1)
+    }
 }
