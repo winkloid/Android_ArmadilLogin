@@ -3,6 +3,7 @@
     <string name="title_home">Login</string>
     <string name="title_help">Hilfe</string>
     <string name="welcome_title">Willkommen!</string>
+    <string name="welcome_explanation">Vielen Dank für Deine Teilnahme an dieser Studie. Diese App soll dabei helfen, zu ermitteln, wie man ein einfaches, komfortables und trotzdem sicheres Login-System für alle schaffen kann.</string>
     <string name="register_login_title">Registrieren oder einloggen?</string>
     <string name="register_login_explanation">Möchtest du ein neues Konto anlegen oder dich in ein Konto einloggen, das bereits vorhanden ist?</string>
     <string name="register_login_registerbutton">Registrieren</string>

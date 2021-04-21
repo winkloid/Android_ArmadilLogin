@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/register_username_explanation"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="@+id/textview_register_username_title"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_username_title" />
 
@@ -62,6 +63,7 @@
                 android:checked="true"
                 android:text="@string/register_switch_save_username"
                 android:layout_marginTop="16dp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_textinput_username" />
