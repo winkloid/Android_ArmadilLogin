@@ -11,11 +11,8 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_help"
-            app:destination="@id/navigation_help" />
-        <action
-            android:id="@+id/action_navigation_welcome_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_navigation_welcome_to_navigation_register_login"
+            app:destination="@id/navigation_register_login" />
     </fragment>
 
     <fragment
@@ -27,10 +24,30 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="de.tuchemnitz.armadillogin.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_register_login"
+        android:name="de.tuchemnitz.armadillogin.ui.registerlogin.RegisterLoginFragment"
+        tools:layout="@layout/fragment_register_login" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_help2"
-            app:destination="@id/navigation_help" />
+            android:id="@+id/action_navigation_register_login_to_navigation_register1"
+            app:destination="@id/navigation_register1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register1"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterFragment"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_navigation_register1_to_navigation_register2"
+            app:destination="@id/navigation_register2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register2"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterUserNameFragment"
+        tools:layout="@layout/fragment_register_user_name" >
     </fragment>
 
 

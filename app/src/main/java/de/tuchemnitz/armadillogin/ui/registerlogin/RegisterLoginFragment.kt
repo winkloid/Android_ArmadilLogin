@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterLoginBinding
@@ -34,5 +35,9 @@ class RegisterLoginFragment : Fragment() {
         binding?.apply {
             registerLoginFragment = this@RegisterLoginFragment
         }
+    }
+
+    fun goToRegisterFragment() {
+        findNavController().navigate(R.id.action_navigation_register_login_to_navigation_register1)
     }
 }

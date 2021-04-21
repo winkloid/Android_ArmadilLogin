@@ -41,6 +41,6 @@ class WelcomeFragment : Fragment() {
     }
 
     fun goToNextView() {
-        findNavController().navigate(R.id.action_navigation_welcome_to_navigation_home)
+        findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register_login)
     }
 }

@@ -17,13 +17,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp">
 
             <TextView
                 android:id="@+id/textview_welcome_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="165dp"
+                android:layout_marginTop="0dp"
                 android:text="@string/welcome_title"
                 android:textAppearance="@android:style/TextAppearance.Material.Headline"
                 app:layout_constraintEnd_toEndOf="parent"

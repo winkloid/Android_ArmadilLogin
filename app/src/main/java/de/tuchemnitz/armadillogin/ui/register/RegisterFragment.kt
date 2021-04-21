@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterLoginBinding
@@ -31,5 +32,9 @@ class RegisterFragment : Fragment() {
         binding?.apply {
             registerFragment = this@RegisterFragment
         }
+    }
+
+    fun goToNextView() {
+        findNavController().navigate(R.id.action_navigation_register1_to_navigation_register2)
     }
 }

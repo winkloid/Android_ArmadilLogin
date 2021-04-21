@@ -29,8 +29,4 @@ class HomeFragment : Fragment() {
         })
         return root
     }
-
-    fun goToHelpScreen() {
-        findNavController().navigate(R.id.action_navigation_home_to_navigation_help)
-    }
 }
