@@ -2,12 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_welcome"
+        android:id="@+id/login_register_navigation"
+        android:contentDescription="@string/title_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_help"
+        android:id="@+id/help_navigation"
+        android:contentDescription="@string/title_help"
         android:icon="@drawable/ic_baseline_help_24"
         android:title="@string/title_help" />
 </menu>

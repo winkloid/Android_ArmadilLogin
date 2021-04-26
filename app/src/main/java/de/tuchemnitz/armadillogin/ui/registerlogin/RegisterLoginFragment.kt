@@ -22,8 +22,8 @@ class RegisterLoginFragment : Fragment() {
     private var binding: FragmentRegisterLoginBinding? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterLoginBinding.inflate(inflater, container, false)
         binding = fragmentBinding

@@ -18,8 +18,8 @@ class RegisterUserNameFragment : Fragment() {
     private var binding: FragmentRegisterUserNameBinding? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterUserNameBinding.inflate(inflater, container, false)
         binding = fragmentBinding

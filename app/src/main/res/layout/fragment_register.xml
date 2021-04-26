@@ -34,9 +34,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:onClick="@{() -> registerFragment.goToNextView()}"
                 android:text="@string/register_explanation"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:onClick="@{() -> registerFragment.goToNextView()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textview_register_title" />
@@ -121,8 +121,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/register_button_next"
                 android:onClick="@{() -> registerFragment.goToNextView()}"
+                android:text="@string/register_button_next"
                 app:layout_constraintStart_toStartOf="@+id/register_textinput_email"
                 app:layout_constraintTop_toBottomOf="@+id/register_textinput_email" />
         </androidx.constraintlayout.widget.ConstraintLayout>

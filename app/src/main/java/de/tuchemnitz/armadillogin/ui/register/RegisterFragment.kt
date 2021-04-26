@@ -19,8 +19,8 @@ class RegisterFragment : Fragment() {
     private var binding: FragmentRegisterBinding? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterBinding.inflate(inflater, container, false)
         binding = fragmentBinding
