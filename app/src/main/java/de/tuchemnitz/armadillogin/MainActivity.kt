@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         // val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-       // val appBarConfiguration = AppBarConfiguration(setOf(
+        // val appBarConfiguration = AppBarConfiguration(setOf(
         //        R.id.navigation_, R.id.navigation_help))
         // setupActionBarWithNavController(navController, appBarConfiguration)
         // navView.setupWithNavController(navController)
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         onSupportNavigateUp()
     }
-    
+
     override fun onSupportNavigateUp(): Boolean {
         return currentNavController?.value?.navigateUp() ?: false
     }
