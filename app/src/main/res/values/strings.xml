@@ -26,4 +26,6 @@
     <string name="login_explanation">Willkommen zurück! Bitte gib im nachfolgenden Feld deinen Nutzernamen ein, den du bei der Registrierung angelegt hast.</string>
     <string name="login_input_username">Benutzername</string>
     <string name="login_button_next">Weiter</string>
+    <string name="register">Registrierung</string>
+    <string name="login">Login</string>
 </resources>
