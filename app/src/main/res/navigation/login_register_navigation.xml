@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/login_register_navigation"
     app:startDestination="@id/navigation_welcome">
 
     <fragment
@@ -14,17 +14,6 @@
             android:id="@+id/action_navigation_welcome_to_navigation_register_login"
             app:destination="@id/navigation_register_login" />
     </fragment>
-
-    <fragment
-        android:id="@+id/navigation_help"
-        android:name="de.tuchemnitz.armadillogin.ui.help.HelpFragment"
-        android:label="@string/title_help"
-        tools:layout="@layout/fragment_help" />
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="de.tuchemnitz.armadillogin.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_register_login"
