@@ -11,6 +11,9 @@
             name="viewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
         <variable
+            name="helpModel"
+            type="de.tuchemnitz.armadillogin.ui.help.HelpViewModel" />
+        <variable
             name="helpFragment"
             type="de.tuchemnitz.armadillogin.ui.help.HelpFragment" />
     </data>
@@ -23,7 +26,7 @@
             android:id="@+id/testText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textInsert="@{viewModel.status}"
+            app:textInsert="@{helpModel.getCurrentHelp(viewModel.status)}"
             android:visibility="visible" />
     </ScrollView>
 

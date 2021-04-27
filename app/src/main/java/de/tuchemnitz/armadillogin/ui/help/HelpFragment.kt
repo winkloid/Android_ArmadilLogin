@@ -35,6 +35,7 @@ class HelpFragment : Fragment() {
             helpFragment = this@HelpFragment
             lifecycleOwner = this@HelpFragment
             viewModel = sharedViewModel
+            helpModel = helpViewModel
         }
     }
 
