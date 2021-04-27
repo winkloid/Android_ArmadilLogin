@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 
@@ -32,6 +33,8 @@ class HelpFragment : Fragment() {
         helpViewModel = ViewModelProvider(this).get(HelpViewModel::class.java)
         binding?.apply {
             helpFragment = this@HelpFragment
+            lifecycleOwner = this@HelpFragment
+            viewModel = sharedViewModel
         }
     }
 
