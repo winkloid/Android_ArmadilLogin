@@ -7,7 +7,9 @@
     tools:context=".FlavorFragment">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
         <variable
             name="helpFragment"
             type="de.tuchemnitz.armadillogin.ui.help.HelpFragment" />
