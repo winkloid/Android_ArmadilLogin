@@ -61,6 +61,7 @@ class RegisterFragment : Fragment() {
         var lnOk = false
         var emailOk = false
 
+        //validate user inputs
         if (!firstname.isNullOrBlank()) {
             fnOk = true
         }
@@ -69,6 +70,14 @@ class RegisterFragment : Fragment() {
         }
         emailOk = checkEmailFormat(email)
         Log.d("EMAIL", "$emailOk")
+
+        // show errors and if everything is correct pass data to userViewModel
+        if (fnOk && lnOk && emailOk) {
+            //TODO pass data to userViewModel
+        }
+        else {
+            //TODO show error notifications
+        }
     }
 
     private fun checkEmailFormat(email: String): Boolean {
