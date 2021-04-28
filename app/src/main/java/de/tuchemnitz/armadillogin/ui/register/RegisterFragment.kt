@@ -47,11 +47,13 @@ class RegisterFragment : Fragment() {
 
     fun goToNextView() {
         // before going t next fragment, check all values provided by user
-        checkValues()
-        findNavController().navigate(R.id.action_navigation_register1_to_navigation_register2)
+        val valuesCorrect = checkValues()
+        if(valuesCorrect) {
+            findNavController().navigate(R.id.action_navigation_register1_to_navigation_register2)
+        }
     }
 
-    private fun checkValues() {
+    private fun checkValues(): Boolean {
         val lastname = binding?.registerInputLastnameEditText?.text.toString()
         val firstname = binding?.registerInputFirstnameEditText?.text.toString()
         val email = binding?.registerInputEmailEditText?.text.toString()
@@ -77,9 +79,11 @@ class RegisterFragment : Fragment() {
             binding?.registerInputLastnameEditText?.error = null
             binding?.registerInputEmailEditText?.error = null
             userViewModel.setData(firstname, lastname, email)
+            return true
         }
         else {
             showErrors(fnOk, lnOk, emailOk)
+            return false
         }
     }
 
@@ -95,6 +99,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun showErrors(fnOk: Boolean, lnOk: Boolean, emailOk: Boolean) {
+        // check for every field whether the user-provided value is acceptable or not and if not show errors
         if (fnOk) {
             binding?.registerInputFirstnameEditText?.error = null
         } else {
