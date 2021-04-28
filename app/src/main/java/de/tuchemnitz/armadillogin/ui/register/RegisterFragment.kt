@@ -1,10 +1,12 @@
 package de.tuchemnitz.armadillogin.ui.register
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isNotEmpty
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
@@ -44,6 +46,23 @@ class RegisterFragment : Fragment() {
     }
 
     fun goToNextView() {
+        // before going t next fragment, check all values provided by user
+        checkValues()
         findNavController().navigate(R.id.action_navigation_register1_to_navigation_register2)
+    }
+
+    private fun checkValues() {
+        val lastname = binding?.registerInputLastnameEditText?.text.toString()
+        val firstname = binding?.registerInputFirstnameEditText?.text.toString()
+        val email = binding?.registerInputEmailEditText?.text.toString()
+        if (!firstname.isNullOrBlank()) {
+            Log.d("FIRSTNAME", "$firstname")
+        }
+        if(!lastname.isNullOrBlank()) {
+            Log.d("Lastname", "$lastname")
+        }
+        if(!email.isNullOrBlank()) {
+            Log.d("EMAIL", "$email")
+        }
     }
 }
