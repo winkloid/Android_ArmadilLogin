@@ -1,6 +1,7 @@
 package de.tuchemnitz.armadillogin.ui.register
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterUserNameBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -20,6 +22,7 @@ import de.tuchemnitz.armadillogin.model.FragmentStatus
  */
 class RegisterUserNameFragment : Fragment() {
     private var binding: FragmentRegisterUserNameBinding? = null
+    private val userViewModel: UserDataViewModel by activityViewModels()
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -45,15 +48,18 @@ class RegisterUserNameFragment : Fragment() {
 
     fun goToNextView() {
         val valuesCorrect = checkValues()
+        if(valuesCorrect) {
+            findNavController().navigate(R.id.action_navigation_register2_to_navigation_register_summary)
+        }
     }
 
     fun checkValues(): Boolean {
         val username = binding?.registerInputUsernameEditText?.text.toString()
-
-        var unOk = false
+        Log.d("UNAME", "$username")
 
         if(!username.isNullOrBlank()) {
             binding?.registerInputUsernameEditText?.error = null
+            userViewModel.setUsername(username)
             return true
         } else {
             binding?.registerInputUsernameEditText?.error = getString(R.string.simple_string_error)

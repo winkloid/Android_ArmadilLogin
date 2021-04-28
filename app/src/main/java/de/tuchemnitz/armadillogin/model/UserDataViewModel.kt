@@ -24,4 +24,8 @@ class UserDataViewModel : ViewModel() {
         _email.value = email
     }
 
+    fun setUsername(uname: String) {
+        _username.value = uname
+    }
+
 }
