@@ -30,4 +30,6 @@
     <string name="login">Login</string>
     <string name="simple_string_error">Bitte fülle dieses Feld aus</string>
     <string name="email_string_error">Keine gültige E-Mail-Adresse</string>
+    <string name="register_summary_title">Stimmt alles so?</string>
+    <string name="register_summary_explanation">Hier werden dir noch einmal deine Eingaben angezeigt. Bitte überprüfe noch einmal, ob alles korrekt ist.</string>
 </resources>
