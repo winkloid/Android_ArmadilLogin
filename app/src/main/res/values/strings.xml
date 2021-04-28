@@ -28,4 +28,6 @@
     <string name="login_button_next">Weiter</string>
     <string name="register">Registrierung</string>
     <string name="login">Login</string>
+    <string name="simple_string_error">Bitte fülle dieses Feld aus</string>
+    <string name="email_string_error">Keine gültige E-Mail-Adresse</string>
 </resources>

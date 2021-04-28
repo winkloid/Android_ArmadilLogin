@@ -18,9 +18,10 @@ class UserDataViewModel : ViewModel() {
     private var _username = MutableLiveData("username")
     val username: LiveData<String> = _username
 
-    fun setFirstname(fn: String): Boolean {
+    fun setData(fn: String, ln: String, email: String) {
         _firstname.value = fn
-        return true
+        _lastname.value = ln
+        _email.value = email
     }
 
 }

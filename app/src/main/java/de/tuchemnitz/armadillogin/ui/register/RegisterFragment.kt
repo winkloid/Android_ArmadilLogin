@@ -71,12 +71,15 @@ class RegisterFragment : Fragment() {
         emailOk = checkEmailFormat(email)
         Log.d("EMAIL", "$emailOk")
 
-        // show errors and if everything is correct pass data to userViewModel
+        // if everything is correct pass data to userViewModel, else: show errors
         if (fnOk && lnOk && emailOk) {
-            //TODO pass data to userViewModel
+            binding?.registerInputFirstnameEditText?.error = null
+            binding?.registerInputLastnameEditText?.error = null
+            binding?.registerInputEmailEditText?.error = null
+            userViewModel.setData(firstname, lastname, email)
         }
         else {
-            //TODO show error notifications
+            showErrors(fnOk, lnOk, emailOk)
         }
     }
 
@@ -88,6 +91,26 @@ class RegisterFragment : Fragment() {
         } else {
             //if string is blank or null
             return false
+        }
+    }
+
+    private fun showErrors(fnOk: Boolean, lnOk: Boolean, emailOk: Boolean) {
+        if (fnOk) {
+            binding?.registerInputFirstnameEditText?.error = null
+        } else {
+            binding?.registerInputFirstnameEditText?.error = getString(R.string.simple_string_error)
+        }
+
+        if (lnOk) {
+            binding?.registerInputLastnameEditText?.error = null
+        } else {
+            binding?.registerInputLastnameEditText?.error = getString(R.string.simple_string_error)
+        }
+
+        if (emailOk) {
+            binding?.registerInputEmailEditText?.error = null
+        } else {
+            binding?.registerInputEmailEditText?.error = getString(R.string.email_string_error)
         }
     }
 }
