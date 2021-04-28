@@ -6,14 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isNotEmpty
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
-import de.tuchemnitz.armadillogin.databinding.FragmentRegisterLoginBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -23,6 +22,7 @@ import de.tuchemnitz.armadillogin.model.FragmentStatus
 class RegisterFragment : Fragment() {
     private var binding: FragmentRegisterBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
+    private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -55,14 +55,30 @@ class RegisterFragment : Fragment() {
         val lastname = binding?.registerInputLastnameEditText?.text.toString()
         val firstname = binding?.registerInputFirstnameEditText?.text.toString()
         val email = binding?.registerInputEmailEditText?.text.toString()
+
+        //values for validating which of the user-provided values are failing
+        var fnOk = false
+        var lnOk = false
+        var emailOk = false
+
         if (!firstname.isNullOrBlank()) {
-            Log.d("FIRSTNAME", "$firstname")
+            fnOk = true
         }
-        if(!lastname.isNullOrBlank()) {
-            Log.d("Lastname", "$lastname")
+        if (!lastname.isNullOrBlank()) {
+            lnOk = true
         }
-        if(!email.isNullOrBlank()) {
-            Log.d("EMAIL", "$email")
+        emailOk = checkEmailFormat(email)
+        Log.d("EMAIL", "$emailOk")
+    }
+
+    private fun checkEmailFormat(email: String): Boolean {
+        // first, check whether there is an null or blank string
+        if (!email.isNullOrBlank()) {
+            //if this is not the case, test whether the given string has a correct email format
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        } else {
+            //if string is blank or null
+            return false
         }
     }
 }
