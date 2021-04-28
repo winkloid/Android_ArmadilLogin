@@ -32,4 +32,7 @@
     <string name="email_string_error">Keine gültige E-Mail-Adresse</string>
     <string name="register_summary_title">Stimmt alles so?</string>
     <string name="register_summary_explanation">Hier werden dir noch einmal deine Eingaben angezeigt. Bitte überprüfe noch einmal, ob alles korrekt ist.</string>
+    <string name="register_summary_name">Dein Name lautet:</string>
+    <string name="register_summary_email">Deine E-Mail-Adresse lautet:</string>
+    <string name="register_summary_username">Dein neuer Benutzername lautet:</string>
 </resources>

@@ -28,4 +28,8 @@ class UserDataViewModel : ViewModel() {
         _username.value = uname
     }
 
+    fun getFullName(): String {
+        return "${firstname.value} ${lastname.value}"
+    }
+
 }
