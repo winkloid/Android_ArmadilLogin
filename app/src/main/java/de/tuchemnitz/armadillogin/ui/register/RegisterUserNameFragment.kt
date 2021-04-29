@@ -37,11 +37,15 @@ class RegisterUserNameFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER2)
+        if(!userViewModel.username.value.equals("")) {
+            binding?.registerInputUsernameEditText?.setText(userViewModel.username.value.toString())
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
+            lifecycleOwner = this@RegisterUserNameFragment
             registerUserNameFragment = this@RegisterUserNameFragment
         }
     }

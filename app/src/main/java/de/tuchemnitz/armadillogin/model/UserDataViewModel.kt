@@ -15,7 +15,7 @@ class UserDataViewModel : ViewModel() {
     private var _email = MutableLiveData("klaus.uhr@tu-chemnitz.de")
     val email: LiveData<String> = _email
 
-    private var _username = MutableLiveData("username")
+    private var _username = MutableLiveData("")
     val username: LiveData<String> = _username
 
     fun setData(fn: String, ln: String, email: String) {
