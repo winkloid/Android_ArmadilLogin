@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterSummaryBinding
@@ -44,5 +45,9 @@ class RegisterSummaryFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER1)
+    }
+
+    fun goBackToRegister() {
+        findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register1)
     }
 }

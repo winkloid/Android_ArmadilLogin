@@ -58,6 +58,10 @@
         android:id="@+id/navigation_register_summary"
         android:name="de.tuchemnitz.armadillogin.ui.register.RegisterSummaryFragment"
         android:label="@string/register"
-        tools:layout="@layout/fragment_register_summary"></fragment>
+        tools:layout="@layout/fragment_register_summary">
+        <action
+            android:id="@+id/action_navigation_register_summary_to_navigation_register1"
+            app:popUpTo="@id/navigation_register1" />
+    </fragment>
 
 </navigation>
