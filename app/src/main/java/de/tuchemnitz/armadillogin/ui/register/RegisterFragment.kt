@@ -43,6 +43,18 @@ class RegisterFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER1)
+
+        // check whether there already are user data different than default data in userViewModel
+        // if so, the corresponding EditText fields are filled in
+        if(!userViewModel.firstname.value.equals("")) {
+            binding?.registerInputFirstnameEditText?.setText(userViewModel.firstname.value.toString())
+        }
+        if(!userViewModel.lastname.value.equals("")) {
+            binding?.registerInputLastnameEditText?.setText(userViewModel.lastname.value.toString())
+        }
+        if(!userViewModel.email.value.equals("")) {
+            binding?.registerInputEmailEditText?.setText(userViewModel.email.value.toString())
+        }
     }
 
     fun goToNextView() {

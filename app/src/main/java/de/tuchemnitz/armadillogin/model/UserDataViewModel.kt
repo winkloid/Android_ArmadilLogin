@@ -6,13 +6,13 @@ import androidx.lifecycle.ViewModel
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 
 class UserDataViewModel : ViewModel() {
-    private var _firstname = MutableLiveData<String>("Test")
+    private var _firstname = MutableLiveData<String>("")
     val firstname: LiveData<String> = _firstname
 
-    private var _lastname = MutableLiveData<String>("User")
+    private var _lastname = MutableLiveData<String>("")
     val lastname: LiveData<String> = _lastname
 
-    private var _email = MutableLiveData("klaus.uhr@tu-chemnitz.de")
+    private var _email = MutableLiveData("")
     val email: LiveData<String> = _email
 
     private var _username = MutableLiveData("")
