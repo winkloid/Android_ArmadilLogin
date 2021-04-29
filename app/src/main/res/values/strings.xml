@@ -35,4 +35,6 @@
     <string name="register_summary_name">Dein Name lautet:</string>
     <string name="register_summary_email">Deine E-Mail-Adresse lautet:</string>
     <string name="register_summary_username">Dein neuer Benutzername lautet:</string>
+    <string name="register_summary_correct">Bestätigen</string>
+    <string name="register_summary_not_correct">Berichtigen</string>
 </resources>
