@@ -37,4 +37,7 @@
     <string name="register_summary_username">Dein neuer Benutzername lautet:</string>
     <string name="register_summary_correct">Bestätigen</string>
     <string name="register_summary_not_correct">Berichtigen</string>
+    <string name="register_key_title">Noch ein letzter Schritt</string>
+    <string name="register_key_explanation">Damit nur du Zugang zu deinem Konto erhältst, muss die App in Zukunft sicherstellen können, dass du es tatsächlich bist. Dafür musst du dir kein kopliziertes Passwort merken, sondern nur eine Art Schlüssel bei dir tragen. Je nach Art des Schlüssels, legst du diesen einfach auf die Rückseite deines Telefons auf oder steckst ihn in die Ladebuchse dessen Ladebuchse. Alternativ kannst du auch dein Handy selbst als Schlüssel verwenden, indem du deine Displaysperre zum Entsperren der App verwendest. Innerhalb von Sekundenbruchteilen bist du angemeldet. Weitere Infos findest du im "Hilfe"-Tab.</string>
+    <string name="register_key_confirm">Los Geht\'s!</string>
 </resources>

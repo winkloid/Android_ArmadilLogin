@@ -15,6 +15,7 @@ class HelpViewModel : ViewModel() {
             FragmentStatus.REGISTER_LOGIN -> "Registrieren oder einloggen"
             FragmentStatus.REGISTER1 -> "Persönliche Daten eingeben"
             FragmentStatus.REGISTER2 -> "Nutzernamen vergeben"
+            FragmentStatus.REGISTER_SUMMARY -> "Bestätige die Richtigkeit der eingegebenen Daten oder passe Sie an."
             else -> "Strange thing..."
         }
     }

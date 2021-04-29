@@ -62,6 +62,17 @@
         <action
             android:id="@+id/action_navigation_register_summary_to_navigation_register1"
             app:popUpTo="@id/navigation_register1" />
+        <action
+            android:id="@+id/action_navigation_register_summary_to_navigation_register_key"
+            app:destination="@id/navigation_register_key" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register_key"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register_key">
+
     </fragment>
 
 </navigation>

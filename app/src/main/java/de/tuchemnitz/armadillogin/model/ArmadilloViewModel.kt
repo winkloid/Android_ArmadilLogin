@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-enum class FragmentStatus { WELCOME, REGISTER_LOGIN, REGISTER1, REGISTER2, LOGIN }
+enum class FragmentStatus { WELCOME, REGISTER_LOGIN, REGISTER1, REGISTER2, REGISTER_SUMMARY, REGISTER_KEY, LOGIN }
 
 class ArmadilloViewModel : ViewModel() {
     private val _status = MutableLiveData<FragmentStatus>()
