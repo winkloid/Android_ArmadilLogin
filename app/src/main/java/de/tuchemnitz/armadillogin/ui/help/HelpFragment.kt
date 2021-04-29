@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 
 class HelpFragment : Fragment() {
 
@@ -16,6 +19,7 @@ class HelpFragment : Fragment() {
 
     private var binding: FragmentHelpBinding? = null
     private lateinit var helpViewModel: HelpViewModel
+    private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -29,6 +33,9 @@ class HelpFragment : Fragment() {
         helpViewModel = ViewModelProvider(this).get(HelpViewModel::class.java)
         binding?.apply {
             helpFragment = this@HelpFragment
+            lifecycleOwner = this@HelpFragment
+            viewModel = sharedViewModel
+            helpModel = helpViewModel
         }
     }
 

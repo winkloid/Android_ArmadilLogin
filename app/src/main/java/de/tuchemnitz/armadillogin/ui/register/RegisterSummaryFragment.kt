@@ -1,4 +1,4 @@
-package de.tuchemnitz.armadillogin.ui.login
+package de.tuchemnitz.armadillogin.ui.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,25 +8,27 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
-import de.tuchemnitz.armadillogin.databinding.FragmentLoginBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
+import de.tuchemnitz.armadillogin.databinding.FragmentRegisterSummaryBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
+ * Use the [RegisterSummaryFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoginFragment : Fragment() {
-    private var binding: FragmentLoginBinding? = null
+class RegisterSummaryFragment : Fragment() {
+    private var binding: FragmentRegisterSummaryBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
+    private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val fragmentBinding = FragmentLoginBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentRegisterSummaryBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
@@ -34,16 +36,22 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
-            loginFragment = this@LoginFragment
+            lifecycleOwner = this@RegisterSummaryFragment
+            registerSummaryFragment = this@RegisterSummaryFragment
+            userDataModel = userViewModel
         }
     }
 
     override fun onResume() {
         super.onResume()
-        sharedViewModel.setFragmentStatus(FragmentStatus.LOGIN)
+        sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_SUMMARY)
     }
 
-    fun goToNextView() {
-        // findNavController().navigate(R.id.)
+    fun goBackToRegister() {
+        findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register1)
+    }
+
+    fun goToNextFragment() {
+        findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
     }
 }

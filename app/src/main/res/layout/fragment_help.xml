@@ -7,7 +7,12 @@
     tools:context=".FlavorFragment">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
+        <variable
+            name="helpModel"
+            type="de.tuchemnitz.armadillogin.ui.help.HelpViewModel" />
         <variable
             name="helpFragment"
             type="de.tuchemnitz.armadillogin.ui.help.HelpFragment" />
@@ -21,7 +26,7 @@
             android:id="@+id/testText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hallo!"
+            app:textInsert="@{helpModel.getCurrentHelp(viewModel.status)}"
             android:visibility="visible" />
     </ScrollView>
 

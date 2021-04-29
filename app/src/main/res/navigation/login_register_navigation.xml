@@ -42,12 +42,37 @@
         android:id="@+id/navigation_register2"
         android:name="de.tuchemnitz.armadillogin.ui.register.RegisterUserNameFragment"
         android:label="@string/register"
-        tools:layout="@layout/fragment_register_user_name"></fragment>
+        tools:layout="@layout/fragment_register_user_name">
+        <action
+            android:id="@+id/action_navigation_register2_to_navigation_register_summary"
+            app:destination="@id/navigation_register_summary" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_login1"
         android:name="de.tuchemnitz.armadillogin.ui.login.LoginFragment"
         android:label="@string/login"
         tools:layout="@layout/fragment_login"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_register_summary"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterSummaryFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register_summary">
+        <action
+            android:id="@+id/action_navigation_register_summary_to_navigation_register1"
+            app:popUpTo="@id/navigation_register1" />
+        <action
+            android:id="@+id/action_navigation_register_summary_to_navigation_register_key"
+            app:destination="@id/navigation_register_key" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register_key"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register_key">
+
+    </fragment>
 
 </navigation>

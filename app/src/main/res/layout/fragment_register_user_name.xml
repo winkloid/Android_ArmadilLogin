@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterFragment">
+    tools:context=".RegisterUserNameFragment">
 
     <data>
 
@@ -73,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/register_login_registerbutton"
+                android:onClick="@{() -> registerUserNameFragment.goToNextView()}"
                 app:layout_constraintStart_toStartOf="@+id/register_switch_save_username"
                 app:layout_constraintTop_toBottomOf="@+id/register_switch_save_username" />
 

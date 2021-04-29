@@ -1,21 +1,20 @@
 package de.tuchemnitz.armadillogin.ui.welcome
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentWelcomeBinding
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
+import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.ui.help.HelpViewModel
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -25,6 +24,7 @@ private const val ARG_PARAM2 = "param2"
 class WelcomeFragment : Fragment() {
 
     private var binding: FragmentWelcomeBinding? = null
+    private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -40,6 +40,11 @@ class WelcomeFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("D","Resuming")
+        sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
+    }
     fun goToNextView() {
         findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register_login)
     }

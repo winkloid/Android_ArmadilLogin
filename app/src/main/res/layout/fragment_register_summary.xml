@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegisterSummaryFragment">
+
+    <data>
+        <variable
+            name="registerSummaryFragment"
+            type="de.tuchemnitz.armadillogin.ui.register.RegisterSummaryFragment" />
+        <variable
+            name="userDataModel"
+            type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textview_register_summary_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_summary_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/register_summary_explanation"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textview_register_summary_title" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="@string/register_summary_name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_explanation" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{userDataModel.getFullName()}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name_title" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_email_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="@string/register_summary_email"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{userDataModel.email}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email_title" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_username_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="@string/register_summary_username"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email" />
+
+            <TextView
+                android:id="@+id/textview_register_summary_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{userDataModel.username}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_username_title" />
+
+            <Button
+                android:id="@+id/button_register_summary_not_correct"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/register_summary_not_correct"
+                android:onClick="@{() -> registerSummaryFragment.goBackToRegister()}"
+                app:layout_constraintEnd_toStartOf="@+id/button_register_summary_correct"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/button_register_summary_correct"
+                />
+
+            <Button
+                android:id="@+id/button_register_summary_correct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/register_summary_correct"
+                android:layout_marginTop="20dp"
+                android:onClick="@{() -> registerSummaryFragment.goToNextFragment()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/button_register_summary_not_correct"
+                app:layout_constraintTop_toBottomOf="@id/textview_register_summary_username"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

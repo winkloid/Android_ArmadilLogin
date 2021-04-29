@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterLoginBinding
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
+import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.ui.help.HelpViewModel
 
 /**
@@ -20,6 +23,7 @@ import de.tuchemnitz.armadillogin.ui.help.HelpViewModel
 class RegisterLoginFragment : Fragment() {
 
     private var binding: FragmentRegisterLoginBinding? = null
+    private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +39,11 @@ class RegisterLoginFragment : Fragment() {
         binding?.apply {
             registerLoginFragment = this@RegisterLoginFragment
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_LOGIN)
     }
 
     fun goToRegisterFragment() {
