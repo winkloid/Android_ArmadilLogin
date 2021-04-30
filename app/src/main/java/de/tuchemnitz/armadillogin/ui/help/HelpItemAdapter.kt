@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import de.tuchemnitz.armadillogin.R
@@ -12,6 +13,7 @@ import de.tuchemnitz.armadillogin.model.HelpData
 class HelpItemAdapter(private val context: Context, private val data: List<HelpData>) : RecyclerView.Adapter<HelpItemAdapter.HelpItemViewHolder>(){
 
     class HelpItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+        val imageView: ImageView = view.findViewById(R.id.item_help_title_image)
         val textView: TextView = view.findViewById(R.id.item_help_title)
     }
 
@@ -33,6 +35,9 @@ class HelpItemAdapter(private val context: Context, private val data: List<HelpD
         val helpItem = data[position]
         // get the right string and set it as value for the text of the textview inside the itemViewHolder
         holder.textView.text = context.resources.getString(helpItem.stringResourceId)
+        if(helpItem.imageResourceId != null) {
+            holder.imageView.setImageResource(helpItem.imageResourceId)
+        }
     }
 
 }
