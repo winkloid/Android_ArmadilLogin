@@ -6,6 +6,6 @@ import androidx.databinding.BindingAdapter
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 
 @BindingAdapter("textInsert")
-fun bindText(textView: TextView, textInsert: String) {
-    textView.setText("Status: ${textInsert}")
+fun bindText(textView: TextView, textInsert: Int) {
+    textView.setText("Status: ${textInsert.toString()}")
 }

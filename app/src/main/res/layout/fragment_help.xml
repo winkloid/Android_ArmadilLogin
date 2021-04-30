@@ -26,7 +26,7 @@
             android:id="@+id/testText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textInsert="@{helpModel.getCurrentHelp(viewModel.status)}"
+            app:textInsert="@{helpModel.loadHelpData().size}"
             android:visibility="visible" />
     </ScrollView>
 
