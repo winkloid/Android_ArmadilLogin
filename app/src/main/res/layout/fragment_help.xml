@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FlavorFragment">
+    tools:context=".ui.help.HelpFragment">
 
     <data>
+
         <variable
             name="viewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
+
         <variable
             name="helpModel"
             type="de.tuchemnitz.armadillogin.ui.help.HelpViewModel" />
+
         <variable
             name="helpFragment"
             type="de.tuchemnitz.armadillogin.ui.help.HelpFragment" />
     </data>
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/testText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:textInsert="@{helpModel.loadHelpData().size}"
-            android:visibility="visible" />
-    </ScrollView>
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_help"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            app:layoutManager="LinearLayoutManager" />
+    </FrameLayout>
 </layout>
