@@ -1,11 +1,13 @@
 package de.tuchemnitz.armadillogin.ui.help
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
@@ -37,6 +39,10 @@ class HelpFragment : Fragment() {
             viewModel = sharedViewModel
             helpModel = helpViewModel
         }
+    }
+
+    fun getHelpContext() : FragmentActivity? {
+        return activity
     }
 
 }

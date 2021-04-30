@@ -23,7 +23,7 @@ class HelpViewModel : ViewModel() {
         }
     }
 
-    fun loadHelpData(): List<HelpData> {
+    fun loadHelpData(status: FragmentStatus?): List<HelpData> {
         return listOf<HelpData>(
                 HelpData(R.string.help1),
                 HelpData(R.string.help2),
