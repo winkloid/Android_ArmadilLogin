@@ -3,6 +3,8 @@ package de.tuchemnitz.armadillogin.ui.help
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -36,7 +38,10 @@ class HelpItemAdapter(private val context: Context, private val data: List<HelpD
         // get the right string and set it as value for the text of the textview inside the itemViewHolder
         holder.textView.text = context.resources.getString(helpItem.stringResourceId)
         if(helpItem.imageResourceId != null) {
+            holder.imageView.visibility = VISIBLE
             holder.imageView.setImageResource(helpItem.imageResourceId)
+        } else {
+            holder.imageView.visibility = GONE
         }
     }
 
