@@ -1,9 +1,6 @@
 package de.tuchemnitz.armadillogin.ui.help
 
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
-import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
-import androidx.fragment.app.activityViewModels
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.model.HelpData
@@ -25,13 +22,13 @@ class HelpViewModel : ViewModel() {
 
     fun loadHelpData(status: FragmentStatus?): List<HelpData> {
         return listOf<HelpData>(
-                HelpData(R.string.help1),
+                HelpData(R.string.help1, R.drawable.image1),
                 HelpData(R.string.help2),
                 HelpData(R.string.help3),
                 HelpData(R.string.help4),
-                HelpData(R.string.help5),
+                HelpData(R.string.help5, R.drawable.image2),
                 HelpData(R.string.help6),
-                HelpData(R.string.help7),
+                HelpData(R.string.help7, R.drawable.image3),
                 HelpData(R.string.help8),
                 HelpData(R.string.help9),
                 HelpData(R.string.help10)
