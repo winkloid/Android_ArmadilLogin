@@ -27,4 +27,4 @@ class ApiResult<T>(
      * The result data.
      */
     val data: T
-    )
+)

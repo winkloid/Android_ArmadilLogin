@@ -22,9 +22,9 @@ import okhttp3.Response
 class AddHeaderInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         return chain.proceed(
-                chain.request().newBuilder()
-                        .header("X-Requested-With", "XMLHttpRequest")
-                        .build()
+            chain.request().newBuilder()
+                .header("X-Requested-With", "XMLHttpRequest")
+                .build()
         )
     }
 }
