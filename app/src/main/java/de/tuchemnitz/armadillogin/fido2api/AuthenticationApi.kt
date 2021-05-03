@@ -128,6 +128,7 @@ class AuthenticationApi {
                     .method("POST", jsonRequestBody {
                         name("attestation").value("none")
                         name("authenticatorSelection").objectValue {
+                            // this value has been modified by winkloid. If you only want to use platform authenticators, use value "platform" instead of roaming
                             name("authenticatorAttachment").value("roaming")
                             name("userVerification").value("required")
                         }
