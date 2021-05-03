@@ -1,6 +1,6 @@
 package de.tuchemnitz.armadillogin
 
-// offizielle Anleitung von Android,
+// Anleitung fuer Umsetzung der Navigation mittels BottomNavigationView aus einem offiziellen GitHub-Repository von Android,
 // gefunden auf https://github.com/android/architecture-components-samples/tree/master/NavigationAdvancedSample
 
 /*
