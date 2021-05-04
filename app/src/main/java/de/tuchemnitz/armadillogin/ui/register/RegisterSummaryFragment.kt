@@ -54,11 +54,18 @@ class RegisterSummaryFragment : Fragment() {
     }
 
     fun goToNextFragment() {
-        userViewModel.sendUsername()
         Toast.makeText(activity, getString(R.string.register_summary_sending_username), Toast.LENGTH_SHORT).show()
+
+        // wait for username and password to be sent and then go to the next fragment
+        userViewModel.sendUsername()
         userViewModel.sendingUsername.observe(viewLifecycleOwner) { sendingUsername ->
             if(!sendingUsername) {
-                findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
+                userViewModel.sendPassword()
+                userViewModel.sendingPassword.observe(viewLifecycleOwner) { sendingPassword ->
+                    if(!sendingPassword) {
+                        findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
+                    }
+                }
             }
         }
     }

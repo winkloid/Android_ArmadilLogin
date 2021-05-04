@@ -82,7 +82,7 @@ class RegisterFragment : Fragment() {
         if (!lastname.isNullOrBlank()) {
             lnOk = true
         }
-        
+
         Log.d("EMAIL", "$emailOk")
 
         // if everything is correct pass data to userViewModel, else: show errors

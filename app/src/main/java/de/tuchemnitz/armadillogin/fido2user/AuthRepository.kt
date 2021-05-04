@@ -129,6 +129,8 @@ class AuthRepository(
                     putString(PREF_USERNAME, username)
                     putString(PREF_SESSION_ID, result.sessionId!!)
                 }
+
+                //winkloid - show sessionId in Log
                 Log.d("FIDO2DEBUG", "SessionId: ${result.sessionId}")
                 invokeSignInStateListeners(SignInState.SigningIn(username))
             } finally {
@@ -156,6 +158,8 @@ class AuthRepository(
                         putString(PREF_SESSION_ID, it)
                     }
                 }
+
+                Log.d("FIDO2PASSWORD", "SessionId: ${result.sessionId}")
                 invokeSignInStateListeners(SignInState.SignedIn(username))
             } catch (e: ApiException) {
                 Log.e(TAG, "Invalid login credentials", e)

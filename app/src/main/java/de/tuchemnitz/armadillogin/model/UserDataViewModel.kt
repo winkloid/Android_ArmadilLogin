@@ -24,8 +24,15 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     private var _username = MutableLiveData("")
     val username: LiveData<String> = _username
 
+    // server accepts every password with this server config. To show the real advantages of fido2, no password is asked from the users
+    private val _password = MutableLiveData<String>("defaultpass")
+    val password: LiveData<String> = _password
+
     private val _sendingUsername = MutableLiveData<Boolean>()
     val sendingUsername: LiveData<Boolean> = _sendingUsername
+
+    private val _sendingPassword = MutableLiveData<Boolean>()
+    val sendingPassword: LiveData<Boolean> = _sendingPassword
 
     fun setData(fn: String, ln: String, email: String) {
         _firstname.value = fn
@@ -43,6 +50,10 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     fun sendUsername() {
         repository.username(username.value!!, _sendingUsername)
+    }
+
+    fun sendPassword() {
+        repository.password(password.value!!, _sendingPassword)
     }
 
 }
