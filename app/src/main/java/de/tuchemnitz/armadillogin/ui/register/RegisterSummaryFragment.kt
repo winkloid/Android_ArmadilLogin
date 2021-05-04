@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
@@ -52,6 +54,12 @@ class RegisterSummaryFragment : Fragment() {
     }
 
     fun goToNextFragment() {
-        findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
+        userViewModel.sendUsername()
+        Toast.makeText(activity, getString(R.string.register_summary_sending_username), Toast.LENGTH_SHORT).show()
+        userViewModel.sendingUsername.observe(viewLifecycleOwner) { sendingUsername ->
+            if(!sendingUsername) {
+                findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
+            }
+        }
     }
 }

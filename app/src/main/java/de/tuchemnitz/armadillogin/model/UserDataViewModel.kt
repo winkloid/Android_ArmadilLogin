@@ -1,11 +1,17 @@
 package de.tuchemnitz.armadillogin.model
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
+import de.tuchemnitz.armadillogin.fido2user.AuthRepository
 
-class UserDataViewModel : ViewModel() {
+class UserDataViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val repository = AuthRepository.getInstance(application)
+
     private var _firstname = MutableLiveData<String>("")
     val firstname: LiveData<String> = _firstname
 
@@ -17,6 +23,9 @@ class UserDataViewModel : ViewModel() {
 
     private var _username = MutableLiveData("")
     val username: LiveData<String> = _username
+
+    private val _sendingUsername = MutableLiveData<Boolean>()
+    val sendingUsername: LiveData<Boolean> = _sendingUsername
 
     fun setData(fn: String, ln: String, email: String) {
         _firstname.value = fn
@@ -30,6 +39,10 @@ class UserDataViewModel : ViewModel() {
 
     fun getFullName(): String {
         return "${firstname.value} ${lastname.value}"
+    }
+
+    fun sendUsername() {
+        repository.username(username.value!!, _sendingUsername)
     }
 
 }

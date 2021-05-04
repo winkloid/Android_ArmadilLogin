@@ -129,6 +129,7 @@ class AuthRepository(
                     putString(PREF_USERNAME, username)
                     putString(PREF_SESSION_ID, result.sessionId!!)
                 }
+                Log.d("FIDO2DEBUG", "SessionId: ${result.sessionId}")
                 invokeSignInStateListeners(SignInState.SigningIn(username))
             } finally {
                 sending.postValue(false)
