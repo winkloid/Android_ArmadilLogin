@@ -73,7 +73,7 @@ class RegisterFragment : Fragment() {
         //values for validating which of the user-provided values are failing
         var fnOk = false
         var lnOk = false
-        var emailOk = false
+        var emailOk = checkEmailFormat(email)
 
         //validate user inputs
         if (!firstname.isNullOrBlank()) {
@@ -82,7 +82,7 @@ class RegisterFragment : Fragment() {
         if (!lastname.isNullOrBlank()) {
             lnOk = true
         }
-        emailOk = checkEmailFormat(email)
+        
         Log.d("EMAIL", "$emailOk")
 
         // if everything is correct pass data to userViewModel, else: show errors
