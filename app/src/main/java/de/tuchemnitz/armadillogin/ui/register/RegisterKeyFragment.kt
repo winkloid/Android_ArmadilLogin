@@ -46,4 +46,6 @@ class RegisterKeyFragment : Fragment() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_KEY)
     }
+
+
 }
