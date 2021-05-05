@@ -85,6 +85,9 @@ class RegisterKeyFragment : Fragment() {
                         Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_LONG).show()
                         Log.e(LOG_TAG, errorMessage)
                     }
+
+                    // inserted by winkloid - navigate to RegisterErrorFragment when error occured while registering key
+                    findNavController().navigate(R.id.action_navigation_register_key_to_navigation_register_error)
                 }
                 resultCode != Activity.RESULT_OK -> {
                     Toast.makeText(requireContext(), R.string.register_key_cancelled, Toast.LENGTH_SHORT).show()

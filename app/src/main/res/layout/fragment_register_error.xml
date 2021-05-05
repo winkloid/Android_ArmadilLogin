@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterFinishedFragment">
+    tools:context=".RegisterErrorFragment">
 
     <data>
         <variable
-            name="registerFinishedFragment"
-            type="de.tuchemnitz.armadillogin.ui.register.RegisterFinishedFragment" />
+            name="registerErrorFragment"
+            type="de.tuchemnitz.armadillogin.ui.register.RegisterErrorFragment" />
 
         <variable
             name="userDataModel"
@@ -25,10 +25,10 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/textview_register_finished_title"
+                android:id="@+id/textview_register_error_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/register_finished_title"
+                android:text="@string/register_error_title"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
