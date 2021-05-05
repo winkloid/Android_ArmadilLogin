@@ -1,8 +1,10 @@
 package de.tuchemnitz.armadillogin
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
@@ -10,10 +12,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.fido.Fido
+import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private var currentNavController: LiveData<NavController>? = null
+    private val userViewModel: UserDataViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +35,16 @@ class MainActivity : AppCompatActivity() {
         // and its selectedItemId, we can proceed with setting up the
         // BottomNavigationBar with Navigation
         setupBottomNavigationBar()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        userViewModel.setFido2ApiClient(Fido.getFido2ApiClient(this))
+    }
+
+    override fun onPause() {
+        super.onPause()
+        userViewModel.setFido2ApiClient(null)
     }
 
     /**

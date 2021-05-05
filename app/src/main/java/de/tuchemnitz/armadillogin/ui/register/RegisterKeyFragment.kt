@@ -13,6 +13,7 @@ import de.tuchemnitz.armadillogin.databinding.FragmentRegisterSummaryBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
+import de.tuchemnitz.armadillogin.ui.observeOnce
 
 /**
  * A simple [Fragment] subclass.
@@ -20,6 +21,11 @@ import de.tuchemnitz.armadillogin.model.UserDataViewModel
  * create an instance of this fragment.
  */
 class RegisterKeyFragment : Fragment() {
+
+    companion object {
+        const val FIDO2_REGISTER_REQUEST_CODE = 1
+    }
+
     private var binding: FragmentRegisterKeyBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val userViewModel: UserDataViewModel by activityViewModels()
@@ -45,6 +51,20 @@ class RegisterKeyFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_KEY)
+    }
+
+    fun sendRegisterRequest() {
+        userViewModel.registerRequest().observeOnce(requireActivity()) { pendingIntent ->
+            startIntentSenderForResult(
+                    pendingIntent.getIntentSender(),
+                    FIDO2_REGISTER_REQUEST_CODE,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+            )
+        }
     }
 
 

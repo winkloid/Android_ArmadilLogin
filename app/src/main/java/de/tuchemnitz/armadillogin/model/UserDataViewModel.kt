@@ -1,10 +1,12 @@
 package de.tuchemnitz.armadillogin.model
 
 import android.app.Application
+import android.app.PendingIntent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.gms.fido.fido2.Fido2ApiClient
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 import de.tuchemnitz.armadillogin.fido2user.AuthRepository
 
@@ -34,6 +36,14 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     private val _sendingPassword = MutableLiveData<Boolean>()
     val sendingPassword: LiveData<Boolean> = _sendingPassword
 
+    private val _registeringKey = MutableLiveData<Boolean>()
+    val registeringKey: LiveData<Boolean> = _registeringKey
+
+    // used by MainActivity to create FIDO2 client
+    fun setFido2ApiClient(fidoClient: Fido2ApiClient?) {
+        repository.setFido2APiClient(fidoClient)
+    }
+
     fun setData(fn: String, ln: String, email: String) {
         _firstname.value = fn
         _lastname.value = ln
@@ -54,6 +64,10 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     fun sendPassword() {
         repository.password(password.value!!, _sendingPassword)
+    }
+
+    fun registerRequest() : LiveData<PendingIntent?> {
+        return repository.registerRequest(_registeringKey)
     }
 
 }
