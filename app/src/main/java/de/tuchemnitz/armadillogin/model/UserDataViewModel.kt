@@ -2,6 +2,7 @@ package de.tuchemnitz.armadillogin.model
 
 import android.app.Application
 import android.app.PendingIntent
+import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -58,16 +59,24 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
         return "${firstname.value} ${lastname.value}"
     }
 
+    // used by summary fragment to send collected data
     fun sendUsername() {
         repository.username(username.value!!, _sendingUsername)
     }
 
+    // used by summary fragment to send collected data
     fun sendPassword() {
         repository.password(password.value!!, _sendingPassword)
     }
 
+    // used by register key fragment
     fun registerRequest() : LiveData<PendingIntent?> {
         return repository.registerRequest(_registeringKey)
+    }
+
+    //used by register key fragment
+    fun registerResponse(intentData: Intent) {
+        repository.registerResponse(intentData, _registeringKey)
     }
 
 }

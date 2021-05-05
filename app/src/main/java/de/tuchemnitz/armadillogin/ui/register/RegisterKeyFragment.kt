@@ -1,12 +1,18 @@
 package de.tuchemnitz.armadillogin.ui.register
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.fido.Fido
+import com.google.android.gms.fido.fido2.api.common.AuthenticatorErrorResponse
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterKeyBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterSummaryBinding
@@ -24,6 +30,7 @@ class RegisterKeyFragment : Fragment() {
 
     companion object {
         const val FIDO2_REGISTER_REQUEST_CODE = 1
+        private const val LOG_TAG = "FIDO2_REGISTERKEY"
     }
 
     private var binding: FragmentRegisterKeyBinding? = null
@@ -53,6 +60,7 @@ class RegisterKeyFragment : Fragment() {
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_KEY)
     }
 
+    // sendRegisterRequest and onActivityResult are used as shown in https://github.com/googlecodelabs/fido2-codelab
     fun sendRegisterRequest() {
         userViewModel.registerRequest().observeOnce(requireActivity()) { pendingIntent ->
             startIntentSenderForResult(
@@ -67,5 +75,24 @@ class RegisterKeyFragment : Fragment() {
         }
     }
 
-
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == FIDO2_REGISTER_REQUEST_CODE) {
+            val errorExtra = data?.getByteArrayExtra(Fido.FIDO2_KEY_ERROR_EXTRA)
+            when {
+                errorExtra != null -> {
+                    val error = AuthenticatorErrorResponse.deserializeFromBytes(errorExtra)
+                    error.errorMessage?.let { errorMessage ->
+                        Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_LONG).show()
+                        Log.e(LOG_TAG, errorMessage)
+                    }
+                }
+                resultCode != Activity.RESULT_OK -> {
+                    Toast.makeText(requireContext(), R.string.register_key_cancelled, Toast.LENGTH_SHORT).show()
+                }
+                data != null -> userViewModel.registerResponse(data)
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
 }
