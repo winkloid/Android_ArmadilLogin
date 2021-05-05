@@ -52,7 +52,8 @@
         android:id="@+id/navigation_login1"
         android:name="de.tuchemnitz.armadillogin.ui.login.LoginFragment"
         android:label="@string/login"
-        tools:layout="@layout/fragment_login"></fragment>
+        tools:layout="@layout/fragment_login">
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_register_summary"
@@ -73,6 +74,16 @@
         android:label="@string/register"
         tools:layout="@layout/fragment_register_key">
 
+        <action
+            android:id="@+id/action_navigation_register_key_to_navigation_register_finished"
+            app:destination="@id/navigation_register_finished" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register_finished"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterFinishedFragment"
+        android:label="@string/register_finished_label"
+        tools:layout="@layout/fragment_register_finished">
     </fragment>
 
 </navigation>

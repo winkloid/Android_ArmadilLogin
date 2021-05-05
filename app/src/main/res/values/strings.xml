@@ -42,4 +42,6 @@
     <string name="register_key_confirm">Los Geht\'s!</string>
     <string name="register_summary_sending_username">Nutzername wird an Server gesendet.</string>
     <string name="register_key_cancelled">Abgebrochen!</string>
+    <string name="register_finished_title">Registrierung erfolgreich!</string>
+    <string name="register_finished_label">Registrierung abgeschlossen</string>
 </resources>

@@ -6,9 +6,7 @@ import android.content.Intent
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.google.android.gms.fido.fido2.Fido2ApiClient
-import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 import de.tuchemnitz.armadillogin.fido2user.AuthRepository
 
 class UserDataViewModel(application: Application) : AndroidViewModel(application) {
@@ -29,7 +27,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     // server accepts every password with this server config. To show the real advantages of fido2, no password is asked from the users
     private val _password = MutableLiveData<String>("defaultpass")
-    val password: LiveData<String> = _password
+    private val password: LiveData<String> = _password
 
     private val _sendingUsername = MutableLiveData<Boolean>()
     val sendingUsername: LiveData<Boolean> = _sendingUsername
