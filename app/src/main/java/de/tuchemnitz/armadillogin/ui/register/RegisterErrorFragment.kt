@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterErrorBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
@@ -42,5 +43,10 @@ class RegisterErrorFragment : Fragment() {
             lifecycleOwner = this@RegisterErrorFragment
             registerErrorFragment = this@RegisterErrorFragment
         }
+    }
+
+    fun backToStart() {
+        userViewModel.signOut()
+        findNavController().navigate(R.id.action_navigation_register_error_to_navigation_register_login)
     }
 }
