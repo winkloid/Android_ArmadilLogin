@@ -21,7 +21,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="16dp">
 
             <TextView
@@ -56,7 +56,7 @@
                 android:id="@+id/button_register_finished"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Zurück zum Start"
+                android:text="@sting/register_finished_to_start"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -43,9 +43,13 @@
     <string name="register_summary_sending_username">Nutzername wird an Server gesendet.</string>
     <string name="register_key_cancelled">Abgebrochen!</string>
     <string name="register_finished_title">Erfolgreich registriert</string>
-    <string name="register_finished_explanation">Sie haben sich erfolgreich registriert. Drücken Sie den Knopf unten, um zum Start zurückzukehren und sich einzuloggen.</string>
+    <string name="register_finished_explanation">Du hast dich erfolgreich registriert. Drücke den Knopf unten, um zum Start zurückzukehren und dich einzuloggen.</string>
     <string name="register_finished_label">Registrierung abgeschlossen</string>
+    <string name="register_finished_to_start">Zurück zum Start</string>
     <string name="register_error_title">Registrieren gescheitert</string>
     <string name="register_error_label">Registrierung fehlgeschlagen</string>
+    <string name="register_error_to_start">Zurück zum Start</string>
+    <string name="register_error_try_again">Erneut versuchen</string>
+    <string name="register_error_explanation">Es gab einen Fehler bei der Registrierung deines Schlüssels. Das kann unterschiedliche Gründe haben. Mehr findest du dazu im Hilfe-Tab.</string>
     <string name="signin_key_cancelled">Abgebrochen!</string>
 </resources>
