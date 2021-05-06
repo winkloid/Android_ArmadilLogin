@@ -43,6 +43,7 @@
     <string name="register_summary_sending_username">Nutzername wird an Server gesendet.</string>
     <string name="register_key_cancelled">Abgebrochen!</string>
     <string name="register_finished_title">Erfolgreich registriert</string>
+    <string name="register_finished_explanation">Sie haben sich erfolgreich registriert. Drücken Sie den Knopf unten, um zum Start zurückzukehren und sich einzuloggen.</string>
     <string name="register_finished_label">Registrierung abgeschlossen</string>
     <string name="register_error_title">Registrieren gescheitert</string>
     <string name="register_error_label">Registrierung fehlgeschlagen</string>
