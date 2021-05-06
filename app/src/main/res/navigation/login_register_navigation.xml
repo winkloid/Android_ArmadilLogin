@@ -96,8 +96,7 @@
         tools:layout="@layout/fragment_register_error">
         <action
             android:id="@+id/action_navigation_register_error_to_navigation_register_login"
-            app:destination="@id/navigation_register_login"
-            app:popUpToInclusive="@id/navigation_register_login" />
+            app:popUpTo="@id/navigation_register_login" />
     </fragment>
 
 </navigation>
