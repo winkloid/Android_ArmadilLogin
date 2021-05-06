@@ -86,13 +86,18 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     }
 
     //used in RegisterErrorFragment
-    fun signOut() {
+    fun signOutOnError() {
         // clear all saved data of the current user
         repository.signOut()
         _username.value = ""
         _firstname.value = ""
         _lastname.value = ""
         _email.value = ""
+    }
+
+    //used by MainActivity toprevent multiple users being in signingIn state
+    fun signOut() {
+        repository.signOut()
     }
 
 }
