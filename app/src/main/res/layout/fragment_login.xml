@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:onClick="@{() -> loginFragment.goToNextView()}"
+                android:onClick="@{() -> loginFragment.sendLoginRequest()}"
                 android:text="@string/login_button_next"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/login_textinput_username" />

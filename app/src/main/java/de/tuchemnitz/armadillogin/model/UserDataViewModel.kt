@@ -29,6 +29,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     private val _password = MutableLiveData<String>("defaultpass")
     private val password: LiveData<String> = _password
 
+    // bools to show animations or adapt UI when user has to wait until a task is finished
     private val _sendingUsername = MutableLiveData<Boolean>()
     val sendingUsername: LiveData<Boolean> = _sendingUsername
 
@@ -37,6 +38,9 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     private val _registeringKey = MutableLiveData<Boolean>()
     val registeringKey: LiveData<Boolean> = _registeringKey
+
+    private val _signInKey = MutableLiveData<Boolean>()
+    val signInKey: LiveData<Boolean> = _signInKey
 
     // used by MainActivity to create FIDO2 client
     fun setFido2ApiClient(fidoClient: Fido2ApiClient?) {
@@ -61,8 +65,6 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     fun sendUsername() {
         repository.username(username.value!!, _sendingUsername)
     }
-
-    // used by summary fragment to send collected data
     fun sendPassword() {
         repository.password(password.value!!, _sendingPassword)
     }
@@ -71,10 +73,16 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     fun registerRequest() : LiveData<PendingIntent?> {
         return repository.registerRequest(_registeringKey)
     }
-
-    //used by register key fragment
     fun registerResponse(intentData: Intent) {
         repository.registerResponse(intentData, _registeringKey)
+    }
+
+    //used by login fragment to sign in with key or fingerprint
+    fun signInRequest(): LiveData<PendingIntent?> {
+        return repository.signinRequest(_signInKey)
+    }
+    fun signInResponse(intentData: Intent) {
+        repository.signinResponse(intentData, _signInKey)
     }
 
 }

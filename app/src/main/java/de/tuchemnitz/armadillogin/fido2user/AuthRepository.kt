@@ -60,6 +60,7 @@ class AuthRepository(
 
         private var instance: AuthRepository? = null
 
+        // Constructor - comment by winkloid
         fun getInstance(context: Context): AuthRepository {
             return instance ?: synchronized(this) {
                 instance ?: AuthRepository(
