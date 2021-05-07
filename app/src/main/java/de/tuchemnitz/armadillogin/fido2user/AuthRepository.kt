@@ -121,7 +121,7 @@ class AuthRepository(
      * Sends the username to the server. If it succeeds, the sign-in state will proceed to
      * [SignInState.SigningIn].
      */
-    fun username(username: String, sending: MutableLiveData<Boolean>) {
+    fun username(username: String, sending: MutableLiveData<Boolean>, usernameBeforePassword: MutableLiveData<Boolean>) {
         executor.execute {
             sending.postValue(true)
             try {
@@ -136,6 +136,7 @@ class AuthRepository(
                 invokeSignInStateListeners(SignInState.SigningIn(username))
             } finally {
                 sending.postValue(false)
+                usernameBeforePassword.postValue(true)
             }
         }
     }
@@ -147,7 +148,7 @@ class AuthRepository(
      *
      * @param processing The value is set to `true` while the API call is ongoing.
      */
-    fun password(password: String, processing: MutableLiveData<Boolean>) {
+    fun password(password: String, processing: MutableLiveData<Boolean>, usernameBeforePassword: MutableLiveData<Boolean>) {
         executor.execute {
             processing.postValue(true)
             val username = prefs.getString(PREF_USERNAME, null)!!
@@ -177,6 +178,7 @@ class AuthRepository(
                 )
             } finally {
                 processing.postValue(false)
+                usernameBeforePassword.postValue(false)
             }
         }
     }

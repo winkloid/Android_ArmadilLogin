@@ -59,9 +59,8 @@ class RegisterSummaryFragment : Fragment() {
 
         // wait for username and password to be sent and then go to the next fragment
         userViewModel.sendUsername()
-        userViewModel.sendingUsername.observe(viewLifecycleOwner) { sendingUsername ->
-            if(sendingUsername) {}
-            else {
+        userViewModel.usernameBeforePassword.observe(viewLifecycleOwner) { usernameBeforePassword ->
+            if(usernameBeforePassword) {
                 userViewModel.sendPassword()
                 userViewModel.sendingPassword.observe(viewLifecycleOwner) { sendingPassword ->
                     if(sendingPassword) {}

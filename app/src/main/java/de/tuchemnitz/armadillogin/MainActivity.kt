@@ -72,14 +72,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        /*
+        // sign user out if he or she goes back to summaryFragment (maybe to change data)
         val currentFragmentId = currentNavController?.value?.currentDestination?.id
         Log.d("CURRENTFRAGMENTTEST", "${currentFragmentId == R.id.navigation_register_key}")
 
         if(currentFragmentId == R.id.navigation_register_key){
             userViewModel.signOut()
             Log.d("SIGN_OUT", "User has been signed out")
-        }*/
+        }
         return currentNavController?.value?.navigateUp() ?: false
     }
 }
