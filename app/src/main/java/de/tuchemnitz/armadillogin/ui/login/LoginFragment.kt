@@ -40,6 +40,7 @@ class LoginFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = this@LoginFragment
             loginFragment = this@LoginFragment
+            userModel = userViewModel
         }
     }
 

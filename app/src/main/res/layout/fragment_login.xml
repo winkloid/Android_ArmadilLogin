@@ -5,10 +5,12 @@
     tools:context=".ui.login.LoginFragment">
 
     <data>
-
         <variable
             name="loginFragment"
             type="de.tuchemnitz.armadillogin.ui.login.LoginFragment" />
+        <variable
+            name="userModel"
+            type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
     </data>
 
     <ScrollView
@@ -60,6 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:enabled="@{safeUnbox(!userModel.sendingUsername)}"
                 android:onClick="@{() -> loginFragment.goToNextView()}"
                 android:text="@string/login_button_next"
                 app:layout_constraintStart_toStartOf="parent"
