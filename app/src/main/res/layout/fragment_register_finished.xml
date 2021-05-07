@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegisterFinishedFragment">
+
+    <data>
+        <variable
+            name="registerFinishedFragment"
+            type="de.tuchemnitz.armadillogin.ui.register.RegisterFinishedFragment" />
+
+        <variable
+            name="userDataModel"
+            type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textview_register_finished_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_finished_title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textview_register_finished_explanation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_finished_explanation"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_finished_title" />
+
+            <ImageView
+                android:id="@+id/imageview_register_finished"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_baseline_check_circle_outline_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_finished_explanation" />
+
+            <Button
+                android:id="@+id/button_register_finished"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_finished_to_start"
+                android:layout_marginTop="16dp"
+                android:onClick="@{() -> registerFinishedFragment.backToStart()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_register_finished" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

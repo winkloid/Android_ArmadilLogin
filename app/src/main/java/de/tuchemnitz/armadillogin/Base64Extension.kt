@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package de.tuchemnitz.armadillogin.fido2api
+package de.tuchemnitz.armadillogin
 
-import okhttp3.Interceptor
-import okhttp3.Response
+import android.util.Base64
 
-class AddHeaderInterceptor : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
-        return chain.proceed(
-            chain.request().newBuilder()
-                .header("X-Requested-With", "XMLHttpRequest")
-                .build()
-        )
-    }
+private const val BASE64_FLAG = Base64.NO_PADDING or Base64.NO_WRAP or Base64.URL_SAFE
+
+fun ByteArray.toBase64(): String {
+    return Base64.encodeToString(this, BASE64_FLAG)
+}
+
+fun String.decodeBase64(): ByteArray {
+    return Base64.decode(this, BASE64_FLAG)
 }

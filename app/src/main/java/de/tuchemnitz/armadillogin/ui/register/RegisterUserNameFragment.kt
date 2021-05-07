@@ -57,7 +57,7 @@ class RegisterUserNameFragment : Fragment() {
         }
     }
 
-    fun checkValues(): Boolean {
+    private fun checkValues(): Boolean {
         val username = binding?.registerInputUsernameEditText?.text.toString()
         Log.d("UNAME", "$username")
 
@@ -69,6 +69,5 @@ class RegisterUserNameFragment : Fragment() {
             binding?.registerInputUsernameEditText?.error = getString(R.string.simple_string_error)
             return false
         }
-
     }
 }

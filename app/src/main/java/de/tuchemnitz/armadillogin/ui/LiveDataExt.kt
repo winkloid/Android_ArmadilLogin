@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package de.tuchemnitz.armadillogin.fido2api
+package de.tuchemnitz.armadillogin.ui
 
-import okhttp3.Interceptor
-import okhttp3.Response
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 
-class AddHeaderInterceptor : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
-        return chain.proceed(
-            chain.request().newBuilder()
-                .header("X-Requested-With", "XMLHttpRequest")
-                .build()
-        )
+fun <T> LiveData<T?>.observeOnce(lifecycleOwner: LifecycleOwner, onChanged: (T) -> Unit) {
+    val observer = object : Observer<T?> {
+        override fun onChanged(t: T?) {
+            if (t != null) {
+                onChanged(t)
+                removeObserver(this)
+            }
+        }
     }
+    observe(lifecycleOwner, observer)
 }

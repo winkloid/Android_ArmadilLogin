@@ -16,15 +16,15 @@
 
 package de.tuchemnitz.armadillogin.fido2api
 
-import okhttp3.Interceptor
-import okhttp3.Response
+class ApiResult<T>(
+    /**
+     * The session ID to be used for the subsequent API calls. Might be null if the API call does
+     * not return a new cookie.
+     */
+    val sessionId: String?,
 
-class AddHeaderInterceptor : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
-        return chain.proceed(
-            chain.request().newBuilder()
-                .header("X-Requested-With", "XMLHttpRequest")
-                .build()
-        )
-    }
-}
+    /**
+     * The result data.
+     */
+    val data: T
+)

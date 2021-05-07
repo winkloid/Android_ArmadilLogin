@@ -52,7 +52,11 @@
         android:id="@+id/navigation_login1"
         android:name="de.tuchemnitz.armadillogin.ui.login.LoginFragment"
         android:label="@string/login"
-        tools:layout="@layout/fragment_login"></fragment>
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigation_login1_to_navigation_login_key"
+            app:destination="@id/navigation_login_key" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_register_summary"
@@ -73,6 +77,39 @@
         android:label="@string/register"
         tools:layout="@layout/fragment_register_key">
 
+        <action
+            android:id="@+id/action_navigation_register_key_to_navigation_register_finished"
+            app:destination="@id/navigation_register_finished" />
+        <action
+            android:id="@+id/action_navigation_register_key_to_navigation_register_error"
+            app:destination="@id/navigation_register_error" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register_finished"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterFinishedFragment"
+        android:label="@string/register_finished_label"
+        tools:layout="@layout/fragment_register_finished">
+        <action
+            android:id="@+id/action_navigation_register_finished_to_navigation_register_login"
+            app:popUpTo="@id/navigation_register_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register_error"
+        android:name="de.tuchemnitz.armadillogin.ui.register.RegisterErrorFragment"
+        android:label="@string/register_error_label"
+        tools:layout="@layout/fragment_register_error">
+        <action
+            android:id="@+id/action_navigation_register_error_to_navigation_register_login"
+            app:popUpTo="@id/navigation_register_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login_key"
+        android:name="de.tuchemnitz.armadillogin.ui.login.LoginKeyFragment"
+        android:label="@string/login_key_label"
+        tools:layout="@layout/fragment_login_key">
     </fragment>
 
 </navigation>

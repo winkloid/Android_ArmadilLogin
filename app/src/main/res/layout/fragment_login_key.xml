@@ -3,12 +3,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterKeyFragment">
+    tools:context=".LoginKeyFragment">
 
     <data>
         <variable
-            name="registerKeyFragment"
-            type="de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment" />
+            name="loginKeyFragment"
+            type="de.tuchemnitz.armadillogin.ui.login.LoginKeyFragment" />
         <variable
             name="userDataModel"
             type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
@@ -24,34 +24,34 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/textview_register_key_title"
+                android:id="@+id/textview_login_key_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/register_key_title"
+                android:text="@string/login_key_title"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textview_register_key_explanation"
+                android:id="@+id/textview_login_key_explanation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/register_key_explanation"
+                android:text="@string/login_key_explanation"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_key_title" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_login_key_title" />
 
             <Button
-                android:id="@+id/button_register_key_confirm"
+                android:id="@+id/button_login_key_confirm"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/register_key_confirm"
-                android:onClick="@{() -> registerKeyFragment.sendRegisterRequest()}"
+                android:text="@string/login_key_confirm"
+                android:onClick="@{() -> loginKeyFragment.sendLoginRequest()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_key_explanation" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_login_key_explanation" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

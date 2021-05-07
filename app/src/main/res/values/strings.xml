@@ -40,4 +40,20 @@
     <string name="register_key_title">Noch ein letzter Schritt</string>
     <string name="register_key_explanation">Damit nur du Zugang zu deinem Konto erhältst, muss die App in Zukunft sicherstellen können, dass du es tatsächlich bist. Dafür musst du dir kein kopliziertes Passwort merken, sondern nur eine Art Schlüssel bei dir tragen. Je nach Art des Schlüssels, legst du diesen einfach auf die Rückseite deines Telefons auf oder steckst ihn in die Ladebuchse dessen Ladebuchse. Alternativ kannst du auch dein Handy selbst als Schlüssel verwenden, indem du deine Displaysperre zum Entsperren der App verwendest. Innerhalb von Sekundenbruchteilen bist du angemeldet. Weitere Infos findest du im "Hilfe"-Tab.</string>
     <string name="register_key_confirm">Los Geht\'s!</string>
+    <string name="register_summary_sending_username">Nutzername wird an Server gesendet.</string>
+    <string name="register_key_cancelled">Abgebrochen!</string>
+    <string name="register_finished_title">Erfolgreich registriert</string>
+    <string name="register_finished_explanation">Du hast dich erfolgreich registriert. Drücke den Knopf unten, um zum Start zurückzukehren und dich einzuloggen.</string>
+    <string name="register_finished_label">Registrierung abgeschlossen</string>
+    <string name="register_finished_to_start">Zurück zum Start</string>
+    <string name="register_error_title">Registrieren gescheitert</string>
+    <string name="register_error_label">Registrierung fehlgeschlagen</string>
+    <string name="register_error_to_start">Zurück zum Start</string>
+    <string name="register_error_try_again">Erneut versuchen</string>
+    <string name="register_error_explanation">Es gab einen Fehler bei der Registrierung deines Schlüssels. Das kann unterschiedliche Gründe haben. Mehr findest du dazu im Hilfe-Tab.</string>
+    <string name="signin_key_cancelled">Abgebrochen!</string>
+    <string name="login_key_label">Login</string>
+    <string name="login_key_title">Einloggen mit deinem Schlüssel</string>
+    <string name="login_key_explanation">Betätige den Knopf unten, um dich mit deinem Schlüssel in dein Konto einzuloggen. Du kennst diesen Prozess bereits vom Registrieren. Mehr Informationen , wie du dich mit deinem Schlüssel einloggst, findest du im Hilfe-Tab.</string>
+    <string name="login_key_confirm">Los geht\'s!</string>
 </resources>
