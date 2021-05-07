@@ -42,9 +42,17 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     private val _signInKey = MutableLiveData<Boolean>()
     val signInKey: LiveData<Boolean> = _signInKey
 
-    // used to ensure that the password method is called after username method
+    // used to ensure that the password() method is called after username() method
     private val _usernameBeforePassword = MutableLiveData(false)
     val usernameBeforePassword: LiveData<Boolean> = _usernameBeforePassword
+
+    // used to ensure that the navigation to registerKeyFragment is done after password() method
+    private val _passwordBeforeNextTask = MutableLiveData(false)
+    val passwordBeforeNextTask: LiveData<Boolean> = _passwordBeforeNextTask
+
+    fun setPasswordBeforeNextTask() {
+        _passwordBeforeNextTask.value = false
+    }
 
     // used by MainActivity to create FIDO2 client
     fun setFido2ApiClient(fidoClient: Fido2ApiClient?) {
@@ -70,7 +78,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
         repository.username(username.value!!, _sendingUsername, _usernameBeforePassword)
     }
     fun sendPassword() {
-        repository.password(password.value!!, _sendingPassword, _usernameBeforePassword)
+        repository.password(password.value!!, _sendingPassword, _usernameBeforePassword, _passwordBeforeNextTask)
     }
 
     // used by register key fragment
@@ -103,5 +111,4 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     fun signOut() {
         repository.signOut()
     }
-
 }

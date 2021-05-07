@@ -62,10 +62,10 @@ class RegisterSummaryFragment : Fragment() {
         userViewModel.usernameBeforePassword.observe(viewLifecycleOwner) { usernameBeforePassword ->
             if(usernameBeforePassword) {
                 userViewModel.sendPassword()
-                userViewModel.sendingPassword.observe(viewLifecycleOwner) { sendingPassword ->
-                    if(sendingPassword) {}
-                    else {
+                userViewModel.passwordBeforeNextTask.observe(viewLifecycleOwner) { passwordBeforeNextTask ->
+                    if(passwordBeforeNextTask) {
                         findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
+                        userViewModel.setPasswordBeforeNextTask()
                     }
                 }
             }

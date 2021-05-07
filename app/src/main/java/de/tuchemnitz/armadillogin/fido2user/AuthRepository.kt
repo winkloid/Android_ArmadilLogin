@@ -148,7 +148,7 @@ class AuthRepository(
      *
      * @param processing The value is set to `true` while the API call is ongoing.
      */
-    fun password(password: String, processing: MutableLiveData<Boolean>, usernameBeforePassword: MutableLiveData<Boolean>) {
+    fun password(password: String, processing: MutableLiveData<Boolean>, usernameBeforePassword: MutableLiveData<Boolean>, passwordBeforeNextTask: MutableLiveData<Boolean>) {
         executor.execute {
             processing.postValue(true)
             val username = prefs.getString(PREF_USERNAME, null)!!
@@ -179,6 +179,7 @@ class AuthRepository(
             } finally {
                 processing.postValue(false)
                 usernameBeforePassword.postValue(false)
+                passwordBeforeNextTask.postValue(true)
             }
         }
     }
