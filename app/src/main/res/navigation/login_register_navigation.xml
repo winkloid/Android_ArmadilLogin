@@ -53,6 +53,9 @@
         android:name="de.tuchemnitz.armadillogin.ui.login.LoginFragment"
         android:label="@string/login"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigation_login1_to_navigation_login_key"
+            app:destination="@id/navigation_login_key" />
     </fragment>
 
     <fragment
@@ -87,6 +90,9 @@
         android:name="de.tuchemnitz.armadillogin.ui.register.RegisterFinishedFragment"
         android:label="@string/register_finished_label"
         tools:layout="@layout/fragment_register_finished">
+        <action
+            android:id="@+id/action_navigation_register_finished_to_navigation_register_login"
+            app:popUpTo="@id/navigation_register_login" />
     </fragment>
 
     <fragment
@@ -97,6 +103,13 @@
         <action
             android:id="@+id/action_navigation_register_error_to_navigation_register_login"
             app:popUpTo="@id/navigation_register_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login_key"
+        android:name="de.tuchemnitz.armadillogin.ui.login.LoginKeyFragment"
+        android:label="@string/login_key_label"
+        tools:layout="@layout/fragment_login_key">
     </fragment>
 
 </navigation>

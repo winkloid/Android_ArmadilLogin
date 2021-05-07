@@ -56,8 +56,9 @@
                 android:id="@+id/button_register_finished"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@sting/register_finished_to_start"
+                android:text="@string/register_finished_to_start"
                 android:layout_marginTop="16dp"
+                android:onClick="@{() -> registerFinishedFragment.backToStart()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageview_register_finished" />

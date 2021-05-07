@@ -54,6 +54,10 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
         _passwordBeforeNextTask.value = false
     }
 
+    fun setUsernameBeforePassword() {
+        _usernameBeforePassword.value = false
+    }
+
     // used by MainActivity to create FIDO2 client
     fun setFido2ApiClient(fidoClient: Fido2ApiClient?) {
         repository.setFido2APiClient(fidoClient)
@@ -98,7 +102,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     }
 
     //used in RegisterErrorFragment
-    fun signOutOnError() {
+    fun signOutOnErrorOrFinished() {
         // clear all saved data of the current user
         repository.signOut()
         _username.value = ""

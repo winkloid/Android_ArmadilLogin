@@ -1,7 +1,5 @@
 package de.tuchemnitz.armadillogin.ui.login
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,16 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.fido.Fido
-import com.google.android.gms.fido.fido2.api.common.AuthenticatorErrorResponse
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentLoginBinding
-import de.tuchemnitz.armadillogin.databinding.FragmentRegisterBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
-import de.tuchemnitz.armadillogin.ui.observeOnce
-import de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment
 
 /**
  * A simple [Fragment] subclass.
@@ -28,11 +21,6 @@ import de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment
  * create an instance of this fragment.
  */
 class LoginFragment : Fragment() {
-
-    companion object {
-        const val FIDO2_SIGNIN_REQUEST_CODE = 2
-        private const val LOG_TAG = "FIDO2_SIGNINKEY"
-    }
 
     private var binding: FragmentLoginBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
@@ -60,50 +48,51 @@ class LoginFragment : Fragment() {
         sharedViewModel.setFragmentStatus(FragmentStatus.LOGIN)
     }
 
-    // sendLoginRequest and onActivityResult are used as shown in https://github.com/googlecodelabs/fido2-codelab
-    fun sendLoginRequest() {
-        userViewModel.signInRequest().observeOnce(this) { pendingIntent ->
-            startIntentSenderForResult(
-                pendingIntent.getIntentSender(),
-                FIDO2_SIGNIN_REQUEST_CODE,
-                null,
-                0,
-                0,
-                0,
-                null
-            )
+    /**
+     * Is called via data binding when the Button is Pressed
+     * Calls [checkValues] first to check whether the user entered a valid username
+     * Calls [sendUserName] after this to send the provided username to the server and to navigate using [R.id.action_navigation_login1_to_navigation_login_key] action
+     */
+    fun goToNextView() {
+        val valuesCorrect = checkValues()
+        if(valuesCorrect) {
+            sendUserName()
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.d(LOG_TAG, "requestCode: $requestCode")
+    /**
+     * Check whether the username provided by the user is a string that is not null and not blank
+     * returns Boolean value to show whether the provided value is acceptable or not
+     */
+    private fun checkValues(): Boolean {
+        val username = binding?.loginInputUsernameEditText?.text.toString()
+        Log.d("UNAME", "$username")
 
-        if(requestCode == FIDO2_SIGNIN_REQUEST_CODE) {
-            val errorExtra = data?.getByteArrayExtra(Fido.FIDO2_KEY_ERROR_EXTRA)
+        if(!username.isNullOrBlank()) {
+            binding?.loginInputUsernameEditText?.error = null
+            userViewModel.setUsername(username)
+            return true
+        } else {
+            binding?.loginInputUsernameEditText?.error = getString(R.string.simple_string_error)
+            return false
+        }
+    }
 
-            when {
-                (errorExtra != null) -> {
-                    val error = AuthenticatorErrorResponse.deserializeFromBytes(errorExtra)
-                    error.errorMessage?.let { errorMessage ->
-                        // show Toast with errorMessage - comment by winkloid
-                        Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
-                        Log.e(LOG_TAG, errorMessage)
-                    }
-                }
-                (resultCode != Activity.RESULT_OK) -> {
-                    Toast.makeText(requireContext(), R.string.signin_key_cancelled, Toast.LENGTH_SHORT).show()
-                }
-                else -> {
-                    if(data!= null) {
-                        userViewModel.signInResponse(data)
-                        Log.d(LOG_TAG, "$data")
-                    }
-                }
+    /**
+     * Uses sendUsername method from [userViewModel] to send the username provided by the user to the fido2/webauthn server.
+     * After this is done, the user is redirected to LoginKeyFragment
+     * Calls [userViewModel] method to reset the bool that ensures that the username() method in AuthRepository is always executed before password() method is executed when user registers
+     */
+    private fun sendUserName() {
+        Toast.makeText(activity, getString(R.string.register_summary_sending_username), Toast.LENGTH_SHORT).show()
+
+        // wait for username and password to be sent and then go to the next fragment
+        userViewModel.sendUsername()
+        userViewModel.usernameBeforePassword.observe(viewLifecycleOwner) { usernameBeforeNextTask ->
+            if(usernameBeforeNextTask) {
+                findNavController().navigate(R.id.action_navigation_login1_to_navigation_login_key)
+                userViewModel.setUsernameBeforePassword()
             }
         }
-    }
-
-    fun goToNextView() {
-        // findNavController().navigate(R.id.)
     }
 }

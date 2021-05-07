@@ -52,4 +52,8 @@
     <string name="register_error_try_again">Erneut versuchen</string>
     <string name="register_error_explanation">Es gab einen Fehler bei der Registrierung deines Schlüssels. Das kann unterschiedliche Gründe haben. Mehr findest du dazu im Hilfe-Tab.</string>
     <string name="signin_key_cancelled">Abgebrochen!</string>
+    <string name="login_key_label">Login</string>
+    <string name="login_key_title">Einloggen mit deinem Schlüssel</string>
+    <string name="login_key_explanation">Betätige den Knopf unten, um dich mit deinem Schlüssel in dein Konto einzuloggen. Du kennst diesen Prozess bereits vom Registrieren. Mehr Informationen , wie du dich mit deinem Schlüssel einloggst, findest du im Hilfe-Tab.</string>
+    <string name="login_key_confirm">Los geht\'s!</string>
 </resources>

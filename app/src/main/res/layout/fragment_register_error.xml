@@ -71,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/register_error_try_again"
+                android:onClick="@{() -> registerErrorFragment.backToPrevious()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/button_register_error_to_start"
                 app:layout_constraintTop_toBottomOf="@id/imageview_register_error" />

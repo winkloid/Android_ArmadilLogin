@@ -46,7 +46,11 @@ class RegisterErrorFragment : Fragment() {
     }
 
     fun backToStart() {
-        userViewModel.signOutOnError()
+        userViewModel.signOutOnErrorOrFinished()
         findNavController().navigate(R.id.action_navigation_register_error_to_navigation_register_login)
+    }
+
+    fun backToPrevious() {
+        activity?.onBackPressed()
     }
 }

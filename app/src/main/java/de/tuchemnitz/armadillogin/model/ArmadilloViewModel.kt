@@ -14,7 +14,9 @@ enum class FragmentStatus {
     REGISTER_KEY,
     REGISTER_FINISHED,
     REGISTER_ERROR,
-    LOGIN }
+    LOGIN,
+    LOGIN_KEY
+}
 
 class ArmadilloViewModel : ViewModel() {
     private val _status = MutableLiveData<FragmentStatus>()
