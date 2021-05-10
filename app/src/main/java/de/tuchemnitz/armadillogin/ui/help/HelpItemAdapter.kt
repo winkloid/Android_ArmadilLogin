@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.model.HelpData
 
-class HelpItemAdapter(private val context: Context, private val data: List<HelpData>) : RecyclerView.Adapter<HelpItemAdapter.HelpItemViewHolder>(){
+class HelpItemAdapter(
+    private val context: Context,
+    private val data: List<HelpData>
+) : RecyclerView.Adapter<HelpItemAdapter.HelpItemViewHolder>() {
 
     class HelpItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.item_help_title_image)
@@ -23,7 +26,7 @@ class HelpItemAdapter(private val context: Context, private val data: List<HelpD
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HelpItemViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_help, parent, false)
+            .inflate(R.layout.item_help, parent, false)
 
         return HelpItemViewHolder(adapterLayout)
     }
@@ -37,7 +40,7 @@ class HelpItemAdapter(private val context: Context, private val data: List<HelpD
         val helpItem = data[position]
         // get the right string and set it as value for the text of the textview inside the itemViewHolder
         holder.textView.text = context.resources.getString(helpItem.stringResourceId)
-        if(helpItem.imageResourceId != null) {
+        if (helpItem.imageResourceId != null) {
             holder.imageView.visibility = VISIBLE
             holder.imageView.setImageResource(helpItem.imageResourceId)
         } else {

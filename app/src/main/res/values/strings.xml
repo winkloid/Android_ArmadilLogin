@@ -56,4 +56,6 @@
     <string name="login_key_title">Einloggen mit deinem Schlüssel</string>
     <string name="login_key_explanation">Betätige den Knopf unten, um dich mit deinem Schlüssel in dein Konto einzuloggen. Du kennst diesen Prozess bereits vom Registrieren. Mehr Informationen , wie du dich mit deinem Schlüssel einloggst, findest du im Hilfe-Tab.</string>
     <string name="login_key_confirm">Los geht\'s!</string>
+    <string name="user_overview_title">Willkommen zurück, </string>
+    <string name="user_overview_explanation">In dieser Übersicht findest du all deine registrierten Schlüssel. Es wird empfohlen, mehrere Schlüssel auf verschiedenen Geräten zu registrieren, falls mal einer verloren geht.</string>
 </resources>
