@@ -350,7 +350,7 @@ class AuthRepository(
      * Finishes to signing in with a FIDO2 credential. This should only be called after a call to
      * [signinRequest] and a local FIDO2 API for key assertion.
      */
-    fun signinResponse(data: Intent, processing: MutableLiveData<Boolean>) {
+    fun signinResponse(data: Intent, processing: MutableLiveData<Boolean>, signInReady: MutableLiveData<Boolean>) {
         executor.execute {
             processing.postValue(true)
             try {
@@ -371,6 +371,7 @@ class AuthRepository(
                 Log.e(TAG, "Cannot call registerResponse", e)
             } finally {
                 processing.postValue(false)
+                signInReady.postValue(true)
             }
         }
     }
