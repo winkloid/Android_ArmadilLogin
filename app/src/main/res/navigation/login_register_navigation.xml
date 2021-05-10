@@ -110,6 +110,16 @@
         android:name="de.tuchemnitz.armadillogin.ui.login.LoginKeyFragment"
         android:label="@string/login_key_label"
         tools:layout="@layout/fragment_login_key">
+        <action
+            android:id="@+id/action_navigation_login_key_to_navigation_user_overview"
+            app:destination="@id/navigation_user_overview" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user_overview"
+        android:name="de.tuchemnitz.armadillogin.ui.user.UserOverviewFragment"
+        android:label="@string/user_overview_label"
+        tools:layout="@layout/fragment_user_overview">
     </fragment>
 
 </navigation>

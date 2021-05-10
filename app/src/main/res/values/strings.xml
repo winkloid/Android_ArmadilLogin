@@ -58,4 +58,5 @@
     <string name="login_key_confirm">Los geht\'s!</string>
     <string name="user_overview_title">Willkommen zurück, </string>
     <string name="user_overview_explanation">In dieser Übersicht findest du all deine registrierten Schlüssel. Es wird empfohlen, mehrere Schlüssel auf verschiedenen Geräten zu registrieren, falls mal einer verloren geht.</string>
+    <string name="user_overview_label">Übersicht</string>
 </resources>
