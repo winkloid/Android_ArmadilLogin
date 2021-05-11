@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="item_credential_headlines" parent="item_credential_text">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline5</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="item_credential_text">
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+</resources>

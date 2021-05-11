@@ -1,14 +1,13 @@
 package de.tuchemnitz.armadillogin.ui.user
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import de.tuchemnitz.armadillogin.R
-import de.tuchemnitz.armadillogin.databinding.FragmentRegisterKeyBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentUserOverviewBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
@@ -19,7 +18,7 @@ import de.tuchemnitz.armadillogin.model.UserDataViewModel
  * Use the [UserOverviewFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class UserOverviewFragment : Fragment() {
+class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
 
     companion object {
         private const val LOG_TAG = "UserOverviewFragment"
@@ -29,6 +28,7 @@ class UserOverviewFragment : Fragment() {
     private var binding: FragmentUserOverviewBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val userViewModel: UserDataViewModel by activityViewModels()
+    private val viewModel: UserOverviewViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,27 +45,32 @@ class UserOverviewFragment : Fragment() {
             lifecycleOwner = this@UserOverviewFragment
             userOverviewFragment = this@UserOverviewFragment
             userDataModel = userViewModel
+            viewModel = viewModel
         }
 
         // credentials recyclerview binding
         // these lines are used as shown in https://github.com/googlecodelabs/fido2-codelab in HomeFragment
-        /*
         val credentialAdapter = CredentialAdapter { credentialId ->
             DeleteConfirmationFragment.newInstance(credentialId)
-                .show(childFragmentManager, FRAGMENT_DELETE_CONFIRMATION)
+               .show(childFragmentManager, FRAGMENT_DELETE_CONFIRMATION)
         }
         binding?.recyclerviewUserOverviewCredentials?.run {
             layoutManager = LinearLayoutManager(view.context)
             adapter = credentialAdapter
         }
-        userViewModel.credentialList.observe(viewLifecycleOwner) { credentialList ->
+        viewModel.credentialList.observe(viewLifecycleOwner) { credentialList ->
             credentialAdapter.submitList(credentialList)
+            Log.d(LOG_TAG, "$credentialList")
             binding?.userOverviewCredentialPlaceholder?.visibility = if (credentialList.isEmpty()) {
                 View.VISIBLE
             } else {
                 View.INVISIBLE
             }
-        }*/
+        }
+    }
+
+    override fun onDeleteConfirmed(credentialId: String) {
+        viewModel.removeKey(credentialId)
     }
 
     override fun onResume() {

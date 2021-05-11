@@ -1,5 +1,6 @@
 package de.tuchemnitz.armadillogin.ui.user
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -13,7 +14,7 @@ class CredentialAdapter(
 ) : ListAdapter<Credential, CredentialAdapter.CredentialViewHolder>(DiffCallback) {
 
     class CredentialViewHolder(
-        private var binding: ItemCredentialBinding, onDeleteClicked: (String) -> Unit
+        val binding: ItemCredentialBinding, onDeleteClicked: (String) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.itemCredentialDelete.setOnClickListener {
@@ -59,7 +60,8 @@ class CredentialAdapter(
      * If there is a free [RecyclerView] item view: change its content
      */
     override fun onBindViewHolder(holder: CredentialViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.binding.credential = getItem(position)
+        Log.d("CredentialAdapter", "${getItem(position)}")
     }
 
 }

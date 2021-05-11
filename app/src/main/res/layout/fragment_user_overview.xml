@@ -14,6 +14,9 @@
         <variable
             name="userDataModel"
             type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+        <variable
+            name="viewModel"
+            type="de.tuchemnitz.armadillogin.ui.user.UserOverviewViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -49,8 +52,8 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_user_overview_credentials"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_explanation"
