@@ -98,6 +98,7 @@ class LoginKeyFragment : Fragment() {
                         userViewModel.signInResponse(data)
                         Log.d(LOG_TAG, "$data")
 
+                        // inserted by winkloid
                         // observe whether signInResponse already completed and suceeded and if so, go to next fragment
                         userViewModel.signInReady.observe(viewLifecycleOwner) { signInReady ->
                             if (signInReady) {
