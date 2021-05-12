@@ -20,4 +20,8 @@
         <tag>DEFAULT</tag>
         <textres>help4</textres>
     </helpitem>
+    <helpitem>
+        <tag>DEFAULT</tag>
+        <imgres>image1</imgres>
+    </helpitem>
 </resources>

@@ -13,7 +13,7 @@ data class HelpDataTagged (
      * [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user
      * if there is a suitable tag contained in the [tagList]
      */
-    val stringResourceId: String,
+    val stringResourceId: String? = null,
 
     /**
      * [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user

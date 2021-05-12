@@ -86,7 +86,7 @@ class HelpDataXmlParser {
 
             Log.d(LOG_TAG, "imgResource: $imageResourceId")
         }
-        return HelpDataTagged(stringResourceId!!, imageResourceId, tagList)
+        return HelpDataTagged(stringResourceId, imageResourceId, tagList)
     }
 
     @Throws(XmlPullParserException::class, IOException::class)
