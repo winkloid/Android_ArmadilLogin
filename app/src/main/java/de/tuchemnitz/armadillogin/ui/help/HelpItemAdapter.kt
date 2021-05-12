@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import de.tuchemnitz.armadillogin.R
-import de.tuchemnitz.armadillogin.model.HelpData
+import de.tuchemnitz.armadillogin.data.HelpData
 
 class HelpItemAdapter(
     private val context: Context,

@@ -1,11 +1,24 @@
 package de.tuchemnitz.armadillogin.ui.help
 
+import android.annotation.SuppressLint
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.model.FragmentStatus
-import de.tuchemnitz.armadillogin.model.HelpData
+import de.tuchemnitz.armadillogin.data.HelpData
+import java.io.InputStream
+import java.nio.channels.AsynchronousFileChannel.open
 
-class HelpViewModel : ViewModel() {
+class HelpViewModel(application: Application) : AndroidViewModel(application) {
+
+    companion object {
+        private const val LOG_TAG = "HELP_VIEWMODEL"
+    }
+
+    var parseInputStream: InputStream = application.assets.open("helpdata.xml")
+    private val parsedHelpList = HelpDataXmlParser().parse(parseInputStream)
 
     fun getCurrentHelp(status: FragmentStatus?): String {
         return when(status) {
@@ -21,6 +34,7 @@ class HelpViewModel : ViewModel() {
     }
 
     fun loadHelpData(status: FragmentStatus?): List<HelpData> {
+        Log.d(LOG_TAG, "parsedList: $parsedHelpList")
         return listOf<HelpData>(
                 HelpData(R.string.help1, R.drawable.image1),
                 HelpData(R.string.help2),

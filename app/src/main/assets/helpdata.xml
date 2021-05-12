@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <helpitem>
+        <tag>Welcome</tag>
+        <textres>R.string.help1</textres>
+        <imgres>R.drawable.image1</imgres>
+    </helpitem>
+    <helpitem>
+        <tag>Welcome</tag>
+        <textres>R.string.help2</textres>
+        <imgres>R.drawable.image2</imgres>
+    </helpitem>
+</resources>

@@ -17,6 +17,7 @@ enum class FragmentStatus {
     LOGIN,
     LOGIN_KEY,
     USER_OVERVIEW,
+    DEFAULT,
 }
 
 class ArmadilloViewModel : ViewModel() {

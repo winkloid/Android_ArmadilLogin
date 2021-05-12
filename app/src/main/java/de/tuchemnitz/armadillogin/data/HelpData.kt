@@ -1,4 +1,4 @@
-package de.tuchemnitz.armadillogin.model
+package de.tuchemnitz.armadillogin.data
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
