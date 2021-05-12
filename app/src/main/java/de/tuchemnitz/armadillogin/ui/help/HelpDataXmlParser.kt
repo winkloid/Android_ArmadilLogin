@@ -2,7 +2,6 @@ package de.tuchemnitz.armadillogin.ui.help
 
 import android.util.Log
 import android.util.Xml
-import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.data.HelpDataTagged
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 import org.xmlpull.v1.XmlPullParser
@@ -10,7 +9,7 @@ import org.xmlpull.v1.XmlPullParserException
 import java.io.IOException
 import java.io.InputStream
 
-class HelpDataXmlParser() {
+class HelpDataXmlParser {
 
     companion object {
         private const val LOG_TAG = "XML_PARSER"
@@ -24,11 +23,11 @@ class HelpDataXmlParser() {
      * Initializes [XmlPullParser], starts parsing process and invokes [readXml]
      */
     @Throws(XmlPullParserException::class, IOException::class)
-    fun parse(inputStream: InputStream?): List <*> {
-        inputStream.use { inputStream ->
+    fun parse(inputStream: InputStream?): List<HelpDataTagged> {
+        inputStream.use { iS ->
             val parser: XmlPullParser = Xml.newPullParser()
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false)
-            parser.setInput(inputStream, null)
+            parser.setInput(iS, null)
             parser.nextTag()
             return readXml(parser)
         }
@@ -41,7 +40,7 @@ class HelpDataXmlParser() {
      * Calls [skip] to skip all other tags
      */
     @Throws(XmlPullParserException::class, IOException::class)
-    private fun readXml(parser: XmlPullParser): List<*> {
+    private fun readXml(parser: XmlPullParser): List<HelpDataTagged> {
         val helpItems = mutableListOf<HelpDataTagged>()
 
         //start parsing when start tag named "resources" has been found
@@ -70,9 +69,9 @@ class HelpDataXmlParser() {
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readHelpItem(parser: XmlPullParser): HelpDataTagged {
         parser.require(XmlPullParser.START_TAG, namespace, "helpitem")
-        var stringResourceId: Int? = null
-        var imageResourceId: Int? = null
-        var tagList = mutableListOf<FragmentStatus>()
+        var stringResourceId: String? = null
+        var imageResourceId: String? = null
+        val tagList = mutableListOf<FragmentStatus>()
 
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.eventType != XmlPullParser.START_TAG) {
@@ -81,7 +80,7 @@ class HelpDataXmlParser() {
             when (parser.name) {
                 "tag" -> tagList.add(readTagList(parser))
                 "textres" -> stringResourceId = readTextRes(parser)
-                "imgRes" -> imageResourceId = readImgRes(parser)
+                "imgres" -> imageResourceId = readImgRes(parser)
                 else -> skip(parser)
             }
 
@@ -113,21 +112,21 @@ class HelpDataXmlParser() {
     }
 
     @Throws(XmlPullParserException::class, IOException::class)
-    private fun readTextRes(parser: XmlPullParser): Int {
+    private fun readTextRes(parser: XmlPullParser): String {
         parser.require(XmlPullParser.START_TAG, namespace, "textres")
         val textResAsString = readText(parser)
         parser.require(XmlPullParser.END_TAG, namespace, "textres")
 
-        return textResAsString.toInt()
+        return textResAsString
     }
 
     @Throws(XmlPullParserException::class, IOException::class)
-    private fun readImgRes(parser: XmlPullParser): Int {
+    private fun readImgRes(parser: XmlPullParser): String {
         parser.require(XmlPullParser.START_TAG, namespace, "imgres")
         val imgResAsString = readText(parser)
         parser.require(XmlPullParser.END_TAG, namespace, "imgres")
 
-        return imgResAsString.toInt()
+        return imgResAsString
     }
 
     @Throws(XmlPullParserException::class, IOException::class)

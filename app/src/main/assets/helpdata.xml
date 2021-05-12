@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <helpitem>
-        <tag>Welcome</tag>
-        <textres>R.string.help1</textres>
-        <imgres>R.drawable.image1</imgres>
+        <tag>WELCOME</tag>
+        <textres>help1</textres>
+        <imgres>image1</imgres>
     </helpitem>
     <helpitem>
-        <tag>Welcome</tag>
-        <textres>R.string.help2</textres>
-        <imgres>R.drawable.image2</imgres>
+        <tag>WELCOME</tag>
+        <tag>LOGIN</tag>
+        <textres>help2</textres>
+        <imgres>image2</imgres>
+    </helpitem>
+    <helpitem>
+        <tag>DEFAULT</tag>
+        <textres>help3</textres>
+        <imgres>image3</imgres>
+    </helpitem>
+    <helpitem>
+        <tag>DEFAULT</tag>
+        <textres>help4</textres>
     </helpitem>
 </resources>
