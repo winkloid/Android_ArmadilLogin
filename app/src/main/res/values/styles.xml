@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="item_credential_headlines" parent="item_credential_text">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline5</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="item_credential_text">
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+
+    <style name="item_credential_button_delete">
+        <item name="android:backgroundTint">@color/error_color_500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+</resources>

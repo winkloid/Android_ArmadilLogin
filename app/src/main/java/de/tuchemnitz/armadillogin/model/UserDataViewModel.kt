@@ -13,10 +13,10 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     private val repository = AuthRepository.getInstance(application)
 
-    private var _firstname = MutableLiveData<String>("")
+    private var _firstname = MutableLiveData("")
     val firstname: LiveData<String> = _firstname
 
-    private var _lastname = MutableLiveData<String>("")
+    private var _lastname = MutableLiveData("")
     val lastname: LiveData<String> = _lastname
 
     private var _email = MutableLiveData("")
@@ -26,7 +26,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     val username: LiveData<String> = _username
 
     // server accepts every password with this server config. To show the real advantages of fido2, no password is asked from the users
-    private val _password = MutableLiveData<String>("defaultpass")
+    private val _password = MutableLiveData("defaultpass")
     private val password: LiveData<String> = _password
 
     // bools to show animations or adapt UI when user has to wait until a task is finished
@@ -50,12 +50,20 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     private val _passwordBeforeNextTask = MutableLiveData(false)
     val passwordBeforeNextTask: LiveData<Boolean> = _passwordBeforeNextTask
 
+    // value to determine whether signInResponse already completed and suceeded
+    private val _signInReady = MutableLiveData(false)
+    val signInReady: LiveData<Boolean> = _signInReady
+
     fun setPasswordBeforeNextTask() {
         _passwordBeforeNextTask.value = false
     }
 
     fun setUsernameBeforePassword() {
         _usernameBeforePassword.value = false
+    }
+
+    fun setSignInKey() {
+        _signInKey.value = false
     }
 
     // used by MainActivity to create FIDO2 client
@@ -98,7 +106,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
         return repository.signinRequest(_signInKey)
     }
     fun signInResponse(intentData: Intent) {
-        repository.signinResponse(intentData, _signInKey)
+        repository.signinResponse(intentData, _signInKey, _signInReady)
     }
 
     //used in RegisterErrorFragment

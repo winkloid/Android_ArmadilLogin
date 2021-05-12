@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <helpitem>
+        <tag>WELCOME</tag>
+        <textres>help1</textres>
+        <imgres>image1</imgres>
+    </helpitem>
+    <helpitem>
+        <tag>WELCOME</tag>
+        <tag>LOGIN</tag>
+        <textres>help2</textres>
+        <imgres>image2</imgres>
+    </helpitem>
+    <helpitem>
+        <tag>DEFAULT</tag>
+        <textres>help3</textres>
+        <imgres>image3</imgres>
+    </helpitem>
+    <helpitem>
+        <tag>DEFAULT</tag>
+        <textres>help4</textres>
+    </helpitem>
+    <helpitem>
+        <tag>DEFAULT</tag>
+        <imgres>image1</imgres>
+    </helpitem>
+</resources>

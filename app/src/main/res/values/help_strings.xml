@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="help_not_found">Hilfs-Ressource wurde nicht gefunden.</string>
+    <string name="help_default">Das ist ein Standardstring. Er ist immer im Hilfe-Tab enthalten.</string>
     <string name="help1">Hilfestellung 1</string>
     <string name="help2">Hilfestellung 2</string>
     <string name="help3">Hilfestellung 3</string>

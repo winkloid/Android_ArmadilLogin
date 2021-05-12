@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.gms.fido.Fido
 import com.google.android.gms.fido.fido2.api.common.AuthenticatorErrorResponse
 import de.tuchemnitz.armadillogin.R
@@ -96,6 +97,15 @@ class LoginKeyFragment : Fragment() {
                     if(data!= null) {
                         userViewModel.signInResponse(data)
                         Log.d(LOG_TAG, "$data")
+
+                        // inserted by winkloid
+                        // observe whether signInResponse already completed and suceeded and if so, go to next fragment
+                        userViewModel.signInReady.observe(viewLifecycleOwner) { signInReady ->
+                            if (signInReady) {
+                                findNavController().navigate(R.id.action_navigation_login_key_to_navigation_user_overview)
+                                userViewModel.setSignInKey()
+                            }
+                        }
                     }
                 }
             }
