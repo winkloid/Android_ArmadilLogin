@@ -12,4 +12,10 @@
     <string name="help8">Hilfestellung 8</string>
     <string name="help9">Hilfestellung 9</string>
     <string name="help10">Hilfestellung 10</string>
+
+    <string name="help1_title">Hilfe 1</string>
+    <string name="help2_title">Hilfe 2</string>
+    <string name="help3_title">Hilfe 3</string>
+    <string name="help4_title">Hilfe 4</string>
+    <string name="help5_title">Hilfe 5</string>
 </resources>

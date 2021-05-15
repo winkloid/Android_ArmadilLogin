@@ -19,7 +19,8 @@ class HelpItemAdapter(
 
     class HelpItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val imageView: ImageView = view.findViewById(R.id.item_help_title_image)
-        val textView: TextView = view.findViewById(R.id.item_help_title)
+        val headlineView: TextView = view.findViewById(R.id.item_help_title)
+        val textView: TextView = view.findViewById(R.id.item_help_text)
     }
 
     // create new view holders if there are no free view holders any more
@@ -38,8 +39,11 @@ class HelpItemAdapter(
     // if there is a view holder: replace contents of list item view inside of it
     override fun onBindViewHolder(holder: HelpItemViewHolder, position: Int) {
         val helpItem = data[position]
+
         // get the right string and set it as value for the text of the textview inside the itemViewHolder
         holder.textView.text = context.resources.getString(helpItem.stringResourceId)
+        holder.headlineView.text = context.resources.getString(helpItem.titleResourceId)
+
         if (helpItem.imageResourceId != null) {
             holder.imageView.visibility = VISIBLE
             holder.imageView.setImageResource(helpItem.imageResourceId)

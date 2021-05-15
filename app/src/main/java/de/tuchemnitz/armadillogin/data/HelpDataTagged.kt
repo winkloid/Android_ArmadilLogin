@@ -9,14 +9,21 @@ import de.tuchemnitz.armadillogin.model.FragmentStatus
  * All these data will be retrieved from an XML file containing these IDs and tags which describe when the corresponding resource should be used.
  */
 data class HelpDataTagged (
+
     /**
-     * [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user
+     * [titleResourceId], [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user
+     * if there is a suitable tag contained in the [tagList]
+     */
+    val titleResourceId: String? = null,
+
+    /**
+     * [titleResourceId], [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user
      * if there is a suitable tag contained in the [tagList]
      */
     val stringResourceId: String? = null,
 
     /**
-     * [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user
+     * [titleResourceId], [stringResourceId] and [imageResourceId] contain the IDs of the corresponding string and image resources which will be visible to the user
      * if there is a suitable tag included in the [tagList]
      */
     val imageResourceId: String? = null,
