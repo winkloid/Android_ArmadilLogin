@@ -22,7 +22,7 @@
 
         <TextView
             android:id="@+id/item_help_title"
-            style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+            style="@style/TextAppearance.StandardTypographyStyles.Headline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
@@ -32,7 +32,7 @@
 
         <TextView
             android:id="@+id/item_help_text"
-            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            style="@style/TextAppearance.StandardTypographyStyles.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"

@@ -14,11 +14,6 @@ import de.tuchemnitz.armadillogin.databinding.FragmentWelcomeBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [SettingFragment.newInstance] factory method to
@@ -38,11 +33,17 @@ class SettingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
+            lifecycleOwner = this@SettingFragment
             settingFragment = this@SettingFragment
+            armadilloViewModel = sharedViewModel
         }
 
         binding?.switchSettingsChangeFont?.setOnCheckedChangeListener { _, checked ->
             sharedViewModel.setDyslexicFont(checked)
+        }
+
+        sharedViewModel.currentHeadlineStyle.observe(viewLifecycleOwner) { currentHeadlineStyle ->
+            binding?.textviewSettingsTitle?.setTextAppearance(currentHeadlineStyle)
         }
     }
 }

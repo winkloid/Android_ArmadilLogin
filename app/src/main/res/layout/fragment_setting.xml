@@ -9,6 +9,10 @@
         <variable
             name="settingFragment"
             type="de.tuchemnitz.armadillogin.ui.settings.SettingFragment" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <ScrollView
@@ -25,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/settings_title"
-                style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+                style="@style/TextAppearance.DyslexicTypographyStyles.Headline3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/settings_explanation"
-                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_settings_title" />
 
@@ -46,7 +50,7 @@
                 android:layout_marginTop="16dp"
                 android:checked="false"
                 android:text="@string/settings_set_dyslexic_font"
-                android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_settings_explanation" />
 

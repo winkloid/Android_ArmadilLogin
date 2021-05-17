@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import de.tuchemnitz.armadillogin.R
 
 enum class FragmentStatus {
     WELCOME,
@@ -20,17 +21,14 @@ enum class FragmentStatus {
     DEFAULT,
 }
 
-enum class FontStatus {
-    HEADLINE,
-    BODY,
-    SWITCH,
-}
-
 class ArmadilloViewModel : ViewModel() {
     private val _status = MutableLiveData<FragmentStatus>()
     val status: LiveData<FragmentStatus> = _status
 
     private val _dyslexicFont = MutableLiveData<Boolean>(false)
+
+    private val _currentHeadlineStyle = MutableLiveData<Int>(R.style.TextAppearance_StandardTypographyStyles_Headline3)
+    val currentHeadlineStyle: LiveData<Int> = _currentHeadlineStyle
 
 
     fun setFragmentStatus(fragStatus: FragmentStatus) {
@@ -40,22 +38,20 @@ class ArmadilloViewModel : ViewModel() {
 
     fun setDyslexicFont(dyslexicActive: Boolean) {
         _dyslexicFont.value = dyslexicActive
+        getHeadlineFont()
     }
 
     /**
      * Determines whether a dyslexic font style or a standard font style is needed by checking [_dyslexicFont] value.
      * If a dyslexic font is needed, [getDyslexicFont] is called, else [getStandardFont] is called.
      */
-    fun getCurrentFont(status: FontStatus) {
+    fun getHeadlineFont() {
         if(_dyslexicFont.value!!) {
-            getDyslexicFont(status)
+            _currentHeadlineStyle.value = R.style.TextAppearance_DyslexicTypographyStyles_Headline3
         } else {
-            getStandardFont(status)
+            _currentHeadlineStyle.value = R.style.TextAppearance_StandardTypographyStyles_Headline3
         }
     }
-
-    private fun getDyslexicFont(status: FontStatus) {}
-    private fun getStandardFont(status: FontStatus) {}
 
 
 }
