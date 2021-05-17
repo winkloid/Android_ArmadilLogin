@@ -2,6 +2,7 @@
     <string name="app_name">ArmadilLogin</string>
     <string name="title_home">Login</string>
     <string name="title_help">Hilfe</string>
+    <string name="title_settings">Einstellungen</string>
     <string name="welcome_title">Willkommen!</string>
     <string name="welcome_explanation">Vielen Dank für Deine Teilnahme an dieser Studie. Diese App soll dabei helfen, zu ermitteln, wie man ein einfaches, komfortables und trotzdem sicheres Login-System für alle schaffen kann.</string>
     <string name="register_login_title">Registrieren oder einloggen?</string>

@@ -12,4 +12,10 @@
         android:contentDescription="@string/title_help"
         android:icon="@drawable/ic_baseline_help_24"
         android:title="@string/title_help" />
+
+    <item
+        android:id="@+id/settings_navigation"
+        android:contentDescription="@string/title_settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/title_settings" />
 </menu>
