@@ -64,4 +64,6 @@
     <string name="user_overview_delete_credential_confirmation">Bist du dir sicher, dass du den Schlüssel mit folgender ID löschen möchtest?\n%s</string>
     <string name="item_credential_id_title">Schlüssel-ID:</string>
     <string name="item_credential_publickey_title">Öffentlicher Schlüssel:</string>
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_explanation">In dieser Ansicht findest du diverse Einstellungen, die du vornehmen kannst. So können das Farbschema und die Schriftart hier eingestellt werden.</string>
 </resources>
