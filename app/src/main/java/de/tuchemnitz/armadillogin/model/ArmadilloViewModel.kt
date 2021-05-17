@@ -26,10 +26,7 @@ class ArmadilloViewModel : ViewModel() {
     val status: LiveData<FragmentStatus> = _status
 
     private val _dyslexicFont = MutableLiveData<Boolean>(false)
-
-    private val _currentHeadlineStyle = MutableLiveData<Int>(R.style.TextAppearance_StandardTypographyStyles_Headline3)
-    val currentHeadlineStyle: LiveData<Int> = _currentHeadlineStyle
-
+    val dyslexicFont: LiveData<Boolean> = _dyslexicFont
 
     fun setFragmentStatus(fragStatus: FragmentStatus) {
         _status.value = fragStatus
@@ -38,20 +35,5 @@ class ArmadilloViewModel : ViewModel() {
 
     fun setDyslexicFont(dyslexicActive: Boolean) {
         _dyslexicFont.value = dyslexicActive
-        getHeadlineFont()
     }
-
-    /**
-     * Determines whether a dyslexic font style or a standard font style is needed by checking [_dyslexicFont] value.
-     * If a dyslexic font is needed, [getDyslexicFont] is called, else [getStandardFont] is called.
-     */
-    fun getHeadlineFont() {
-        if(_dyslexicFont.value!!) {
-            _currentHeadlineStyle.value = R.style.TextAppearance_DyslexicTypographyStyles_Headline3
-        } else {
-            _currentHeadlineStyle.value = R.style.TextAppearance_StandardTypographyStyles_Headline3
-        }
-    }
-
-
 }

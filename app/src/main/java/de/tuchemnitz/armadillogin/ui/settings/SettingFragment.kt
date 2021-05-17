@@ -41,9 +41,5 @@ class SettingFragment : Fragment() {
         binding?.switchSettingsChangeFont?.setOnCheckedChangeListener { _, checked ->
             sharedViewModel.setDyslexicFont(checked)
         }
-
-        sharedViewModel.currentHeadlineStyle.observe(viewLifecycleOwner) { currentHeadlineStyle ->
-            binding?.textviewSettingsTitle?.setTextAppearance(currentHeadlineStyle)
-        }
     }
 }

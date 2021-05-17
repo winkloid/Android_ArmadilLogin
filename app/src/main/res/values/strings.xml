@@ -71,4 +71,5 @@
 <!-- Settings -->
     <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
 
+    <string name="font_headline">headline</string>
 </resources>

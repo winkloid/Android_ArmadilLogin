@@ -87,13 +87,13 @@
 
     <!-- Dyslexic text appearance Styles -->
     <style name="TextAppearance.DyslexicTypographyStyles.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/opendyslexic_bold</item>
-        <item name="android:fontFamily">@font/opendyslexic_bold</item>
+        <item name="fontFamily">@font/opendyslexic3_bold</item>
+        <item name="android:fontFamily">@font/opendyslexic3_bold</item>
         <item name="android:textSize">98sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/opendyslexic_bold</item>
-        <item name="android:fontFamily">@font/opendyslexic_bold</item>
+        <item name="fontFamily">@font/opendyslexic3_bold</item>
+        <item name="android:fontFamily">@font/opendyslexic3_bold</item>
         <item name="android:textSize">61sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
@@ -102,53 +102,53 @@
         <item name="android:textSize">49sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/opendyslexic_bold</item>
-        <item name="android:fontFamily">@font/opendyslexic_bold</item>
+        <item name="fontFamily">@font/opendyslexic3_bold</item>
+        <item name="android:fontFamily">@font/opendyslexic3_bold</item>
         <item name="android:textSize">35sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/opendyslexic_bold</item>
-        <item name="android:fontFamily">@font/opendyslexic_bold</item>
+        <item name="fontFamily">@font/opendyslexic3_bold</item>
+        <item name="android:fontFamily">@font/opendyslexic3_bold</item>
         <item name="android:textSize">24sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/opendyslexic_bold</item>
-        <item name="android:fontFamily">@font/opendyslexic_bold</item>
+        <item name="fontFamily">@font/opendyslexic3_bold</item>
+        <item name="android:fontFamily">@font/opendyslexic3_bold</item>
         <item name="android:textSize">20sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">16sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">14sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">16sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Body2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">14sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">14sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Caption" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">12sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Overline" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/opendyslexic_regular</item>
-        <item name="android:fontFamily">@font/opendyslexic_regular</item>
+        <item name="fontFamily">@font/opendyslexic3_regular</item>
+        <item name="android:fontFamily">@font/opendyslexic3_regular</item>
         <item name="android:textSize">10sp</item>
     </style>
 </resources>
