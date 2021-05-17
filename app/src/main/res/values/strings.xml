@@ -67,4 +67,7 @@
     <string name="item_credential_publickey_title">Öffentlicher Schlüssel:</string>
     <string name="settings_title">Einstellungen</string>
     <string name="settings_explanation">In dieser Ansicht findest du diverse Einstellungen, die du vornehmen kannst. So können das Farbschema und die Schriftart hier eingestellt werden.</string>
+
+<!-- Settings -->
+    <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
 </resources>
