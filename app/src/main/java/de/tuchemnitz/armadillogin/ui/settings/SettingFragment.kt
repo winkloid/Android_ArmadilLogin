@@ -40,5 +40,9 @@ class SettingFragment : Fragment() {
         binding?.apply {
             settingFragment = this@SettingFragment
         }
+
+        binding?.switchSettingsChangeFont?.setOnCheckedChangeListener { _, checked ->
+            sharedViewModel.setDyslexicFont(checked)
+        }
     }
 }
