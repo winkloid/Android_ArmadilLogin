@@ -1,15 +1,12 @@
 package de.tuchemnitz.armadillogin.ui.help
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.data.HelpData
 import java.io.InputStream
-import java.nio.channels.AsynchronousFileChannel.open
 
 class HelpViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -17,22 +14,9 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
         private const val LOG_TAG = "HELP_VIEWMODEL"
     }
 
-    var parseInputStream: InputStream = application.assets.open("helpdata.xml")
+    private var parseInputStream: InputStream = application.assets.open("helpdata.xml")
     private val parsedHelpList = HelpDataXmlParser().parse(parseInputStream)
     private val appContext = application
-
-    fun getCurrentHelp(status: FragmentStatus?): String {
-        return when(status) {
-            FragmentStatus.WELCOME -> "Willkommen"
-            FragmentStatus.LOGIN -> "Einloggen"
-            FragmentStatus.REGISTER_LOGIN -> "Registrieren oder einloggen"
-            FragmentStatus.REGISTER1 -> "Persönliche Daten eingeben"
-            FragmentStatus.REGISTER2 -> "Nutzernamen vergeben"
-            FragmentStatus.REGISTER_SUMMARY -> "Bestätige die Richtigkeit der eingegebenen Daten oder passe Sie an."
-            FragmentStatus.REGISTER_KEY -> "Registriere deinen Schlüssel."
-            else -> "Strange thing..."
-        }
-    }
 
     /**
      * Iterates through [parsedHelpList] which was parsed from [assets/helpdata.xml].
@@ -44,11 +28,20 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
 
         for (helpItem in parsedHelpList) {
             if (helpItem.tagList.contains(status) || helpItem.tagList.contains(FragmentStatus.DEFAULT)) {
-                var stringResourceId: Int? = null
-                var imageResourceId: Int? = null
+                var titleResourceId: Int?
+                var stringResourceId: Int?
+                var imageResourceId: Int?
 
+                val xmlTitleResourceId = helpItem.titleResourceId
                 val xmlStringResourceId = helpItem.stringResourceId
                 val xmlImageResourceId = helpItem.imageResourceId
+
+                // check if xmlTitleResourceId is null - if not, convert string to resource id; if it is null, assign default value to stringResourceId
+                if (!xmlStringResourceId.isNullOrBlank()) {
+                    titleResourceId = appContext.resources.getIdentifier(xmlTitleResourceId, "string", appContext.packageName)
+                } else {
+                    titleResourceId = R.string.help_not_found
+                }
 
                 // check if xmlStringResourceId is null - if not, convert string to resource id; if it is null, assign default value to stringResourceId
                 if (!xmlStringResourceId.isNullOrBlank()) {
@@ -63,7 +56,7 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
                 } else {
                     imageResourceId = null
                 }
-                helpItems.add(HelpData(stringResourceId, imageResourceId))
+                helpItems.add(HelpData(titleResourceId, stringResourceId, imageResourceId))
             }
         }
         return helpItems

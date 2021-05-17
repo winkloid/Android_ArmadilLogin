@@ -69,6 +69,8 @@ class HelpDataXmlParser {
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readHelpItem(parser: XmlPullParser): HelpDataTagged {
         parser.require(XmlPullParser.START_TAG, namespace, "helpitem")
+
+        var titleResId: String? = null
         var stringResourceId: String? = null
         var imageResourceId: String? = null
         val tagList = mutableListOf<FragmentStatus>()
@@ -79,6 +81,7 @@ class HelpDataXmlParser {
             }
             when (parser.name) {
                 "tag" -> tagList.add(readTagList(parser))
+                "titleres" -> titleResId = readTitleRes(parser)
                 "textres" -> stringResourceId = readTextRes(parser)
                 "imgres" -> imageResourceId = readImgRes(parser)
                 else -> skip(parser)
@@ -86,7 +89,7 @@ class HelpDataXmlParser {
 
             Log.d(LOG_TAG, "imgResource: $imageResourceId")
         }
-        return HelpDataTagged(stringResourceId, imageResourceId, tagList)
+        return HelpDataTagged(titleResId, stringResourceId, imageResourceId, tagList)
     }
 
     @Throws(XmlPullParserException::class, IOException::class)
@@ -109,6 +112,15 @@ class HelpDataXmlParser {
             "USER_OVERVIEW" -> FragmentStatus.USER_OVERVIEW
             else -> FragmentStatus.DEFAULT
         }
+    }
+
+    @Throws(XmlPullParserException::class, IOException::class)
+    private fun readTitleRes(parser: XmlPullParser): String {
+        parser.require(XmlPullParser.START_TAG, namespace, "titleres")
+        val titleResAsString = readText(parser)
+        parser.require(XmlPullParser.END_TAG, namespace, "titleres")
+
+        return titleResAsString
     }
 
     @Throws(XmlPullParserException::class, IOException::class)
