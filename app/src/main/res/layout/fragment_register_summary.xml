@@ -11,6 +11,9 @@
         <variable
             name="userDataModel"
             type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <ScrollView
@@ -27,7 +30,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_summary_title"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
+                app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/register_summary_explanation"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textview_register_summary_title" />
@@ -48,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:text="@string/register_summary_name"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
+                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_explanation" />
 
@@ -57,9 +63,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{userDataModel.getFullName()}"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name_title" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name_title"
+                tools:text="Klaus Uhr"/>
 
             <TextView
                 android:id="@+id/textview_register_summary_email_title"
@@ -67,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:text="@string/register_summary_email"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
+                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name" />
 
@@ -76,9 +85,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{userDataModel.email}"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email_title" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email_title"
+                tools:text="klaus.uhr@s1111.tu-chemnitz.de"/>
 
             <TextView
                 android:id="@+id/textview_register_summary_username_title"
@@ -86,18 +97,21 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:text="@string/register_summary_username"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email"
+                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
             <TextView
                 android:id="@+id/textview_register_summary_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{userDataModel.username}"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_username_title" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_username_title"
+                tools:text="klausur"/>
 
             <Button
                 android:id="@+id/button_register_summary_not_correct"

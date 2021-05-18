@@ -41,6 +41,7 @@ class LoginFragment : Fragment() {
             lifecycleOwner = this@LoginFragment
             loginFragment = this@LoginFragment
             userModel = userViewModel
+            armadilloViewModel = sharedViewModel
         }
     }
 

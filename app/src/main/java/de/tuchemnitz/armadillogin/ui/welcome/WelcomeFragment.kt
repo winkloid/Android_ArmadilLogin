@@ -36,7 +36,9 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
+            lifecycleOwner = this@WelcomeFragment
             welcomeFragment = this@WelcomeFragment
+            armadilloViewModel = sharedViewModel
         }
     }
 

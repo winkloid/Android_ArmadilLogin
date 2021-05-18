@@ -52,6 +52,7 @@ class RegisterKeyFragment : Fragment() {
             lifecycleOwner = this@RegisterKeyFragment
             registerKeyFragment = this@RegisterKeyFragment
             userDataModel = userViewModel
+            armadilloViewModel = sharedViewModel
         }
     }
 

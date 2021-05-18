@@ -23,10 +23,6 @@ class CredentialAdapter(
                 }
             }
         }
-
-        fun bind(credentialItem : Credential) {
-            binding.credential = credentialItem
-        }
     }
 
     /**

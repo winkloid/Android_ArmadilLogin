@@ -47,6 +47,7 @@ class RegisterUserNameFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = this@RegisterUserNameFragment
             registerUserNameFragment = this@RegisterUserNameFragment
+            armadilloViewModel = sharedViewModel
         }
     }
 

@@ -30,3 +30,21 @@ fun adjustBodyFont(textView: TextView, bodyDyslexicEnabled: Boolean) {
         textView.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Body1)
     }
 }
+
+@BindingAdapter(value = ["subHeadlineDyslexicEnabled"])
+fun adjustSubHeadlineFont(textView: TextView, subHeadlineDyslexicEnabled: Boolean) {
+    if(subHeadlineDyslexicEnabled) {
+        textView.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline4)
+    } else {
+        textView.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline4)
+    }
+}
+
+@BindingAdapter(value = ["bigBodyDyslexicEnabled"])
+fun adjustBigBodyFont(textView: TextView, bigBodyDyslexicEnabled: Boolean) {
+    if(bigBodyDyslexicEnabled) {
+        textView.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline6)
+    } else {
+        textView.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline6)
+    }
+}

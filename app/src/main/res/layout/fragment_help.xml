@@ -18,6 +18,10 @@
         <variable
             name="helpFragment"
             type="de.tuchemnitz.armadillogin.ui.help.HelpFragment" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <FrameLayout

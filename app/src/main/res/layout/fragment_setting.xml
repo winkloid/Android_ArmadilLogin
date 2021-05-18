@@ -53,6 +53,7 @@
                 android:checked="false"
                 android:text="@string/settings_set_dyslexic_font"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_settings_explanation" />
 

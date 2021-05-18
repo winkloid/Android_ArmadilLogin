@@ -46,6 +46,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
             userOverviewFragment = this@UserOverviewFragment
             userDataModel = userViewModel
             viewModel = viewModel
+            armadilloViewModel = sharedViewModel
         }
 
         // credentials recyclerview binding
@@ -66,6 +67,11 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
             } else {
                 View.INVISIBLE
             }
+        }
+
+        sharedViewModel.dyslexicFont.observe(viewLifecycleOwner) { dyslexicEnabled ->
+            binding?.recyclerviewUserOverviewCredentials.
+
         }
     }
 

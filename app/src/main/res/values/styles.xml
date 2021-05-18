@@ -32,11 +32,11 @@
     <style name="TextAppearance.StandardTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="fontFamily">@font/open_sans_extrabold</item>
         <item name="android:fontFamily">@font/open_sans_extrabold</item>
-        <item name="android:textSize">49sp</item>
+        <item name="android:textSize">45sp</item>
     </style>
     <style name="TextAppearance.StandardTypographyStyles.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/open_sans_extrabold</item>
-        <item name="android:fontFamily">@font/open_sans_extrabold</item>
+        <item name="fontFamily">@font/open_sans_bold</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
         <item name="android:textSize">35sp</item>
     </style>
     <style name="TextAppearance.StandardTypographyStyles.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
@@ -99,7 +99,7 @@
     <style name="TextAppearance.DyslexicTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
         <item name="fontFamily">@font/opendyslexic3_bold</item>
         <item name="android:fontFamily">@font/opendyslexic3_bold</item>
-        <item name="android:textSize">49sp</item>
+        <item name="android:textSize">45sp</item>
     </style>
     <style name="TextAppearance.DyslexicTypographyStyles.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="fontFamily">@font/opendyslexic3_bold</item>
