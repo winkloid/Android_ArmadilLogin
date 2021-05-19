@@ -35,6 +35,8 @@
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager"
             app:textContent="@{helpModel.loadHelpData(viewModel.status)}"
-            app:viewContext="@{helpFragment.getHelpContext()}" />
+            app:viewContext="@{helpFragment.getHelpContext()}"
+            app:armadilloViewModel="@{armadilloViewModel}"
+            app:lifecycleOwner="@{helpFragment.getLifecycleOwner()}"/>
     </FrameLayout>
 </layout>

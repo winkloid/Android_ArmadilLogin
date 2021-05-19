@@ -3,13 +3,16 @@ package de.tuchemnitz.armadillogin
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import de.tuchemnitz.armadillogin.data.HelpData
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.ui.help.HelpItemAdapter
 
-@BindingAdapter(value = ["textContent", "viewContext"])
-fun bindText(recyclerView: RecyclerView, textContent: List<HelpData>, viewContext: FragmentActivity) {
-    recyclerView.adapter = HelpItemAdapter(viewContext, textContent)
+@BindingAdapter(value = ["textContent", "viewContext", "armadilloViewModel", "lifecycleOwner"])
+fun bindText(recyclerView: RecyclerView, textContent: List<HelpData>, viewContext: FragmentActivity, armadilloViewModel: ArmadilloViewModel, lifecycleOwner: LifecycleOwner) {
+    recyclerView.adapter = HelpItemAdapter(viewContext, textContent, armadilloViewModel, lifecycleOwner)
     recyclerView.setHasFixedSize(true)
 }
 

@@ -51,10 +51,14 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
 
         // credentials recyclerview binding
         // these lines are used as shown in https://github.com/googlecodelabs/fido2-codelab in HomeFragment
-        val credentialAdapter = CredentialAdapter { credentialId ->
-            DeleteConfirmationFragment.newInstance(credentialId)
-               .show(childFragmentManager, FRAGMENT_DELETE_CONFIRMATION)
-        }
+        val credentialAdapter = CredentialAdapter(
+            { credentialId ->
+                DeleteConfirmationFragment.newInstance(credentialId)
+                    .show(childFragmentManager, FRAGMENT_DELETE_CONFIRMATION)
+            },
+            viewLifecycleOwner,
+            sharedViewModel
+        )
         binding?.recyclerviewUserOverviewCredentials?.run {
             layoutManager = LinearLayoutManager(view.context)
             adapter = credentialAdapter
@@ -67,11 +71,6 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
             } else {
                 View.INVISIBLE
             }
-        }
-
-        sharedViewModel.dyslexicFont.observe(viewLifecycleOwner) { dyslexicEnabled ->
-            binding?.recyclerviewUserOverviewCredentials.
-
         }
     }
 

@@ -8,13 +8,17 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.data.HelpData
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 
 class HelpItemAdapter(
     private val context: Context,
-    private val data: List<HelpData>
+    private val data: List<HelpData>,
+    private val armadilloViewModel: ArmadilloViewModel,
+    private val lifecycleOwner: LifecycleOwner
 ) : RecyclerView.Adapter<HelpItemAdapter.HelpItemViewHolder>() {
 
     class HelpItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
@@ -50,6 +54,15 @@ class HelpItemAdapter(
         } else {
             holder.imageView.visibility = GONE
         }
-    }
 
+        armadilloViewModel.dyslexicFont.observe(lifecycleOwner) { dyslexicEnabled ->
+            if(dyslexicEnabled) {
+                holder.headlineView.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline4)
+                holder.textView.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Body1)
+            } else {
+                holder.headlineView.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline4)
+                holder.textView.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Body1)
+            }
+        }
+    }
 }
