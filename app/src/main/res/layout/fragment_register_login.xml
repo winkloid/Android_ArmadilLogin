@@ -5,10 +5,13 @@
     tools:context=".RegisterLoginFragment">
 
     <data>
-
         <variable
             name="registerLoginFragment"
             type="de.tuchemnitz.armadillogin.ui.registerlogin.RegisterLoginFragment" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <ScrollView
@@ -25,7 +28,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_login_title"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
+                app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +39,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/register_login_explanation"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textview_register_login_title" />
 

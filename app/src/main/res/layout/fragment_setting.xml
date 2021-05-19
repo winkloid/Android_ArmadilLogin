@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".RegisterKeyFragment">
+    tools:context=".SettingFragment">
 
     <data>
+
         <variable
-            name="registerKeyFragment"
-            type="de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment" />
-        <variable
-            name="userDataModel"
-            type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+            name="settingFragment"
+            type="de.tuchemnitz.armadillogin.ui.settings.SettingFragment" />
+
         <variable
             name="armadilloViewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
@@ -27,36 +25,38 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/textview_register_key_title"
-                android:layout_width="wrap_content"
+                android:id="@+id/textview_settings_title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/register_key_title"
+                android:text="@string/settings_title"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
                 app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textview_register_key_explanation"
-                android:layout_width="wrap_content"
+                android:id="@+id/textview_settings_explanation"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/register_key_explanation"
+                android:layout_marginTop="16dp"
+                android:text="@string/settings_explanation"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_key_title" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_settings_title" />
 
-            <Button
-                android:id="@+id/button_register_key_confirm"
-                android:layout_width="0dp"
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_settings_change_font"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/register_key_confirm"
-                android:onClick="@{() -> registerKeyFragment.sendRegisterRequest()}"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:checked="false"
+                android:text="@string/settings_set_dyslexic_font"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_key_explanation" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_settings_explanation" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

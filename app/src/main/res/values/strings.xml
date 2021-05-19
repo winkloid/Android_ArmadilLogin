@@ -2,6 +2,7 @@
     <string name="app_name">ArmadilLogin</string>
     <string name="title_home">Login</string>
     <string name="title_help">Hilfe</string>
+    <string name="title_settings">Einstellungen</string>
     <string name="welcome_title">Willkommen!</string>
     <string name="welcome_explanation">Vielen Dank für Deine Teilnahme an dieser Studie. Diese App soll dabei helfen, zu ermitteln, wie man ein einfaches, komfortables und trotzdem sicheres Login-System für alle schaffen kann.</string>
     <string name="register_login_title">Registrieren oder einloggen?</string>
@@ -64,4 +65,11 @@
     <string name="user_overview_delete_credential_confirmation">Bist du dir sicher, dass du den Schlüssel mit folgender ID löschen möchtest?\n%s</string>
     <string name="item_credential_id_title">Schlüssel-ID:</string>
     <string name="item_credential_publickey_title">Öffentlicher Schlüssel:</string>
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_explanation">In dieser Ansicht findest du diverse Einstellungen, die du vornehmen kannst. So können das Farbschema und die Schriftart hier eingestellt werden.</string>
+
+<!-- Settings -->
+    <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
+
+    <string name="font_headline">headline</string>
 </resources>

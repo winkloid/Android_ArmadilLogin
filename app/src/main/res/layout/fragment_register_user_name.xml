@@ -9,6 +9,10 @@
         <variable
             name="registerUserNameFragment"
             type="de.tuchemnitz.armadillogin.ui.register.RegisterUserNameFragment" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <ScrollView
@@ -26,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="@string/register_username_title"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
+                app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/register_username_explanation"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="@+id/textview_register_username_title"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_username_title" />
 
@@ -53,9 +59,11 @@
                     android:id="@+id/register_input_username_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                    app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
-
+<!--
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/register_switch_save_username"
                 android:layout_width="0dp"
@@ -67,15 +75,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_textinput_username" />
+                -->
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/register_login_registerbutton"
                 android:onClick="@{() -> registerUserNameFragment.goToNextView()}"
-                app:layout_constraintStart_toStartOf="@+id/register_switch_save_username"
-                app:layout_constraintTop_toBottomOf="@+id/register_switch_save_username" />
+                android:text="@string/register_login_registerbutton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_textinput_username" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

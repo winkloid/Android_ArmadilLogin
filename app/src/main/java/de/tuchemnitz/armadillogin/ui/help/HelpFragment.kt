@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
@@ -41,10 +42,15 @@ class HelpFragment : Fragment() {
             lifecycleOwner = this@HelpFragment
             viewModel = sharedViewModel
             helpModel = helpViewModel
+            armadilloViewModel = sharedViewModel
         }
     }
 
     fun getHelpContext() : FragmentActivity? {
         return activity
+    }
+
+    fun getLifecycleOwner(): LifecycleOwner {
+        return viewLifecycleOwner
     }
 }

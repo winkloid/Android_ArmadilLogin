@@ -52,6 +52,7 @@ class LoginKeyFragment : Fragment() {
             lifecycleOwner = this@LoginKeyFragment
             loginKeyFragment = this@LoginKeyFragment
             userDataModel = userViewModel
+            armadilloViewModel = sharedViewModel
         }
     }
 

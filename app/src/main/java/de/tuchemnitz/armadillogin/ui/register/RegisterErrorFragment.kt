@@ -42,6 +42,7 @@ class RegisterErrorFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = this@RegisterErrorFragment
             registerErrorFragment = this@RegisterErrorFragment
+            armadilloViewModel = sharedViewModel
         }
     }
 

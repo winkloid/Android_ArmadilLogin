@@ -42,6 +42,7 @@ class RegisterFinishedFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = this@RegisterFinishedFragment
             registerFinishedFragment = this@RegisterFinishedFragment
+            armadilloViewModel = sharedViewModel
         }
     }
 

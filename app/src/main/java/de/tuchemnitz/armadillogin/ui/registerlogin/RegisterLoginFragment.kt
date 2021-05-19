@@ -37,7 +37,9 @@ class RegisterLoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
+            lifecycleOwner = this@RegisterLoginFragment
             registerLoginFragment = this@RegisterLoginFragment
+            armadilloViewModel = sharedViewModel
         }
     }
 

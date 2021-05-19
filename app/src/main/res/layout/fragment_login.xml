@@ -8,9 +8,14 @@
         <variable
             name="loginFragment"
             type="de.tuchemnitz.armadillogin.ui.login.LoginFragment" />
+
         <variable
             name="userModel"
             type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <ScrollView
@@ -27,7 +32,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/login_title"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
+                app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +43,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/login_explanation"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_login_title" />
 
@@ -54,7 +61,9 @@
                     android:id="@+id/login_input_username_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                    app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button

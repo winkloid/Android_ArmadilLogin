@@ -13,6 +13,10 @@
         <variable
             name="userDataModel"
             type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <ScrollView
@@ -29,7 +33,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_finished_title"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
+                app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_finished_explanation"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_finished_title" />
 

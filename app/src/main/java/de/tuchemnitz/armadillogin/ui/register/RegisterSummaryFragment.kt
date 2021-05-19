@@ -42,6 +42,7 @@ class RegisterSummaryFragment : Fragment() {
             lifecycleOwner = this@RegisterSummaryFragment
             registerSummaryFragment = this@RegisterSummaryFragment
             userDataModel = userViewModel
+            armadilloViewModel = sharedViewModel
         }
     }
 

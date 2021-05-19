@@ -3,14 +3,21 @@ package de.tuchemnitz.armadillogin.ui.user
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LifecycleRegistry
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.ItemCredentialBinding
 import de.tuchemnitz.armadillogin.fido2api.Credential
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 
 class CredentialAdapter(
-    private val onDeleteClicked: (String) -> Unit
+    private val onDeleteClicked: (String) -> Unit,
+    private val lifecycleOwner: LifecycleOwner,
+    private val armadilloViewModel: ArmadilloViewModel
 ) : ListAdapter<Credential, CredentialAdapter.CredentialViewHolder>(DiffCallback) {
 
     class CredentialViewHolder(
@@ -22,10 +29,6 @@ class CredentialAdapter(
                     onDeleteClicked(credential.id)
                 }
             }
-        }
-
-        fun bind(credentialItem : Credential) {
-            binding.credential = credentialItem
         }
     }
 
@@ -61,7 +64,20 @@ class CredentialAdapter(
      */
     override fun onBindViewHolder(holder: CredentialViewHolder, position: Int) {
         holder.binding.credential = getItem(position)
+        armadilloViewModel.dyslexicFont.observe(lifecycleOwner) { dyslexicEnabled ->
+            if(dyslexicEnabled) {
+                holder.binding.itemCredentialIdTitle.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline6)
+                holder.binding.itemCredentialPublickeyTitle.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline6)
+                holder.binding.itemCredentialId.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Caption)
+                holder.binding.itemCredentialPublickey.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Caption)
+            }
+            else {
+                holder.binding.itemCredentialIdTitle.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline6)
+                holder.binding.itemCredentialPublickeyTitle.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline6)
+                holder.binding.itemCredentialId.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Caption)
+                holder.binding.itemCredentialPublickey.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Caption)
+            }
+        }
         Log.d("CredentialAdapter", "${getItem(position)}")
     }
-
 }

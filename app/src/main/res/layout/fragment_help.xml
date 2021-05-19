@@ -18,6 +18,10 @@
         <variable
             name="helpFragment"
             type="de.tuchemnitz.armadillogin.ui.help.HelpFragment" />
+
+        <variable
+            name="armadilloViewModel"
+            type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
     </data>
 
     <FrameLayout
@@ -31,6 +35,8 @@
             android:scrollbars="vertical"
             app:layoutManager="LinearLayoutManager"
             app:textContent="@{helpModel.loadHelpData(viewModel.status)}"
-            app:viewContext="@{helpFragment.getHelpContext()}" />
+            app:viewContext="@{helpFragment.getHelpContext()}"
+            app:armadilloViewModel="@{armadilloViewModel}"
+            app:lifecycleOwner="@{helpFragment.getLifecycleOwner()}"/>
     </FrameLayout>
 </layout>
