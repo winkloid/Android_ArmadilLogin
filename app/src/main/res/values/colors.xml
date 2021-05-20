@@ -10,4 +10,11 @@
     <color name="success_color_500">#8BC34A</color>
     <color name="error_color_500">#F44336</color>
 
+    <!-- Colors for app theme, derived from TUC house and informatics color -->
+    <color name="home_extra_light">#51c7ad</color>
+    <color name="home_light">#005f50</color>
+    <color name="home_dark">#003428</color>
+    <color name="info_light">#bef768</color>
+    <color name="info_dark">#599300</color>
+
 </resources>
