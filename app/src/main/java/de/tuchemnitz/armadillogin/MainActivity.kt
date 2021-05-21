@@ -5,17 +5,21 @@ import android.util.Log
 import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.gms.fido.Fido
+import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 class MainActivity : AppCompatActivity() {
 
     private var currentNavController: LiveData<NavController>? = null
     private val userViewModel: UserDataViewModel by viewModels()
+    private val sharedViewModel: ArmadilloViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +27,19 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
+        }
+
+        /**
+         * Sets theme colors depending on [sharedViewModel.colorMode]. Default is light mode.
+         */
+        sharedViewModel.colorMode.observe(this@MainActivity) { colorMode ->
+            if(colorMode.equals(0)) {
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
+            } else if(colorMode.equals(1)) {
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
+            }
         }
     }
 

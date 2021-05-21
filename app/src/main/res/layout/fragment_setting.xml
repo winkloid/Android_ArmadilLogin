@@ -118,6 +118,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/settings_color_light"
+                            android:checked="@{armadilloViewModel.colorMode.equals(0)}"
+                            android:onClick="@{() -> armadilloViewModel.setColorMode(0)}"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
 
@@ -126,6 +128,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/settings_color_dark"
+                            android:checked="@{armadilloViewModel.colorMode.equals(1)}"
+                            android:onClick="@{() -> armadilloViewModel.setColorMode(1)}"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
                         <RadioButton
@@ -133,6 +137,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/settings_color_system"
+                            android:checked="@{armadilloViewModel.colorMode.equals(2)}"
+                            android:onClick="@{() -> armadilloViewModel.setColorMode(2)}"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
                     </RadioGroup>
