@@ -45,18 +45,100 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_settings_title" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switch_settings_change_font"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_settings_font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:checked="false"
-                android:text="@string/settings_set_dyslexic_font"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_settings_explanation" />
+                app:layout_constraintTop_toBottomOf="@id/textview_settings_explanation">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp">
+
+                    <TextView
+                        android:id="@+id/textview_settings_font_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_font_title"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switch_settings_change_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:checked="false"
+                        android:text="@string/settings_set_dyslexic_font"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_settings_font_title" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardview_settings_font">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp">
+
+                <TextView
+                    android:id="@+id/textview_settings_color_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_color_title"
+                    android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                    app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/radiogroup_settings_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_settings_color_title">
+
+                        <RadioButton
+                            android:id="@+id/radiobutton_settings_light"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_color_light"
+                            android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+
+                        <RadioButton
+                            android:id="@+id/radiobutton_settings_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_color_dark"
+                            android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                        <RadioButton
+                            android:id="@+id/radiobutton_settings_system"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_color_system"
+                            android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                    </RadioGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
