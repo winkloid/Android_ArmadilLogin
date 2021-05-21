@@ -28,6 +28,15 @@ class ArmadilloViewModel : ViewModel() {
     private val _dyslexicFont = MutableLiveData<Boolean>(false)
     val dyslexicFont: LiveData<Boolean> = _dyslexicFont
 
+    /**
+     * Describes which color mode is to be used.
+     * 0 - Light theme
+     * 1 - Dark theme
+     * 2 - System adapted theme
+     */
+    private val _colorMode = MutableLiveData<Int>(0)
+    val colorMode: LiveData<Int> = _colorMode
+
     fun setFragmentStatus(fragStatus: FragmentStatus) {
         _status.value = fragStatus
         Log.d("SETSTATUS", "${status.value}")
@@ -35,5 +44,12 @@ class ArmadilloViewModel : ViewModel() {
 
     fun setDyslexicFont(dyslexicActive: Boolean) {
         _dyslexicFont.value = dyslexicActive
+    }
+
+    /**
+     * Sets the value of [_colorMode].
+     */
+    fun setColorMode(mode: Int) {
+        _colorMode.value = mode
     }
 }
