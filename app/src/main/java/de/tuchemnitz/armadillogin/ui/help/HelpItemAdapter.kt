@@ -1,6 +1,9 @@
 package de.tuchemnitz.armadillogin.ui.help
 
 import android.content.Context
+import android.text.Html
+import android.text.Html.FROM_HTML_MODE_LEGACY
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -45,7 +48,9 @@ class HelpItemAdapter(
         val helpItem = data[position]
 
         // get the right string and set it as value for the text of the textview inside the itemViewHolder
-        holder.textView.text = context.resources.getString(helpItem.stringResourceId)
+        val stringRes = context.resources.getString(helpItem.stringResourceId)
+        holder.textView.text = Html.fromHtml(stringRes)
+        holder.textView.movementMethod = LinkMovementMethod.getInstance()
         holder.headlineView.text = context.resources.getString(helpItem.titleResourceId)
 
         if (helpItem.imageResourceId != null) {
