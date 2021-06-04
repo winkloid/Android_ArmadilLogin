@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <helpitem>
-        <tag>WELCOME</tag>
-        <titleres>help1_title</titleres>
-        <textres>help1</textres>
-        <imgres>help_11_register_data_processing</imgres>
+        <tag>DEFAULT</tag>
+        <titleres>help_1_settings_title</titleres>
+        <textres>help_1_settings</textres>
+        <imgres>help_1_settings</imgres>
     </helpitem>
-    <helpitem>
-        <tag>WELCOME</tag>
-        <tag>LOGIN</tag>
-        <titleres>help2_title</titleres>
-        <textres>help2</textres>
-        <imgres>image2</imgres>
-    </helpitem>
+
     <helpitem>
         <tag>DEFAULT</tag>
-        <titleres>help3_title</titleres>
-        <textres>help3</textres>
-        <imgres>image3</imgres>
+        <titleres>help_2_fonts_title</titleres>
+        <textres>help_2_fonts</textres>
+        <imgres>help_2_fonts</imgres>
     </helpitem>
+
     <helpitem>
         <tag>DEFAULT</tag>
-        <titleres>help4_title</titleres>
-        <textres>help4</textres>
+        <titleres>help_3_fido_title</titleres>
+        <textres>help_3_fido</textres>
+        <imgres>help_3_fido</imgres>
     </helpitem>
+
     <helpitem>
         <tag>DEFAULT</tag>
-        <titleres></titleres>
-        <imgres>image1</imgres>
+        <titleres>help_4_security_title</titleres>
+        <textres>help_4_security</textres>
+        <imgres>help_4_security</imgres>
     </helpitem>
 </resources>
