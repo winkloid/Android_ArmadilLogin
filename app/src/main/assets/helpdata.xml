@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- WELCOME Data -->
+    <helpitem>
+        <tag>WELCOME</tag>
+        <titleres>help_5_welcome_procedure_title</titleres>
+        <textres>help_5_welcome_procedure</textres>
+        <imgres>help_5_welcome_procedure</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>WELCOME</tag>
+        <titleres>help_6_welcome_goal_title</titleres>
+        <textres>help_6_welcome_goal</textres>
+        <imgres>help_6_welcome_goal</imgres>
+    </helpitem>
+
+    <!--DEFAULT Data -->
     <helpitem>
         <tag>DEFAULT</tag>
         <titleres>help_1_settings_title</titleres>
