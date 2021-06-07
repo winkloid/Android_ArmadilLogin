@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- REGISTER2_FRAGMENT -->
+    <helpitem>
+        <tag>REGISTER2</tag>
+        <titleres>help_14_register_username_username_title</titleres>
+        <textres>help_14_register_username_username</textres>
+        <imgres>help_14_register_username_username</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>REGISTER2</tag>
+        <titleres>help_15_register_username_allowed_characters_title</titleres>
+        <textres>help_15_register_username_allowed_characters</textres>
+        <imgres>help_15_register_username_allowed_characters</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>REGISTER2</tag>
+        <titleres>help_16_register_username_procedure_title</titleres>
+        <textres>help_16_register_username_procedure</textres>
+        <imgres>help_16_register_username_procedure</imgres>
+    </helpitem>
+
     <!-- REGISTER1_FRAGMENT -->
     <helpitem>
         <tag>REGISTER1</tag>
@@ -11,7 +33,6 @@
 
     <helpitem>
         <tag>REGISTER1</tag>
-        <tag>REGISTER2</tag>
         <titleres>help_12_register_input_procedure_title</titleres>
         <textres>help_12_register_input_procedure</textres>
         <imgres>help_12_register_input_procedure</imgres>
