@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- LOGIN_USERNAME_FRAGMENT -->
+    <helpitem>
+        <tag>LOGIN_USERNAME</tag>
+        <titleres>help_32_login_username_explanation_title</titleres>
+        <textres>help_32_login_username_explanation</textres>
+        <imgres>help_32_login_username_explanation</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>LOGIN_USERNAME</tag>
+        <titleres>help_33_login_username_no_username_title</titleres>
+        <textres>help_33_login_username_no_username</textres>
+        <imgres>help_33_login_username_no_username</imgres>
+    </helpitem>
 
     <!-- REGISTER_FINISHED_FRAGMENT -->
     <helpitem>
