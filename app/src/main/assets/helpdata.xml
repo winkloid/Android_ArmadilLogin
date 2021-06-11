@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <!-- LOGIN_KEY_FRAGMENT -->
+    <helpitem>
+        <tag>LOGIN_KEY</tag>
+        <titleres>help_35_login_key_usb_title</titleres>
+        <textres>help_35_login_key_usb</textres>
+        <imgres>help_35_login_key_usb</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>LOGIN_KEY</tag>
+        <titleres>help_36_login_key_bluetooth_title</titleres>
+        <textres>help_36_login_key_bluetooth</textres>
+        <imgres>help_36_login_key_bluetooth</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>LOGIN_KEY</tag>
+        <titleres>help_37_login_key_nfc_title</titleres>
+        <textres>help_37_login_key_nfc</textres>
+        <imgres>help_37_login_key_nfc</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>LOGIN_KEY</tag>
+        <titleres>help_38_login_key_smartphone_title</titleres>
+        <textres>help_38_login_key_smartphone</textres>
+        <imgres>help_38_login_key_smartphone</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>LOGIN_KEY</tag>
+        <titleres>help_34_login_key_error_title</titleres>
+        <textres>help_34_login_key_error</textres>
+        <imgres>help_34_login_key_error</imgres>
+    </helpitem>
+
     <!-- LOGIN_USERNAME_FRAGMENT -->
     <helpitem>
         <tag>LOGIN_USERNAME</tag>
