@@ -107,7 +107,7 @@ class HelpDataXmlParser {
             "REGISTER_KEY" -> FragmentStatus.REGISTER_KEY
             "REGISTER_FINISHED" -> FragmentStatus.REGISTER_FINISHED
             "REGISTER_ERROR" -> FragmentStatus.REGISTER_ERROR
-            "LOGIN" -> FragmentStatus.LOGIN
+            "LOGIN_USERNAME" -> FragmentStatus.LOGIN
             "LOGIN_KEY" -> FragmentStatus.LOGIN_KEY
             "USER_OVERVIEW" -> FragmentStatus.USER_OVERVIEW
             else -> FragmentStatus.DEFAULT

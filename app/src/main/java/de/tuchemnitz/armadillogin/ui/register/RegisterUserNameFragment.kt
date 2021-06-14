@@ -62,13 +62,38 @@ class RegisterUserNameFragment : Fragment() {
         val username = binding?.registerInputUsernameEditText?.text.toString()
         Log.d("UNAME", "$username")
 
-        if(!username.isNullOrBlank()) {
-            binding?.registerInputUsernameEditText?.error = null
-            userViewModel.setUsername(username)
-            return true
+        // check whether username input field is blank or null and whether it is alphanumeric
+        val usernameNullOrBlank = username.isNullOrBlank()
+        if(!usernameNullOrBlank && isAlphaNumeric(username)) {
+                binding?.registerInputUsernameEditText?.error = null
+                userViewModel.setUsername(username)
+                return true
         } else {
-            binding?.registerInputUsernameEditText?.error = getString(R.string.simple_string_error)
+            if (usernameNullOrBlank) {
+                binding?.registerInputUsernameEditText?.error =
+                    getString(R.string.simple_string_error)
+            } else {
+                binding?.registerInputUsernameEditText?.error =
+                    getString(R.string.not_alphanumeric_string_error)
+            }
             return false
+        }
+    }
+
+    /**
+     * Checks whether [line] is a String which contains alphanumeric values only
+     * @return true if [line] is alphanumeric and false if [line] is not alphanumeric.
+     */
+    private fun isAlphaNumeric(line: String): Boolean {
+        if(line.isNullOrBlank()) {
+            return false
+        } else {
+            for (char in line) {
+                if (char !in 'a'..'z' && char !in 'A'..'Z' && char !in '0'..'9') {
+                    return false
+                }
+            }
+            return true
         }
     }
 }
