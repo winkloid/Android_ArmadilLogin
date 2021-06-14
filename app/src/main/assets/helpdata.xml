@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- USER_OVERVIEW_FRAGMENT -->
+    <helpitem>
+        <tag>USER_OVERVIEW</tag>
+        <titleres>help_39_user_overview_key_list_title</titleres>
+        <textres>help_39_user_overview_key_list</textres>
+        <imgres>help_39_user_overview_key_list</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>USER_OVERVIEW</tag>
+        <titleres>help_40_user_overview_public_key_id_title</titleres>
+        <textres>help_40_user_overview_public_key_id</textres>
+        <imgres>help_40_user_overview_public_key_id</imgres>
+    </helpitem>
+
+    <helpitem>
+        <tag>USER_OVERVIEW</tag>
+        <titleres>help_41_user_overview_delete_key_title</titleres>
+        <textres>help_41_user_overview_delete_key</textres>
+        <imgres>help_41_user_overview_delete_key</imgres>
+    </helpitem>
 
     <!-- LOGIN_KEY_FRAGMENT -->
     <helpitem>
