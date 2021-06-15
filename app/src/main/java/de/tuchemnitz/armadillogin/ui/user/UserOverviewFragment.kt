@@ -81,5 +81,8 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_OVERVIEW)
+        Log.d("USER", userViewModel.userTime.toString())
+        Log.d("USER_START", userViewModel.userStartTime.toString())
+        Log.d("USER_FINISHED", userViewModel.userFinishedTime.toString())
     }
 }

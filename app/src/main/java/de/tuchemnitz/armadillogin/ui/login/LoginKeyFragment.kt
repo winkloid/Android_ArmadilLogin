@@ -15,7 +15,6 @@ import com.google.android.gms.fido.Fido
 import com.google.android.gms.fido.fido2.api.common.AuthenticatorErrorResponse
 import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentLoginKeyBinding
-import de.tuchemnitz.armadillogin.databinding.FragmentRegisterKeyBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
@@ -103,6 +102,8 @@ class LoginKeyFragment : Fragment() {
                         // observe whether signInResponse already completed and suceeded and if so, go to next fragment
                         userViewModel.signInReady.observe(viewLifecycleOwner) { signInReady ->
                             if (signInReady) {
+                                userViewModel.userFinishedTime = System.nanoTime()
+                                userViewModel.calculateUserTime()
                                 findNavController().navigate(R.id.action_navigation_login_key_to_navigation_user_overview)
                                 userViewModel.setSignInKey()
                             }

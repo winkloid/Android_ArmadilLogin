@@ -7,14 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
-import de.tuchemnitz.armadillogin.databinding.FragmentHelpBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentWelcomeBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
-import de.tuchemnitz.armadillogin.ui.help.HelpViewModel
+import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -25,6 +23,7 @@ class WelcomeFragment : Fragment() {
 
     private var binding: FragmentWelcomeBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
+    private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -48,6 +47,7 @@ class WelcomeFragment : Fragment() {
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
     }
     fun goToNextView() {
+        userViewModel.userStartTime = System.nanoTime()
         findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register_login)
     }
 }

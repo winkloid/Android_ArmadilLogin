@@ -13,6 +13,18 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     private val repository = AuthRepository.getInstance(application)
 
+    // time measurement feature
+    var userStartTime: Long? = null
+    var userFinishedTime: Long? = null
+    var userTime: Long? = null
+
+    fun calculateUserTime() {
+        if (userFinishedTime != null && userStartTime != null) {
+            userTime = userFinishedTime!! - userStartTime!!
+        }
+    }
+
+    // personal user data
     private var _firstname = MutableLiveData("")
     val firstname: LiveData<String> = _firstname
 
@@ -25,11 +37,11 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     private var _username = MutableLiveData("")
     val username: LiveData<String> = _username
 
-    // server accepts every password with this server config. To show the real advantages of fido2, no password is asked from the users
+    // with its server config the server accepts every password. To show the real advantages of fido2, no password is asked from the users
     private val _password = MutableLiveData("defaultpass")
     private val password: LiveData<String> = _password
 
-    // bools to show animations or adapt UI when user has to wait until a task is finished
+    // bools to show animations or adapt UI when user has to wait until a task has finished
     private val _sendingUsername = MutableLiveData<Boolean>()
     val sendingUsername: LiveData<Boolean> = _sendingUsername
 
