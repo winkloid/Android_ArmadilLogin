@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
+import de.tuchemnitz.armadillogin.databinding.FragmentUserDataBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentWelcomeBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
@@ -17,17 +18,17 @@ import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
  * A simple [Fragment] subclass.
- * Use the [WelcomeFragment.newInstance] factory method to
+ * Use the [UserDataFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class WelcomeFragment : Fragment() {
-
-    private var binding: FragmentWelcomeBinding? = null
+class UserDataFragment : Fragment() {
+    private var binding: FragmentUserDataBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
+    private val studyUserViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val fragmentBinding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentUserDataBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
@@ -35,8 +36,8 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
-            lifecycleOwner = this@WelcomeFragment
-            welcomeFragment = this@WelcomeFragment
+            lifecycleOwner = this@UserDataFragment
+            userDataFragment = this@UserDataFragment
             armadilloViewModel = sharedViewModel
         }
     }
@@ -47,6 +48,7 @@ class WelcomeFragment : Fragment() {
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
     }
     fun goToNextView() {
+        studyUserViewModel.userStartTime = System.nanoTime()
         findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register_login)
     }
 }

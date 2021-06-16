@@ -17,6 +17,7 @@ import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentLoginKeyBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 import de.tuchemnitz.armadillogin.ui.observeOnce
 
@@ -35,6 +36,7 @@ class LoginKeyFragment : Fragment() {
     private var binding: FragmentLoginKeyBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val userViewModel: UserDataViewModel by activityViewModels()
+    private val studyUserViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -102,8 +104,8 @@ class LoginKeyFragment : Fragment() {
                         // observe whether signInResponse already completed and suceeded and if so, go to next fragment
                         userViewModel.signInReady.observe(viewLifecycleOwner) { signInReady ->
                             if (signInReady) {
-                                userViewModel.userFinishedTime = System.nanoTime()
-                                userViewModel.calculateUserTime()
+                                studyUserViewModel.userFinishedTime = System.nanoTime()
+                                studyUserViewModel.calculateUserTime()
                                 findNavController().navigate(R.id.action_navigation_login_key_to_navigation_user_overview)
                                 userViewModel.setSignInKey()
                             }

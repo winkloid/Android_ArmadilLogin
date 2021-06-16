@@ -13,17 +13,6 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
 
     private val repository = AuthRepository.getInstance(application)
 
-    // time measurement feature
-    var userStartTime: Long? = null
-    var userFinishedTime: Long? = null
-    var userTime: Long? = null
-
-    fun calculateUserTime() {
-        if (userFinishedTime != null && userStartTime != null) {
-            userTime = userFinishedTime!! - userStartTime!!
-        }
-    }
-
     // personal user data
     private var _firstname = MutableLiveData("")
     val firstname: LiveData<String> = _firstname

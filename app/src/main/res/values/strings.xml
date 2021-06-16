@@ -70,7 +70,7 @@
     <string name="settings_title">Einstellungen</string>
     <string name="settings_explanation">In dieser Ansicht findest du diverse Einstellungen, die du vornehmen kannst. So können das Farbschema und die Schriftart hier eingestellt werden.</string>
 
-<!-- Settings -->
+    <!-- Settings -->
     <string name="settings_font_title">Schriftart</string>
     <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
 
@@ -78,4 +78,6 @@
     <string name="settings_color_light">Heller Modus</string>
     <string name="settings_color_dark">Dunkler Modus</string>
     <string name="settings_color_system">Farbe an das System anpassen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
