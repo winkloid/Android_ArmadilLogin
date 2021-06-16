@@ -73,11 +73,31 @@
     <!-- Settings -->
     <string name="settings_font_title">Schriftart</string>
     <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
-
     <string name="settings_color_title">Farben</string>
     <string name="settings_color_light">Heller Modus</string>
     <string name="settings_color_dark">Dunkler Modus</string>
     <string name="settings_color_system">Farbe an das System anpassen</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- User Data Fragment Strings -->
+    <string name="user_data_title">Bevor Sie fortfahren...</string>
+    <string name="user_data_explanation">Um wertvolle Erkenntnisse aus der Studie zu gewinnen, ist es hilfreich, die Teilnehmer möglichst genau einschätzen zu können. Daher bitte ich Sie, die nachfolgenden Fragen zu beantworten. Sie haben allerdings die freie Wahl, welche Angaben Sie machen möchten und welche nicht. Möchten Sie sich zu einer Frage nicht äußern, wählen Sie als Antwort entweder "keine Angabe" aus oder lassen Sie das entsprechende Textfeld leer. Alle Angaben werden anonymisiert gespeichert und können daher im Nachhinein nicht mehr mit Ihnen als Person in Verbindung gebracht werden. Während der Studie wird außerdem die Zeit gemessen, die Sie zum Registrieren und Einloggen benötigt haben. Lassen Sie sich davon nicht aus der Ruhe bringen, es geht vorwiegend darum, wie gut sich das Anmeldesystem bedienen lässt.\nVielen Dank!</string>
+    <string name="user_data_age_title">Wie alt sind Sie?</string>
+    <string name="user_data_input_age">Ihr Alter, z.B. 42</string>
+    <string name="user_data_gender_title">Mit welchem Geschlecht identifizieren Sie sich?</string>
+    <string name="user_data_gender_female">weiblich</string>
+    <string name="user_data_gender_male">männlich</string>
+    <string name="user_data_gender_diverse">divers</string>
+    <string name="user_data_gender_not_specified">Keine Angabe.</string>
+    <string name="user_data_technical_experience_title">Wie würden Sie Ihre Erfahrung mit Technik einschätzen?</string>
+    <string name="user_data_technical_experience_explanation">Hierbei ist speziell Ihre Erfahrung und Fertigkeit mit mobilen Geräten wie Smartphones oder Tablets gemeint.</string>
+    <string name="user_data_technical_experience_1">1 - kaum bis keine Erfahrung</string>
+    <string name="user_data_technical_experience_2">2 - wenig Erfahrung</string>
+    <string name="user_data_technical_experience_3">3 - durchschnittliche Erfahrung</string>
+    <string name="user_data_technical_experience_4">4 - viel Erfahrung</string>
+    <string name="user_data_technical_experience_5">5 - ich bin Experte</string>
+    <string name="user_data_technical_experience_not_specified">Keine Angabe.</string>
+
+
+
+
 </resources>
