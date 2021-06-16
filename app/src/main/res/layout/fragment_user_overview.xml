@@ -21,6 +21,9 @@
         <variable
             name="armadilloViewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
+        <variable
+            name="studyUserModel"
+            type="de.tuchemnitz.armadillogin.model.StudyUserDataViewModel" />
     </data>
 
     <ScrollView
@@ -70,7 +73,7 @@
                 android:id="@+id/textview_user_overview_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{userDataModel.userTime.toString()}"
+                android:text="@{``+ studyUserModel.userTime}"
                 android:layout_marginTop="8dp"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"

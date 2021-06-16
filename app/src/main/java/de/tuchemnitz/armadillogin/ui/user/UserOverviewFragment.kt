@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import de.tuchemnitz.armadillogin.databinding.FragmentUserOverviewBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
@@ -29,6 +30,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val userViewModel: UserDataViewModel by activityViewModels()
     private val viewModel: UserOverviewViewModel by activityViewModels()
+    private val studyUserViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +49,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
             userDataModel = userViewModel
             viewModel = viewModel
             armadilloViewModel = sharedViewModel
+            studyUserModel = studyUserViewModel
         }
 
         // credentials recyclerview binding
@@ -81,8 +84,8 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_OVERVIEW)
-        Log.d("USER", userViewModel.userTime.toString())
-        Log.d("USER_START", userViewModel.userStartTime.toString())
-        Log.d("USER_FINISHED", userViewModel.userFinishedTime.toString())
+        Log.d("USER", studyUserViewModel.userTime.toString())
+        Log.d("USER_START", studyUserViewModel.userStartTime.toString())
+        Log.d("USER_FINISHED", studyUserViewModel.userFinishedTime.toString())
     }
 }

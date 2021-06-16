@@ -11,8 +11,8 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_welcome">
         <action
-            android:id="@+id/action_navigation_welcome_to_navigation_register_login"
-            app:destination="@id/navigation_register_login" />
+            android:id="@+id/action_navigation_welcome_to_navigation_user_data"
+            app:destination="@id/navigation_user_data" />
     </fragment>
 
     <fragment
@@ -120,6 +120,16 @@
         android:name="de.tuchemnitz.armadillogin.ui.user.UserOverviewFragment"
         android:label="@string/user_overview_label"
         tools:layout="@layout/fragment_user_overview">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user_data"
+        android:name="de.tuchemnitz.armadillogin.ui.welcome.UserDataFragment"
+        android:label="@string/user_data_label"
+        tools:layout="@layout/fragment_user_data">
+        <action
+            android:id="@+id/action_navigation_user_data_to_navigation_register_login"
+            app:destination="@id/navigation_register_login" />
     </fragment>
 
 </navigation>

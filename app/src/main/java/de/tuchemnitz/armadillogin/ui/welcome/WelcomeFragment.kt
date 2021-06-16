@@ -47,6 +47,6 @@ class WelcomeFragment : Fragment() {
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
     }
     fun goToNextView() {
-        findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register_login)
+        findNavController().navigate(R.id.action_navigation_welcome_to_navigation_user_data)
     }
 }

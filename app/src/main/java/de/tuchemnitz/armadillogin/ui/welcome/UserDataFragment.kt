@@ -39,16 +39,37 @@ class UserDataFragment : Fragment() {
             lifecycleOwner = this@UserDataFragment
             userDataFragment = this@UserDataFragment
             armadilloViewModel = sharedViewModel
+            studyUserModel = studyUserViewModel
         }
     }
 
     override fun onResume() {
         super.onResume()
         Log.d("D","Resuming")
-        sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
+        sharedViewModel.setFragmentStatus(FragmentStatus.USER_DATA)
     }
     fun goToNextView() {
-        studyUserViewModel.userStartTime = System.nanoTime()
-        findNavController().navigate(R.id.action_navigation_welcome_to_navigation_register_login)
+        val valuesCorrect = checkValues()
+        if (valuesCorrect) {
+            studyUserViewModel.userStartTime = System.nanoTime()
+            findNavController().navigate(R.id.action_navigation_user_data_to_navigation_register_login)
+        }
+    }
+
+    private fun checkValues(): Boolean {
+        val ageInput = binding?.userDataInputAgeEditText?.text
+        if(ageInput.isNullOrBlank()) {
+            studyUserViewModel.setAge(null)
+            return true
+        } else {
+            val age = ageInput.toString().toIntOrNull()
+            if(age != null) {
+                studyUserViewModel.setAge(age)
+                return true
+            } else {
+                binding?.userDataInputAgeEditText?.error = getString(R.string.user_data_no_age_error)
+                return false
+            }
+        }
     }
 }

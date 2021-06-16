@@ -23,39 +23,43 @@ class StudyUserDataViewModel: ViewModel() {
     private var _age = MutableLiveData<Int?>(null)
     val age: LiveData<Int?> = _age
 
+    fun setAge(ageInput: Int?) {
+        _age.value = ageInput
+    }
+
     /**
      * Represents the gender of the user.
-     * null - not specified
-     * 0 - Female
-     * 1 - Male
-     * 2 - Diverse
+     * 0 - not specified
+     * 1 - Female
+     * 2 - Male
+     * 3 - Diverse
      */
-    private var _gender = MutableLiveData<Int?>(null)
-    val gender: LiveData<Int?> = _gender
+    private var _gender = MutableLiveData<Int>(0)
+    val gender: LiveData<Int> = _gender
 
     /**
      * Sets the gender specified by the user immediately when user selects it from radio group in UserDataFragment.
      */
-    fun setGender(genderInput: Int?) {
+    fun setGender(genderInput: Int) {
         _gender.value = genderInput
     }
 
     /**
      * Represents technical experience of the user.
-     * null - not specified
+     * 0 - not specified
      * 1 - none
      * 2 - little
      * 3 - average
      * 4 - much
      * 5 - expert level
      */
-    private var _technicalExperience = MutableLiveData<Int?>(null)
-    val technicalExperience: LiveData<Int?> = _technicalExperience
+    private var _technicalExperience = MutableLiveData<Int>(0)
+    val technicalExperience: LiveData<Int> = _technicalExperience
 
     /**
      * Sets the gender specified by the user immediately when user selects it from radio group in UserDataFragment.
      */
-    fun setTechnicalExperience(technicalExperienceInput: Int?) {
+    fun setTechnicalExperience(technicalExperienceInput: Int) {
         _technicalExperience.value = technicalExperienceInput
     }
 }

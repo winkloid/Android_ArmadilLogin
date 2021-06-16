@@ -2,10 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.welcome.UserDataFragment">
 
     <data>
-
         <variable
             name="userDataFragment"
             type="de.tuchemnitz.armadillogin.ui.welcome.UserDataFragment" />
@@ -27,7 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
-
 
             <TextView
                 android:id="@+id/textview_user_data_title"
@@ -158,8 +156,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/user_data_gender_not_specified"
-                            android:checked="@{studyUserModel.gender.equals(null)}"
-                            android:onClick="@{() -> studyUserModel.setGender(null)}"
+                            android:checked="@{studyUserModel.gender.equals(0)}"
+                            android:onClick="@{() -> studyUserModel.setGender(0)}"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
                     </RadioGroup>
@@ -260,13 +258,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/user_data_technical_experience_not_specified"
-                            android:checked="@{studyUserModel.technicalExperience.equals(null)}"
-                            android:onClick="@{() -> studyUserModel.setTechnicalExperience(null)}"
+                            android:checked="@{studyUserModel.technicalExperience.equals(0)}"
+                            android:onClick="@{() -> studyUserModel.setTechnicalExperience(0)}"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
                     </RadioGroup>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/button_user_data_conform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="@{() -> userDataFragment.goToNextView()}"
+                android:text="@string/user_data_confirm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardview_user_data_technical_experience" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
