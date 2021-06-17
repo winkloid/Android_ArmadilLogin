@@ -19,6 +19,7 @@ enum class FragmentStatus {
     LOGIN,
     LOGIN_KEY,
     USER_OVERVIEW,
+    FINISHED,
     DEFAULT,
 }
 
