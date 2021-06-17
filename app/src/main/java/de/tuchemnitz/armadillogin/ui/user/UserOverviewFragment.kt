@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentUserOverviewBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
@@ -87,5 +89,14 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
         Log.d("USER", studyUserViewModel.userTime.toString())
         Log.d("USER_START", studyUserViewModel.userStartTime.toString())
         Log.d("USER_FINISHED", studyUserViewModel.userFinishedTime.toString())
+    }
+
+    fun finishStudy() {
+        studyUserViewModel.sendData()
+        studyUserViewModel.sentStudyData.observe(viewLifecycleOwner) { sentStudyData ->
+            if(sentStudyData) {
+                findNavController().navigate(R.id.action_navigation_user_overview_to_navigation_finished)
+            }
+        }
     }
 }

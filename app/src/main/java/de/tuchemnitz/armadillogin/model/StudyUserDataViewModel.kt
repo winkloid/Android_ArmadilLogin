@@ -101,7 +101,8 @@ class StudyUserDataViewModel(application: Application): AndroidViewModel(applica
             "age" to age.value,
             "gender" to gender.value,
             "technicalExperience" to technicalExperience.value,
-            "timeNeeded" to userTime
+            "timeNeeded" to userTimeInSeconds,
+            "timeNeededNano" to userTime
         )
 
         studyDataBase.collection("userData")

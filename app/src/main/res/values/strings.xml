@@ -108,7 +108,8 @@
     <string name="user_data_no_age_error">Bitte geben Sie Ihr Alter ein oder lassen Sie das Feld leer, wenn Sie sich dazu nicht äußern möchten.</string>
 
     <!-- Finished Fragment Strings -->
+    <string name="finished_label">Danke!</string>
     <string name="finished_title">Vielen Dank!</string>
-    <string name="finished_explanation">Ihre Studienergebnisse wurden erfolgreich gespeichert.</string>
+    <string name="finished_explanation">Die Studie ist abgeschlossen und Ihre Studienergebnisse wurden erfolgreich gespeichert.</string>
     <string name="finished_back_to_welcome">Zurück zur Willkommen-Seite</string>
 </resources>

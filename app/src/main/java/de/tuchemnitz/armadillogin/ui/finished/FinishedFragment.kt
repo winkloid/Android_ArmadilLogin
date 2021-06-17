@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
+import de.tuchemnitz.armadillogin.databinding.FragmentFinishedBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentWelcomeBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
@@ -20,12 +21,12 @@ import de.tuchemnitz.armadillogin.model.FragmentStatus
  * create an instance of this fragment.
  */
 class FinishedFragment : Fragment() {
-    private var binding: FragmentWelcomeBinding? = null
+    private var binding: FragmentFinishedBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val fragmentBinding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentFinishedBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
@@ -33,8 +34,8 @@ class FinishedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
-            lifecycleOwner = this@WelcomeFragment
-            welcomeFragment = this@WelcomeFragment
+            lifecycleOwner = this@FinishedFragment
+            finishedFragment = this@FinishedFragment
             armadilloViewModel = sharedViewModel
         }
     }
@@ -43,5 +44,9 @@ class FinishedFragment : Fragment() {
         super.onResume()
         Log.d("D","Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.FINISHED)
+    }
+
+    fun backToWelcome() {
+        findNavController().navigate(R.id.action_navigation_finished_to_navigation_welcome)
     }
 }
