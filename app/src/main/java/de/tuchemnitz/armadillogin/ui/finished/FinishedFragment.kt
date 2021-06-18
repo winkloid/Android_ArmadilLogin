@@ -1,4 +1,4 @@
-package de.tuchemnitz.armadillogin.ui.welcome
+package de.tuchemnitz.armadillogin.ui.finished
 
 import android.os.Bundle
 import android.util.Log
@@ -9,25 +9,24 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import de.tuchemnitz.armadillogin.R
+import de.tuchemnitz.armadillogin.databinding.FragmentFinishedBinding
 import de.tuchemnitz.armadillogin.databinding.FragmentWelcomeBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
-import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
-import de.tuchemnitz.armadillogin.model.UserDataViewModel
+
 
 /**
  * A simple [Fragment] subclass.
- * Use the [WelcomeFragment.newInstance] factory method to
+ * Use the [FinishedFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class WelcomeFragment : Fragment() {
-
-    private var binding: FragmentWelcomeBinding? = null
+class FinishedFragment : Fragment() {
+    private var binding: FragmentFinishedBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val fragmentBinding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        val fragmentBinding = FragmentFinishedBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
     }
@@ -35,8 +34,8 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
-            lifecycleOwner = this@WelcomeFragment
-            welcomeFragment = this@WelcomeFragment
+            lifecycleOwner = this@FinishedFragment
+            finishedFragment = this@FinishedFragment
             armadilloViewModel = sharedViewModel
         }
     }
@@ -44,9 +43,10 @@ class WelcomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         Log.d("D","Resuming")
-        sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
+        sharedViewModel.setFragmentStatus(FragmentStatus.FINISHED)
     }
-    fun goToNextView() {
-        findNavController().navigate(R.id.action_navigation_welcome_to_navigation_user_data)
+
+    fun backToWelcome() {
+        findNavController().navigate(R.id.action_navigation_finished_to_navigation_welcome)
     }
 }

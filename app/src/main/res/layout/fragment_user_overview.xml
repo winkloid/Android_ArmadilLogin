@@ -6,7 +6,6 @@
     tools:context=".UserOverviewFragment">
 
     <data>
-
         <variable
             name="userOverviewFragment"
             type="de.tuchemnitz.armadillogin.ui.user.UserOverviewFragment" />
@@ -22,6 +21,9 @@
         <variable
             name="armadilloViewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
+        <variable
+            name="studyUserModel"
+            type="de.tuchemnitz.armadillogin.model.StudyUserDataViewModel" />
     </data>
 
     <ScrollView
@@ -47,14 +49,74 @@
 
             <TextView
                 android:id="@+id/textview_user_overview_explanation"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/user_overview_explanation"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_title" />
+
+            <TextView
+                android:id="@+id/textview_user_overview_time_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/user_overview_time_title"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_explanation" />
+
+            <TextView
+                android:id="@+id/textview_user_overview_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{studyUserModel.userTimeInSeconds + ` Sekunden`}"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time_title"
+                tools:text="benötigte Zeit"/>
+
+            <Button
+                android:id="@+id/button_user_overview_finish_study"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_overview_finish_study"
+                android:enabled="@{safeUnbox(!studyUserModel.sendingStudyData &amp;&amp; !studyUserModel.sentStudyData)}"
+                android:onClick="@{() -> userOverviewFragment.finishStudy()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time" />
+
+            <TextView
+                android:id="@+id/textview_user_overview_credential_explanation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/user_overview_credential_explanation"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_credential_title" />
+
+            <TextView
+                android:id="@+id/textview_user_overview_credential_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/user_overview_credential_title"
+                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_user_overview_finish_study" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_user_overview_credentials"
@@ -62,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_explanation"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_credential_explanation"
                 tools:listitem="@layout/item_credential" />
 
             <com.google.android.material.card.MaterialCardView
@@ -70,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_explanation">
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_credential_explanation">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

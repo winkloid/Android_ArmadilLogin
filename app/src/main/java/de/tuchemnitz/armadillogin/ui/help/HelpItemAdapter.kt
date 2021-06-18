@@ -11,6 +11,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.text.HtmlCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import de.tuchemnitz.armadillogin.R
@@ -49,7 +50,7 @@ class HelpItemAdapter(
 
         // get the right string and set it as value for the text of the textview inside the itemViewHolder
         val stringRes = context.resources.getString(helpItem.stringResourceId)
-        holder.textView.text = Html.fromHtml(stringRes)
+        holder.textView.text = HtmlCompat.fromHtml(stringRes, HtmlCompat.FROM_HTML_MODE_LEGACY)
         holder.textView.movementMethod = LinkMovementMethod.getInstance()
         holder.headlineView.text = context.resources.getString(helpItem.titleResourceId)
 

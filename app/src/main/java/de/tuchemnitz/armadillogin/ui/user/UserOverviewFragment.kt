@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentUserOverviewBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
@@ -29,6 +32,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val userViewModel: UserDataViewModel by activityViewModels()
     private val viewModel: UserOverviewViewModel by activityViewModels()
+    private val studyUserViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +51,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
             userDataModel = userViewModel
             viewModel = viewModel
             armadilloViewModel = sharedViewModel
+            studyUserModel = studyUserViewModel
         }
 
         // credentials recyclerview binding
@@ -81,5 +86,17 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_OVERVIEW)
+        Log.d("USER", studyUserViewModel.userTime.toString())
+        Log.d("USER_START", studyUserViewModel.userStartTime.toString())
+        Log.d("USER_FINISHED", studyUserViewModel.userFinishedTime.toString())
+    }
+
+    fun finishStudy() {
+        studyUserViewModel.sendData()
+        studyUserViewModel.sentStudyData.observe(viewLifecycleOwner) { sentStudyData ->
+            if(sentStudyData) {
+                findNavController().navigate(R.id.action_navigation_user_overview_to_navigation_finished)
+            }
+        }
     }
 }

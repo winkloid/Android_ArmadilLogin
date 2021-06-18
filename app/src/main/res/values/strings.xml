@@ -58,23 +58,58 @@
     <string name="login_key_title">Einloggen mit deinem Schlüssel</string>
     <string name="login_key_explanation">Betätige den Knopf unten, um dich mit deinem Schlüssel in dein Konto einzuloggen. Du kennst diesen Prozess bereits vom Registrieren. Mehr Informationen , wie du dich mit deinem Schlüssel einloggst, findest du im Hilfe-Tab.</string>
     <string name="login_key_confirm">Los geht\'s!</string>
+
+    <!-- User Overview Fragment Strings -->
     <string name="user_overview_title">Willkommen %s!</string>
-    <string name="user_overview_explanation">In dieser Übersicht findest du all deine registrierten Schlüssel. Es wird empfohlen, mehrere Schlüssel auf verschiedenen Geräten zu registrieren, falls mal einer verloren geht.</string>
+    <string name="user_overview_explanation">Willkommen im Mitgliederbereich! Vielen Dank, dass Sie an der Studie teilgenommen haben. Tippen Sie auf die Schaltfläche unten, um die Teilnahme abzuschließen und Ihre benötigte Zeit, sowie Ihre Angaben zu Alter, Geschlecht und technischer Erfahrung abzuschicken.</string>
+    <string name="user_overview_time_title">Ihre benötigte Zeit für die Registrierung und den Login:</string>
+    <string name="user_overview_finish_study">Studie abschließen</string>
+    <string name="user_overview_data_sent_success">Daten erfolgreich gesendet!</string>
+    <string name="user_overview_data_sent_error">Fehler beim Senden der Daten!</string>
     <string name="user_overview_label">Übersicht</string>
+    <string name="user_overview_credential_title">Ihre registrierten Schlüssel</string>
+    <string name="user_overview_credential_explanation">In dieser Übersicht finden Sie all Ihre registrierten Schlüssel. Bei realen Anwendungszwecken ist es sinnvoll, mindestens zwei Schlüssel zu registrieren, falls einer verloren geht.</string>
     <string name="user_overview_delete_credential">Schlüssel löschen</string>
     <string name="user_overview_credential_placeholder">Noch keine Schlüssel registriert.</string>
-    <string name="user_overview_delete_credential_confirmation">Bist du dir sicher, dass du den Schlüssel mit folgender ID löschen möchtest?\n%s</string>
+    <string name="user_overview_delete_credential_confirmation">Sind Sie sich sicher, dass Sie den Schlüssel mit folgender ID löschen möchten?\n%s</string>
     <string name="item_credential_id_title">Schlüssel-ID:</string>
     <string name="item_credential_publickey_title">Öffentlicher Schlüssel:</string>
+
+    <!-- Settings -->
     <string name="settings_title">Einstellungen</string>
     <string name="settings_explanation">In dieser Ansicht findest du diverse Einstellungen, die du vornehmen kannst. So können das Farbschema und die Schriftart hier eingestellt werden.</string>
-
-<!-- Settings -->
     <string name="settings_font_title">Schriftart</string>
     <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
-
     <string name="settings_color_title">Farben</string>
     <string name="settings_color_light">Heller Modus</string>
     <string name="settings_color_dark">Dunkler Modus</string>
     <string name="settings_color_system">Farbe an das System anpassen</string>
+
+    <!-- User Data Fragment Strings -->
+    <string name="user_data_label">Ihre Angaben</string>
+    <string name="user_data_title">Bevor Sie fortfahren...</string>
+    <string name="user_data_explanation">Um wertvolle Erkenntnisse aus der Studie zu gewinnen, ist es hilfreich, die Teilnehmer möglichst genau einschätzen zu können. Daher bitte ich Sie, die nachfolgenden Fragen zu beantworten. Sie haben allerdings die freie Wahl, welche Angaben Sie machen möchten und welche nicht. Möchten Sie sich zu einer Frage nicht äußern, wählen Sie als Antwort entweder "keine Angabe" aus oder lassen Sie das entsprechende Textfeld leer. Alle Angaben werden anonymisiert gespeichert und können daher im Nachhinein nicht mehr mit Ihnen als Person in Verbindung gebracht werden. Während der Studie wird außerdem die Zeit gemessen, die Sie zum Registrieren und Einloggen benötigt haben. Lassen Sie sich davon nicht aus der Ruhe bringen, es geht vorwiegend darum, wie gut sich das Anmeldesystem bedienen lässt.\nVielen Dank!</string>
+    <string name="user_data_age_title">Wie alt sind Sie?</string>
+    <string name="user_data_input_age">Ihr Alter, z.B. 42</string>
+    <string name="user_data_gender_title">Mit welchem Geschlecht identifizieren Sie sich?</string>
+    <string name="user_data_gender_female">weiblich</string>
+    <string name="user_data_gender_male">männlich</string>
+    <string name="user_data_gender_diverse">divers</string>
+    <string name="user_data_gender_not_specified">Keine Angabe.</string>
+    <string name="user_data_technical_experience_title">Wie würden Sie Ihre Erfahrung mit Technik einschätzen?</string>
+    <string name="user_data_technical_experience_explanation">Hierbei ist speziell Ihre Erfahrung und Fertigkeit mit mobilen Geräten wie Smartphones oder Tablets gemeint.</string>
+    <string name="user_data_technical_experience_1">1 - ich nutze mein Handy seltener</string>
+    <string name="user_data_technical_experience_2">2 - ich nutze mein Handy einige Male im Monat</string>
+    <string name="user_data_technical_experience_3">3 - ich nutze mein Handy einige Male in der Woche</string>
+    <string name="user_data_technical_experience_4">4 - ich nutze mein Handy täglich</string>
+    <string name="user_data_technical_experience_5">5 - ich nutze mein Handy täglich mehrfach</string>
+    <string name="user_data_technical_experience_not_specified">Keine Angabe.</string>
+    <string name="user_data_confirm">Studie starten!</string>
+    <string name="user_data_no_age_error">Bitte geben Sie Ihr Alter ein oder lassen Sie das Feld leer, wenn Sie sich dazu nicht äußern möchten.</string>
+
+    <!-- Finished Fragment Strings -->
+    <string name="finished_label">Danke!</string>
+    <string name="finished_title">Vielen Dank!</string>
+    <string name="finished_explanation">Die Studie ist abgeschlossen und Ihre Studienergebnisse wurden erfolgreich gespeichert.</string>
+    <string name="finished_back_to_welcome">Zurück zur Willkommen-Seite</string>
 </resources>

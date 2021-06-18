@@ -8,6 +8,7 @@ import de.tuchemnitz.armadillogin.R
 
 enum class FragmentStatus {
     WELCOME,
+    USER_DATA,
     REGISTER_LOGIN,
     REGISTER1,
     REGISTER2,
@@ -18,6 +19,7 @@ enum class FragmentStatus {
     LOGIN,
     LOGIN_KEY,
     USER_OVERVIEW,
+    FINISHED,
     DEFAULT,
 }
 

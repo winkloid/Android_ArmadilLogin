@@ -48,10 +48,11 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/register_textinput_username"
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/register_input_username"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textview_register_explanation"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_explanation">
 
@@ -59,23 +60,10 @@
                     android:id="@+id/register_input_username_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="text"
                     android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                    app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                    android:inputType="text" />
+                    app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
             </com.google.android.material.textfield.TextInputLayout>
-<!--
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/register_switch_save_username"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:checked="true"
-                android:text="@string/register_switch_save_username"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/register_textinput_username" />
-                -->
 
             <Button
                 android:layout_width="wrap_content"
