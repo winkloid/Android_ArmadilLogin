@@ -53,9 +53,9 @@
                 android:paddingTop="20dp"
                 android:text="@string/register_firstname"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
-                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="@id/textview_register_explanation"
-                app:layout_constraintTop_toBottomOf="@id/textview_register_explanation" />
+                app:layout_constraintTop_toBottomOf="@id/textview_register_explanation"
+                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/register_textinput_firstname"
@@ -69,9 +69,9 @@
                     android:id="@+id/register_input_firstname_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="text"
                     android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                    app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                    android:inputType="text" />
+                    app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -81,9 +81,9 @@
                 android:paddingTop="20dp"
                 android:text="@string/register_lastname"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
-                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="@+id/register_textinput_firstname"
-                app:layout_constraintTop_toBottomOf="@+id/register_textinput_firstname" />
+                app:layout_constraintTop_toBottomOf="@+id/register_textinput_firstname"
+                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/register_textinput_lastname"
@@ -109,9 +109,9 @@
                 android:paddingTop="20dp"
                 android:text="@string/register_email"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
-                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="@+id/register_textinput_lastname"
-                app:layout_constraintTop_toBottomOf="@+id/register_textinput_lastname" />
+                app:layout_constraintTop_toBottomOf="@+id/register_textinput_lastname"
+                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/register_textinput_email"

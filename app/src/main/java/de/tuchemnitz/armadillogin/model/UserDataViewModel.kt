@@ -90,14 +90,21 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     fun sendUsername() {
         repository.username(username.value!!, _sendingUsername, _usernameBeforePassword)
     }
+
     fun sendPassword() {
-        repository.password(password.value!!, _sendingPassword, _usernameBeforePassword, _passwordBeforeNextTask)
+        repository.password(
+            password.value!!,
+            _sendingPassword,
+            _usernameBeforePassword,
+            _passwordBeforeNextTask
+        )
     }
 
     // used by register key fragment
-    fun registerRequest() : LiveData<PendingIntent?> {
+    fun registerRequest(): LiveData<PendingIntent?> {
         return repository.registerRequest(_registeringKey)
     }
+
     fun registerResponse(intentData: Intent) {
         repository.registerResponse(intentData, _registeringKey)
     }
@@ -106,6 +113,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
     fun signInRequest(): LiveData<PendingIntent?> {
         return repository.signinRequest(_signInKey)
     }
+
     fun signInResponse(intentData: Intent) {
         repository.signinResponse(intentData, _signInKey, _signInReady)
     }
@@ -120,7 +128,7 @@ class UserDataViewModel(application: Application) : AndroidViewModel(application
         _email.value = ""
     }
 
-    //used by MainActivity toprevent multiple users being in signingIn state
+    //used by MainActivity to prevent multiple users being in signingIn state
     fun signOut() {
         repository.signOut()
     }

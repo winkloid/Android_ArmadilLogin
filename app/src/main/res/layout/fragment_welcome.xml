@@ -5,6 +5,7 @@
     tools:context=".WelcomeFragment">
 
     <data>
+
         <variable
             name="welcomeFragment"
             type="de.tuchemnitz.armadillogin.ui.welcome.WelcomeFragment" />

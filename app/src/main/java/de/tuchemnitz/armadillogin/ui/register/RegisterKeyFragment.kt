@@ -37,8 +37,8 @@ class RegisterKeyFragment : Fragment() {
     private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterKeyBinding.inflate(inflater, container, false)
         binding = fragmentBinding
@@ -64,13 +64,13 @@ class RegisterKeyFragment : Fragment() {
     fun sendRegisterRequest() {
         userViewModel.registerRequest().observeOnce(requireActivity()) { pendingIntent ->
             startIntentSenderForResult(
-                    pendingIntent.getIntentSender(),
-                    FIDO2_REGISTER_REQUEST_CODE,
-                    null,
-                    0,
-                    0,
-                    0,
-                    null
+                pendingIntent.getIntentSender(),
+                FIDO2_REGISTER_REQUEST_CODE,
+                null,
+                0,
+                0,
+                0,
+                null
             )
         }
     }
@@ -90,14 +90,18 @@ class RegisterKeyFragment : Fragment() {
                     findNavController().navigate(R.id.action_navigation_register_key_to_navigation_register_error)
                 }
                 resultCode != Activity.RESULT_OK -> {
-                    Toast.makeText(requireContext(), R.string.register_key_cancelled, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        R.string.register_key_cancelled,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 data != null -> {
                     userViewModel.registerResponse(data)
 
                     // inserted by winkloid - navigate to RegisterFinishedFragment after data transmission
                     userViewModel.registeringKey.observe(viewLifecycleOwner) { registeringKey ->
-                        if(!registeringKey) {
+                        if (!registeringKey) {
                             findNavController().navigate(R.id.action_navigation_register_key_to_navigation_register_finished)
                         }
                     }

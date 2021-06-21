@@ -5,6 +5,7 @@
     tools:context=".ui.welcome.UserDataFragment">
 
     <data>
+
         <variable
             name="userDataFragment"
             type="de.tuchemnitz.armadillogin.ui.welcome.UserDataFragment" />
@@ -127,39 +128,41 @@
                             android:id="@+id/radiobutton_user_data_gender_female"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_gender_female"
                             android:checked="@{studyUserModel.gender.equals(1)}"
                             android:onClick="@{() -> studyUserModel.setGender(1)}"
+                            android:text="@string/user_data_gender_female"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_male"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_gender_male"
                             android:checked="@{studyUserModel.gender.equals(2)}"
                             android:onClick="@{() -> studyUserModel.setGender(2)}"
+                            android:text="@string/user_data_gender_male"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_diverse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_gender_diverse"
                             android:checked="@{studyUserModel.gender.equals(3)}"
                             android:onClick="@{() -> studyUserModel.setGender(3)}"
+                            android:text="@string/user_data_gender_diverse"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_not_specified"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_gender_not_specified"
                             android:checked="@{studyUserModel.gender.equals(0)}"
                             android:onClick="@{() -> studyUserModel.setGender(0)}"
+                            android:text="@string/user_data_gender_not_specified"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
                     </RadioGroup>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -196,8 +199,7 @@
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                         app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textview_user_data_technical_experience_title"
-                        />
+                        app:layout_constraintTop_toBottomOf="@id/textview_user_data_technical_experience_title" />
 
                     <RadioGroup
                         android:id="@+id/radiogroup_user_data_technical_experience"
@@ -211,57 +213,61 @@
                             android:id="@+id/radiobutton_user_data_technical_experience_1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_technical_experience_1"
                             android:checked="@{studyUserModel.technicalExperience.equals(1)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperience(1)}"
+                            android:text="@string/user_data_technical_experience_1"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_technical_experience_2"
                             android:checked="@{studyUserModel.technicalExperience.equals(2)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperience(2)}"
+                            android:text="@string/user_data_technical_experience_2"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_technical_experience_3"
                             android:checked="@{studyUserModel.technicalExperience.equals(3)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperience(3)}"
+                            android:text="@string/user_data_technical_experience_3"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_technical_experience_4"
                             android:checked="@{studyUserModel.technicalExperience.equals(4)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperience(4)}"
+                            android:text="@string/user_data_technical_experience_4"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_technical_experience_5"
                             android:checked="@{studyUserModel.technicalExperience.equals(5)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperience(5)}"
+                            android:text="@string/user_data_technical_experience_5"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_not_specified"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_data_technical_experience_not_specified"
                             android:checked="@{studyUserModel.technicalExperience.equals(0)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperience(0)}"
+                            android:text="@string/user_data_technical_experience_not_specified"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
                     </RadioGroup>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

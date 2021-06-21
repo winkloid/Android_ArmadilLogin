@@ -33,10 +33,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical"
-            app:layoutManager="LinearLayoutManager"
-            app:textContent="@{helpModel.loadHelpData(viewModel.status)}"
-            app:viewContext="@{helpFragment.getHelpContext()}"
             app:armadilloViewModel="@{armadilloViewModel}"
-            app:lifecycleOwner="@{helpFragment.getLifecycleOwner()}"/>
+            app:layoutManager="LinearLayoutManager"
+            app:lifecycleOwner="@{helpFragment.getLifecycleOwner()}"
+            app:textContent="@{helpModel.loadHelpData(viewModel.status)}"
+            app:viewContext="@{helpFragment.getHelpContext()}" />
     </FrameLayout>
 </layout>

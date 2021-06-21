@@ -26,8 +26,8 @@ class RegisterUserNameFragment : Fragment() {
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterUserNameBinding.inflate(inflater, container, false)
         binding = fragmentBinding
@@ -37,7 +37,7 @@ class RegisterUserNameFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER2)
-        if(!userViewModel.username.value.equals("")) {
+        if (!userViewModel.username.value.equals("")) {
             binding?.registerInputUsernameEditText?.setText(userViewModel.username.value.toString())
         }
     }
@@ -53,7 +53,7 @@ class RegisterUserNameFragment : Fragment() {
 
     fun goToNextView() {
         val valuesCorrect = checkValues()
-        if(valuesCorrect) {
+        if (valuesCorrect) {
             findNavController().navigate(R.id.action_navigation_register2_to_navigation_register_summary)
         }
     }
@@ -64,10 +64,10 @@ class RegisterUserNameFragment : Fragment() {
 
         // check whether username input field is blank or null and whether it is alphanumeric
         val usernameNullOrBlank = username.isNullOrBlank()
-        if(!usernameNullOrBlank && isAlphaNumeric(username)) {
-                binding?.registerInputUsernameEditText?.error = null
-                userViewModel.setUsername(username)
-                return true
+        if (!usernameNullOrBlank && isAlphaNumeric(username)) {
+            binding?.registerInputUsernameEditText?.error = null
+            userViewModel.setUsername(username)
+            return true
         } else {
             if (usernameNullOrBlank) {
                 binding?.registerInputUsernameEditText?.error =
@@ -85,7 +85,7 @@ class RegisterUserNameFragment : Fragment() {
      * @return true if [line] is alphanumeric and false if [line] is not alphanumeric.
      */
     private fun isAlphaNumeric(line: String): Boolean {
-        if(line.isNullOrBlank()) {
+        if (line.isNullOrBlank()) {
             return false
         } else {
             for (char in line) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".RegisterFinishedFragment">
 
     <data>
+
         <variable
             name="finishedFragment"
             type="de.tuchemnitz.armadillogin.ui.finished.FinishedFragment" />
@@ -58,9 +58,9 @@
                 android:id="@+id/button_finished"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/finished_back_to_welcome"
                 android:layout_marginTop="16dp"
                 android:onClick="@{() -> finishedFragment.backToWelcome()}"
+                android:text="@string/finished_back_to_welcome"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageview_finished" />

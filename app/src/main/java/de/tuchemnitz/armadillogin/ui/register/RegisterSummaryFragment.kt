@@ -28,8 +28,8 @@ class RegisterSummaryFragment : Fragment() {
     private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterSummaryBinding.inflate(inflater, container, false)
         binding = fragmentBinding
@@ -56,15 +56,19 @@ class RegisterSummaryFragment : Fragment() {
     }
 
     fun goToNextFragment() {
-        Toast.makeText(activity, getString(R.string.register_summary_sending_username), Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            activity,
+            getString(R.string.register_summary_sending_username),
+            Toast.LENGTH_SHORT
+        ).show()
 
         // wait for username and password to be sent and then go to the next fragment
         userViewModel.sendUsername()
         userViewModel.usernameBeforePassword.observe(viewLifecycleOwner) { usernameBeforePassword ->
-            if(usernameBeforePassword) {
+            if (usernameBeforePassword) {
                 userViewModel.sendPassword()
                 userViewModel.passwordBeforeNextTask.observe(viewLifecycleOwner) { passwordBeforeNextTask ->
-                    if(passwordBeforeNextTask) {
+                    if (passwordBeforeNextTask) {
                         findNavController().navigate(R.id.action_navigation_register_summary_to_navigation_register_key)
                         userViewModel.setPasswordBeforeNextTask()
                     }

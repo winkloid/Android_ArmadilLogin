@@ -48,8 +48,8 @@ class HelpDataXmlParser {
 
         // continue if opening resources tag has not been reached yet
         // if parser finds a helpItem tag: process its contents and add it to helpItems list
-        while (parser.next() !=XmlPullParser.END_TAG) {
-            if(parser.eventType != XmlPullParser.START_TAG) {
+        while (parser.next() != XmlPullParser.END_TAG) {
+            if (parser.eventType != XmlPullParser.START_TAG) {
                 continue
             }
             if (parser.name == "helpitem") {

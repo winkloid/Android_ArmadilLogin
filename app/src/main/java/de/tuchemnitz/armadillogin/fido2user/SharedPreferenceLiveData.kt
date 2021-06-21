@@ -24,10 +24,10 @@ fun SharedPreferences.liveStringSet(key: String, defaultValue: Set<String>): Liv
 }
 
 internal class SharedPreferenceLiveData<T>(
-        private val prefs: SharedPreferences,
-        private val key: String,
-        private val defaultValue: T,
-        private val getter: (SharedPreferences).(String, T) -> T?
+    private val prefs: SharedPreferences,
+    private val key: String,
+    private val defaultValue: T,
+    private val getter: (SharedPreferences).(String, T) -> T?
 ) : LiveData<T>() {
 
     private val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->

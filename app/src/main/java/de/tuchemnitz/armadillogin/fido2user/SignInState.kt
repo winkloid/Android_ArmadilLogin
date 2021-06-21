@@ -31,20 +31,20 @@ sealed class SignInState {
      * password or FIDO2.
      */
     data class SigningIn(
-            val username: String
+        val username: String
     ) : SignInState()
 
     /**
      * The user sign-in failed.
      */
     data class SignInError(
-            val error: String
+        val error: String
     ) : SignInState()
 
     /**
      * The user is signed in.
      */
     data class SignedIn(
-            val username: String
+        val username: String
     ) : SignInState()
 }

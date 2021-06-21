@@ -5,6 +5,7 @@
     tools:context=".RegisterLoginFragment">
 
     <data>
+
         <variable
             name="registerLoginFragment"
             type="de.tuchemnitz.armadillogin.ui.registerlogin.RegisterLoginFragment" />

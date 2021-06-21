@@ -62,7 +62,7 @@ class HelpItemAdapter(
         }
 
         armadilloViewModel.dyslexicFont.observe(lifecycleOwner) { dyslexicEnabled ->
-            if(dyslexicEnabled) {
+            if (dyslexicEnabled) {
                 holder.headlineView.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline4)
                 holder.textView.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Body1)
             } else {

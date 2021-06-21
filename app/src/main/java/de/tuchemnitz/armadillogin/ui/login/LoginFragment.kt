@@ -27,8 +27,8 @@ class LoginFragment : Fragment() {
     private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentLoginBinding.inflate(inflater, container, false)
         binding = fragmentBinding
@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
      */
     fun goToNextView() {
         val valuesCorrect = checkValues()
-        if(valuesCorrect) {
+        if (valuesCorrect) {
             sendUserName()
         }
     }
@@ -70,7 +70,7 @@ class LoginFragment : Fragment() {
         val username = binding?.loginInputUsernameEditText?.text.toString()
         Log.d("UNAME", "$username")
 
-        if(!username.isNullOrBlank()) {
+        if (!username.isNullOrBlank()) {
             binding?.loginInputUsernameEditText?.error = null
             userViewModel.setUsername(username)
             return true
@@ -86,12 +86,16 @@ class LoginFragment : Fragment() {
      * Calls [userViewModel] method to reset the bool that ensures that the username() method in AuthRepository is always executed before password() method is executed when user registers
      */
     private fun sendUserName() {
-        Toast.makeText(activity, getString(R.string.register_summary_sending_username), Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            activity,
+            getString(R.string.register_summary_sending_username),
+            Toast.LENGTH_SHORT
+        ).show()
 
         // wait for username and password to be sent and then go to the next fragment
         userViewModel.sendUsername()
         userViewModel.usernameBeforePassword.observe(viewLifecycleOwner) { usernameBeforeNextTask ->
-            if(usernameBeforeNextTask) {
+            if (usernameBeforeNextTask) {
                 findNavController().navigate(R.id.action_navigation_login1_to_navigation_login_key)
                 userViewModel.setUsernameBeforePassword()
             }

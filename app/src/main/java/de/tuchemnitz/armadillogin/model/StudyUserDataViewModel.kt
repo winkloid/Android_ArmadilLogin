@@ -172,30 +172,3 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
         _sendingStudyData.value = false
     }
 }
-
-/*
- fun sendData() {
-
-     val studyDataBase = Firebase.firestore
-     val user = hashMapOf(
-         "age" to age.value,
-         "gender" to gender.value,
-         "technicalExperience" to technicalExperience.value,
-         "timeNeeded" to userTimeInSeconds,
-         "timeNeededNano" to userTime
-     )
-
-     studyDataBase.collection("userData")
-         .add(user)
-         .addOnSuccessListener { documentAddress ->
-             Log.d(LOG_TAG, "DocumentSnapshot added with ID: ${documentAddress.id}")
-             Toast.makeText(getApplication(), getApplication<Application>().getString(R.string.user_overview_data_sent_success), Toast.LENGTH_SHORT).show()
-             this._sentStudyData.value = true
-         }
-         .addOnFailureListener { error ->
-             Log.w(LOG_TAG, "Error adding document", error)
-             Toast.makeText(getApplication(), getApplication<Application>().getString(R.string.user_overview_data_sent_error), Toast.LENGTH_SHORT).show()
-         }
-     _sendingStudyData.value = false
- }
- */

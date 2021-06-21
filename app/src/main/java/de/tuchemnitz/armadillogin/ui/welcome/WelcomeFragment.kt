@@ -25,8 +25,10 @@ class WelcomeFragment : Fragment() {
     private var binding: FragmentWelcomeBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val fragmentBinding = FragmentWelcomeBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -43,9 +45,10 @@ class WelcomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("D","Resuming")
+        Log.d("D", "Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
     }
+
     fun goToNextView() {
         findNavController().navigate(R.id.action_navigation_welcome_to_navigation_user_data)
     }
