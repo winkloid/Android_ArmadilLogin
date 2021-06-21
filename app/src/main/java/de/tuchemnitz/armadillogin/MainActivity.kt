@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity() {
          * Sets theme colors depending on [sharedViewModel.colorMode]. Default is light mode.
          */
         sharedViewModel.colorMode.observe(this@MainActivity) { colorMode ->
-            if(colorMode.equals(0)) {
+            if (colorMode.equals(0)) {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
-            } else if(colorMode.equals(1)) {
+            } else if (colorMode.equals(1)) {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
             } else {
                 AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_FOLLOW_SYSTEM)
@@ -67,14 +67,18 @@ class MainActivity : AppCompatActivity() {
     private fun setupBottomNavigationBar() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.nav_view)
 
-        val navGraphIds = listOf(R.navigation.login_register_navigation, R.navigation.help_navigation, R.navigation.settings_navigation)
+        val navGraphIds = listOf(
+            R.navigation.login_register_navigation,
+            R.navigation.help_navigation,
+            R.navigation.settings_navigation
+        )
 
         // Setup the bottom navigation view with a list of navigation graphs
         val controller = bottomNavigationView.setupWithNavController(
-                navGraphIds = navGraphIds,
-                fragmentManager = supportFragmentManager,
-                containerId = R.id.nav_host_fragment,
-                intent = intent
+            navGraphIds = navGraphIds,
+            fragmentManager = supportFragmentManager,
+            containerId = R.id.nav_host_fragment,
+            intent = intent
         )
 
         // Whenever the selected controller changes, setup the action bar.
@@ -93,7 +97,7 @@ class MainActivity : AppCompatActivity() {
         val currentFragmentId = currentNavController?.value?.currentDestination?.id
         Log.d("CURRENTFRAGMENTTEST", "${currentFragmentId == R.id.navigation_register_key}")
 
-        if(currentFragmentId == R.id.navigation_register_key){
+        if (currentFragmentId == R.id.navigation_register_key) {
             userViewModel.signOut()
             Log.d("SIGN_OUT", "User has been signed out")
         }

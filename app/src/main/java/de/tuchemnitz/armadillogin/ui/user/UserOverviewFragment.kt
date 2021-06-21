@@ -94,7 +94,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     fun finishStudy() {
         studyUserViewModel.sendData()
         studyUserViewModel.sentStudyData.observe(viewLifecycleOwner) { sentStudyData ->
-            if(sentStudyData) {
+            if (sentStudyData) {
                 findNavController().navigate(R.id.action_navigation_user_overview_to_navigation_finished)
             }
         }

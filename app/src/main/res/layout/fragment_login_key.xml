@@ -6,6 +6,7 @@
     tools:context=".LoginKeyFragment">
 
     <data>
+
         <variable
             name="loginKeyFragment"
             type="de.tuchemnitz.armadillogin.ui.login.LoginKeyFragment" />
@@ -54,9 +55,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/login_key_confirm"
-                android:onClick="@{() -> loginKeyFragment.sendLoginRequest()}"
                 android:enabled="@{safeUnbox(!userDataModel.signInKey)}"
+                android:onClick="@{() -> loginKeyFragment.sendLoginRequest()}"
+                android:text="@string/login_key_confirm"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_login_key_explanation" />

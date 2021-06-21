@@ -95,15 +95,15 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp">
 
-                <TextView
-                    android:id="@+id/textview_settings_color_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings_color_title"
-                    android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
-                    app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/textview_settings_color_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_color_title"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <RadioGroup
                         android:id="@+id/radiogroup_settings_color"
@@ -117,30 +117,31 @@
                             android:id="@+id/radiobutton_settings_light"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/settings_color_light"
                             android:checked="@{armadilloViewModel.colorMode.equals(0)}"
                             android:onClick="@{() -> armadilloViewModel.setColorMode(0)}"
+                            android:text="@string/settings_color_light"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_settings_dark"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/settings_color_dark"
                             android:checked="@{armadilloViewModel.colorMode.equals(1)}"
                             android:onClick="@{() -> armadilloViewModel.setColorMode(1)}"
+                            android:text="@string/settings_color_dark"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+
                         <RadioButton
                             android:id="@+id/radiobutton_settings_system"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/settings_color_system"
                             android:checked="@{armadilloViewModel.colorMode.equals(2)}"
                             android:onClick="@{() -> armadilloViewModel.setColorMode(2)}"
+                            android:text="@string/settings_color_system"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"/>
+                            app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
                     </RadioGroup>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

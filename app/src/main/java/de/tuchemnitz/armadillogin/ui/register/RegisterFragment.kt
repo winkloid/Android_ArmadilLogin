@@ -25,8 +25,8 @@ class RegisterFragment : Fragment() {
     private val userViewModel: UserDataViewModel by activityViewModels()
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val fragmentBinding = FragmentRegisterBinding.inflate(inflater, container, false)
         binding = fragmentBinding
@@ -48,13 +48,13 @@ class RegisterFragment : Fragment() {
 
         // check whether there already are user data different than default data in userViewModel
         // if so, the corresponding EditText fields are filled in
-        if(!userViewModel.firstname.value.equals("")) {
+        if (!userViewModel.firstname.value.equals("")) {
             binding?.registerInputFirstnameEditText?.setText(userViewModel.firstname.value.toString())
         }
-        if(!userViewModel.lastname.value.equals("")) {
+        if (!userViewModel.lastname.value.equals("")) {
             binding?.registerInputLastnameEditText?.setText(userViewModel.lastname.value.toString())
         }
-        if(!userViewModel.email.value.equals("")) {
+        if (!userViewModel.email.value.equals("")) {
             binding?.registerInputEmailEditText?.setText(userViewModel.email.value.toString())
         }
     }
@@ -62,7 +62,7 @@ class RegisterFragment : Fragment() {
     fun goToNextView() {
         // before going t next fragment, check all values provided by user
         val valuesCorrect = checkValues()
-        if(valuesCorrect) {
+        if (valuesCorrect) {
             findNavController().navigate(R.id.action_navigation_register1_to_navigation_register2)
         }
     }
@@ -94,8 +94,7 @@ class RegisterFragment : Fragment() {
             binding?.registerInputEmailEditText?.error = null
             userViewModel.setData(firstname, lastname, email)
             return true
-        }
-        else {
+        } else {
             showErrors(fnOk, lnOk, emailOk)
             return false
         }

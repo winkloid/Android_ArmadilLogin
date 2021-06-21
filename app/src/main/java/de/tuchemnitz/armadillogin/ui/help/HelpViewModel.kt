@@ -38,21 +38,33 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
 
                 // check if xmlTitleResourceId is null - if not, convert string to resource id; if it is null, assign default value to stringResourceId
                 if (!xmlStringResourceId.isNullOrBlank()) {
-                    titleResourceId = appContext.resources.getIdentifier(xmlTitleResourceId, "string", appContext.packageName)
+                    titleResourceId = appContext.resources.getIdentifier(
+                        xmlTitleResourceId,
+                        "string",
+                        appContext.packageName
+                    )
                 } else {
                     titleResourceId = R.string.help_not_found
                 }
 
                 // check if xmlStringResourceId is null - if not, convert string to resource id; if it is null, assign default value to stringResourceId
                 if (!xmlStringResourceId.isNullOrBlank()) {
-                    stringResourceId = appContext.resources.getIdentifier(xmlStringResourceId, "string", appContext.packageName)
+                    stringResourceId = appContext.resources.getIdentifier(
+                        xmlStringResourceId,
+                        "string",
+                        appContext.packageName
+                    )
                 } else {
                     stringResourceId = R.string.help_not_found
                 }
 
                 // check if xmlImageResourceId is null - if not, convert string to resource id; if it is null, assign 0 to imageResourceId
                 if (!xmlImageResourceId.isNullOrBlank()) {
-                    imageResourceId = appContext.resources.getIdentifier(xmlImageResourceId, "drawable", appContext.packageName)
+                    imageResourceId = appContext.resources.getIdentifier(
+                        xmlImageResourceId,
+                        "drawable",
+                        appContext.packageName
+                    )
                 } else {
                     imageResourceId = null
                 }

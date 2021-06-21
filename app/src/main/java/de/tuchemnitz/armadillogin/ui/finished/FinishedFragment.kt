@@ -24,8 +24,10 @@ class FinishedFragment : Fragment() {
     private var binding: FragmentFinishedBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val fragmentBinding = FragmentFinishedBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -42,7 +44,7 @@ class FinishedFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("D","Resuming")
+        Log.d("D", "Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.FINISHED)
     }
 

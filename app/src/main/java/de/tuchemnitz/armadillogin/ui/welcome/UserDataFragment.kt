@@ -26,8 +26,10 @@ class UserDataFragment : Fragment() {
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val studyUserViewModel: StudyUserDataViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val fragmentBinding = FragmentUserDataBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -45,9 +47,10 @@ class UserDataFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Log.d("D","Resuming")
+        Log.d("D", "Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_DATA)
     }
+
     fun goToNextView() {
         val valuesCorrect = checkValues()
         if (valuesCorrect) {
@@ -58,16 +61,17 @@ class UserDataFragment : Fragment() {
 
     private fun checkValues(): Boolean {
         val ageInput = binding?.userDataInputAgeEditText?.text
-        if(ageInput.isNullOrBlank()) {
+        if (ageInput.isNullOrBlank()) {
             studyUserViewModel.setAge(null)
             return true
         } else {
             val age = ageInput.toString().toIntOrNull()
-            if(age != null) {
+            if (age != null) {
                 studyUserViewModel.setAge(age)
                 return true
             } else {
-                binding?.userDataInputAgeEditText?.error = getString(R.string.user_data_no_age_error)
+                binding?.userDataInputAgeEditText?.error =
+                    getString(R.string.user_data_no_age_error)
                 return false
             }
         }

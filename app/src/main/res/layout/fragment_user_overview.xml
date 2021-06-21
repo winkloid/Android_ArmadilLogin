@@ -6,6 +6,7 @@
     tools:context=".UserOverviewFragment">
 
     <data>
+
         <variable
             name="userOverviewFragment"
             type="de.tuchemnitz.armadillogin.ui.user.UserOverviewFragment" />
@@ -21,6 +22,7 @@
         <variable
             name="armadilloViewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
+
         <variable
             name="studyUserModel"
             type="de.tuchemnitz.armadillogin.model.StudyUserDataViewModel" />
@@ -45,7 +47,7 @@
                 app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Willkommen winkloid!"/>
+                tools:text="Willkommen winkloid!" />
 
             <TextView
                 android:id="@+id/textview_user_overview_explanation"
@@ -75,22 +77,22 @@
                 android:id="@+id/textview_user_overview_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{studyUserModel.userTimeInSeconds + ` Sekunden`}"
                 android:layout_marginTop="8dp"
+                android:text="@{studyUserModel.userTimeInSeconds + ` Sekunden`}"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time_title"
-                tools:text="benötigte Zeit"/>
+                tools:text="benötigte Zeit" />
 
             <Button
                 android:id="@+id/button_user_overview_finish_study"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/user_overview_finish_study"
                 android:enabled="@{safeUnbox(!studyUserModel.sendingStudyData &amp;&amp; !studyUserModel.sentStudyData)}"
                 android:onClick="@{() -> userOverviewFragment.finishStudy()}"
+                android:text="@string/user_overview_finish_study"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time" />
 
@@ -163,5 +165,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>>
+    </ScrollView>
+    >
 </layout>

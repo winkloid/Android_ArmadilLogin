@@ -80,7 +80,7 @@ class LoginKeyFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         Log.d(LOG_TAG, "requestCode: $requestCode")
 
-        if(requestCode == FIDO2_SIGNIN_REQUEST_CODE) {
+        if (requestCode == FIDO2_SIGNIN_REQUEST_CODE) {
             val errorExtra = data?.getByteArrayExtra(Fido.FIDO2_KEY_ERROR_EXTRA)
 
             when {
@@ -93,10 +93,14 @@ class LoginKeyFragment : Fragment() {
                     }
                 }
                 (resultCode != Activity.RESULT_OK) -> {
-                    Toast.makeText(requireContext(), R.string.signin_key_cancelled, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        R.string.signin_key_cancelled,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 else -> {
-                    if(data!= null) {
+                    if (data != null) {
                         userViewModel.signInResponse(data)
                         Log.d(LOG_TAG, "$data")
 

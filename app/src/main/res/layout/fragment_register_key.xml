@@ -6,12 +6,15 @@
     tools:context=".RegisterKeyFragment">
 
     <data>
+
         <variable
             name="registerKeyFragment"
             type="de.tuchemnitz.armadillogin.ui.register.RegisterKeyFragment" />
+
         <variable
             name="userDataModel"
             type="de.tuchemnitz.armadillogin.model.UserDataViewModel" />
+
         <variable
             name="armadilloViewModel"
             type="de.tuchemnitz.armadillogin.model.ArmadilloViewModel" />
@@ -52,8 +55,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/register_key_confirm"
                 android:onClick="@{() -> registerKeyFragment.sendRegisterRequest()}"
+                android:text="@string/register_key_confirm"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_key_explanation" />

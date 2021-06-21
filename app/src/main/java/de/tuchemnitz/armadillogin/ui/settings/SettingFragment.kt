@@ -23,8 +23,10 @@ class SettingFragment : Fragment() {
     private var binding: FragmentSettingBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val fragmentBinding = FragmentSettingBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root

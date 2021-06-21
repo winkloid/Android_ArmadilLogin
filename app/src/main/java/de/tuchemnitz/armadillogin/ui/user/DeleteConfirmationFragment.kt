@@ -37,7 +37,12 @@ class DeleteConfirmationFragment : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val credentialId = arguments?.getString(ARG_CREDENTIAL_ID) ?: throw RuntimeException()
         return AlertDialog.Builder(requireContext())
-            .setMessage(getString(R.string.user_overview_delete_credential_confirmation, credentialId))
+            .setMessage(
+                getString(
+                    R.string.user_overview_delete_credential_confirmation,
+                    credentialId
+                )
+            )
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 (parentFragment as Listener).onDeleteConfirmed(credentialId)
                 dismiss()

@@ -65,13 +65,12 @@ class CredentialAdapter(
     override fun onBindViewHolder(holder: CredentialViewHolder, position: Int) {
         holder.binding.credential = getItem(position)
         armadilloViewModel.dyslexicFont.observe(lifecycleOwner) { dyslexicEnabled ->
-            if(dyslexicEnabled) {
+            if (dyslexicEnabled) {
                 holder.binding.itemCredentialIdTitle.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline6)
                 holder.binding.itemCredentialPublickeyTitle.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Headline6)
                 holder.binding.itemCredentialId.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Caption)
                 holder.binding.itemCredentialPublickey.setTextAppearance(R.style.TextAppearance_DyslexicTypographyStyles_Caption)
-            }
-            else {
+            } else {
                 holder.binding.itemCredentialIdTitle.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline6)
                 holder.binding.itemCredentialPublickeyTitle.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Headline6)
                 holder.binding.itemCredentialId.setTextAppearance(R.style.TextAppearance_StandardTypographyStyles_Caption)

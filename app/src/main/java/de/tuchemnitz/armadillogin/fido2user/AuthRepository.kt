@@ -121,7 +121,11 @@ class AuthRepository(
      * Sends the username to the server. If it succeeds, the sign-in state will proceed to
      * [SignInState.SigningIn].
      */
-    fun username(username: String, sending: MutableLiveData<Boolean>, usernameBeforePassword: MutableLiveData<Boolean>) {
+    fun username(
+        username: String,
+        sending: MutableLiveData<Boolean>,
+        usernameBeforePassword: MutableLiveData<Boolean>
+    ) {
         executor.execute {
             sending.postValue(true)
             try {
@@ -148,7 +152,12 @@ class AuthRepository(
      *
      * @param processing The value is set to `true` while the API call is ongoing.
      */
-    fun password(password: String, processing: MutableLiveData<Boolean>, usernameBeforePassword: MutableLiveData<Boolean>, passwordBeforeNextTask: MutableLiveData<Boolean>) {
+    fun password(
+        password: String,
+        processing: MutableLiveData<Boolean>,
+        usernameBeforePassword: MutableLiveData<Boolean>,
+        passwordBeforeNextTask: MutableLiveData<Boolean>
+    ) {
         executor.execute {
             processing.postValue(true)
             val username = prefs.getString(PREF_USERNAME, null)!!
@@ -350,7 +359,11 @@ class AuthRepository(
      * Finishes to signing in with a FIDO2 credential. This should only be called after a call to
      * [signinRequest] and a local FIDO2 API for key assertion.
      */
-    fun signinResponse(data: Intent, processing: MutableLiveData<Boolean>, signInReady: MutableLiveData<Boolean>) {
+    fun signinResponse(
+        data: Intent,
+        processing: MutableLiveData<Boolean>,
+        signInReady: MutableLiveData<Boolean>
+    ) {
         executor.execute {
             processing.postValue(true)
             try {

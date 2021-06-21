@@ -25,8 +25,10 @@ class HelpFragment : Fragment() {
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val fragmentBinding = FragmentHelpBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -46,7 +48,7 @@ class HelpFragment : Fragment() {
         }
     }
 
-    fun getHelpContext() : FragmentActivity? {
+    fun getHelpContext(): FragmentActivity? {
         return activity
     }
 
