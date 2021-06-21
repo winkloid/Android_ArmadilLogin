@@ -73,24 +73,37 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     }
 
     /**
-     * Represents technical experience of the user.
+     * Represents usage frequency of smartphones by the user.
      * 0 - not specified
-     * 1 - none
-     * 2 - little
-     * 3 - average
-     * 4 - much
-     * 5 - expert level
+     * 1 - I don't have a smartphone
+     * 2 - I use it once a week or less
+     * 3 - I use it a couple times a week
+     * 4 - I use it every day
+     * 5 - I use it multilpe times per day
      */
-    private var _technicalExperience = MutableLiveData<Int>(0)
-    val technicalExperience: LiveData<Int> = _technicalExperience
+    private var _technicalExperienceFrequency = MutableLiveData<Int>(0)
+    val technicalExperienceFrequency: LiveData<Int> = _technicalExperienceFrequency
 
     /**
-     * Sets the gender specified by the user immediately when user selects it from radio group in UserDataFragment.
+     * Sets the usage frequency of technical devices specified by the user immediately when user selects it from radio group in UserDataFragment.
      */
-    fun setTechnicalExperience(technicalExperienceInput: Int) {
-        _technicalExperience.value = technicalExperienceInput
+    fun setTechnicalExperienceFrequency(technicalExperienceInput: Int) {
+        _technicalExperienceFrequency.value = technicalExperienceInput
     }
 
+
+    /**
+     * Represents usage frequency of technical devices of the user.
+     * 0 - not specified
+     * 1 - I don't use apps, and I'm not familiar with typical app user interfaces.
+     * 5 - I use apps for a wide variety of application purposes, know at least most of the settings, and often find my way around new apps on my own without problems
+     */
+    private var _technicalExperienceVariety = MutableLiveData(0)
+    val technicalExperienceVariety: LiveData<Int> = _technicalExperienceVariety
+
+    fun setTechnicalExperienceVariety(technicalExperienceInput: Int) {
+        _technicalExperienceVariety.value = technicalExperienceInput
+    }
     /**
      * Is true while data are being sent to Firestore Database.
      */
@@ -129,7 +142,8 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
             jsonWriter.beginObject()
             jsonWriter.name("age").value(age.value)
             jsonWriter.name("gender").value(gender.value)
-            jsonWriter.name("experience").value(technicalExperience.value)
+            jsonWriter.name("experienceFrequency").value(technicalExperienceFrequency.value)
+            jsonWriter.name("experienceVariety").value(technicalExperienceVariety.value)
             jsonWriter.name("time").value(userTimeInSeconds)
             jsonWriter.name("nanotime").value(userTime)
             jsonWriter.endObject()
