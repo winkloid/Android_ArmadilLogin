@@ -11,6 +11,7 @@ import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterFinishedBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
@@ -22,6 +23,7 @@ class RegisterFinishedFragment : Fragment() {
     private var binding: FragmentRegisterFinishedBinding? = null
     private val userViewModel: UserDataViewModel by activityViewModels()
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
+    private val studyUserDataViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

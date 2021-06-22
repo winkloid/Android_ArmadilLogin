@@ -17,6 +17,7 @@ import de.tuchemnitz.armadillogin.R
 import de.tuchemnitz.armadillogin.databinding.FragmentRegisterKeyBinding
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 import de.tuchemnitz.armadillogin.model.FragmentStatus
+import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 import de.tuchemnitz.armadillogin.ui.observeOnce
 
@@ -35,6 +36,7 @@ class RegisterKeyFragment : Fragment() {
     private var binding: FragmentRegisterKeyBinding? = null
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
     private val userViewModel: UserDataViewModel by activityViewModels()
+    private val studyUserDataViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,6 +64,9 @@ class RegisterKeyFragment : Fragment() {
 
     // sendRegisterRequest and onActivityResult are used as shown in https://github.com/googlecodelabs/fido2-codelab
     fun sendRegisterRequest() {
+        if (studyUserDataViewModel.userRegisterStartTime == null) {
+            studyUserDataViewModel.userRegisterStartTime = System.nanoTime()
+        }
         userViewModel.registerRequest().observeOnce(requireActivity()) { pendingIntent ->
             startIntentSenderForResult(
                 pendingIntent.getIntentSender(),
@@ -99,9 +104,12 @@ class RegisterKeyFragment : Fragment() {
                 data != null -> {
                     userViewModel.registerResponse(data)
 
-                    // inserted by winkloid - navigate to RegisterFinishedFragment after data transmission
+                    // inserted by winkloid - navigate to RegisterFinishedFragment after data transmission and store register finished time
                     userViewModel.registeringKey.observe(viewLifecycleOwner) { registeringKey ->
                         if (!registeringKey) {
+                            if (studyUserDataViewModel.userRegisterFinishedTime == null) {
+                                studyUserDataViewModel.userRegisterFinishedTime = System.nanoTime()
+                            }
                             findNavController().navigate(R.id.action_navigation_register_key_to_navigation_register_finished)
                         }
                     }

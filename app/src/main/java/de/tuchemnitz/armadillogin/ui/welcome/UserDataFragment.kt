@@ -54,7 +54,9 @@ class UserDataFragment : Fragment() {
     fun goToNextView() {
         val valuesCorrect = checkValues()
         if (valuesCorrect) {
-            studyUserViewModel.userStartTime = System.nanoTime()
+            if(studyUserViewModel.userStartTime == null) {
+                studyUserViewModel.userStartTime = System.nanoTime()
+            }
             findNavController().navigate(R.id.action_navigation_user_data_to_navigation_register_login)
         }
     }
