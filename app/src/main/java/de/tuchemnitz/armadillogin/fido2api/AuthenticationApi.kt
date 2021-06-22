@@ -44,9 +44,9 @@ class AuthenticationApi {
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(AddHeaderInterceptor())
-        .readTimeout(30, TimeUnit.SECONDS)
-        .writeTimeout(40, TimeUnit.SECONDS)
-        .connectTimeout(40, TimeUnit.SECONDS)
+        .readTimeout(110, TimeUnit.SECONDS)
+        .writeTimeout(120, TimeUnit.SECONDS)
+        .connectTimeout(120, TimeUnit.SECONDS)
         .build()
 
     /**

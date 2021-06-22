@@ -29,10 +29,10 @@
     <string name="register">Registrierung</string>
     <string name="login">Login</string>
     <string name="simple_string_error">Bitte füllen Sie dieses Feld aus</string>
-    <string name="not_alphanumeric_string_error">"Bitte verwenden Sie nur Buchstaben und Zahlen."</string>
+    <string name="not_alphanumeric_string_error">Bitte verwenden Sie nur Buchstaben und Zahlen.</string>
     <string name="email_string_error">Keine gültige E-Mail-Adresse</string>
     <string name="register_summary_title">Stimmt alles so?</string>
-    <string name="register_summary_explanation">Hier werden Ihnen noch einmal Ihre Eingaben angezeigt. Bitte überprüfen Sie noch einmal, ob alles korrekt ist.</string>
+    <string name="register_summary_explanation">Hier werden Ihnen noch einmal Ihre Eingaben angezeigt. Bitte überprüfen Sie, ob alles korrekt ist.</string>
     <string name="register_summary_name">Ihr Name lautet:</string>
     <string name="register_summary_email">Ihre E-Mail-Adresse lautet:</string>
     <string name="register_summary_username">Ihr neuer Benutzername lautet:</string>
@@ -87,7 +87,7 @@
     <!-- User Data Fragment Strings -->
     <string name="user_data_label">Ihre Angaben</string>
     <string name="user_data_title">Bevor Sie fortfahren...</string>
-    <string name="user_data_explanation">Um wertvolle Erkenntnisse aus der Studie zu gewinnen, ist es hilfreich, die Teilnehmer möglichst genau einschätzen zu können. Daher bitte ich Sie, die nachfolgenden Fragen zu beantworten. Sie haben allerdings die freie Wahl, welche Angaben Sie machen möchten und welche nicht. Möchten Sie sich zu einer Frage nicht äußern, wählen Sie als Antwort entweder "keine Angabe" aus oder lassen Sie das entsprechende Textfeld leer. Alle Angaben werden anonymisiert gespeichert und können daher im Nachhinein nicht mehr mit Ihnen als Person in Verbindung gebracht werden. Während der Studie wird außerdem die Zeit gemessen, die Sie zum Registrieren und Einloggen benötigt haben. Lassen Sie sich davon nicht aus der Ruhe bringen, es geht vorwiegend darum, wie gut sich das Anmeldesystem bedienen lässt.\nVielen Dank!</string>
+    <string name="user_data_explanation">Um wertvolle Erkenntnisse aus der Studie zu gewinnen, ist es hilfreich, die Teilnehmer möglichst genau einschätzen zu können. Daher bitte ich Sie, die nachfolgenden Fragen zu beantworten. Sie haben allerdings die freie Wahl, welche Angaben Sie machen möchten und welche nicht. Möchten Sie sich zu einer Frage nicht äußern, wählen Sie als Antwort entweder \"keine Angabe\" aus oder lassen Sie das entsprechende Textfeld leer. Alle Angaben werden anonymisiert gespeichert und können daher im Nachhinein nicht mehr mit Ihnen als Person in Verbindung gebracht werden. Während der Studie wird außerdem die Zeit gemessen, die Sie zum Registrieren und Einloggen benötigt haben. Lassen Sie sich davon nicht aus der Ruhe bringen, es geht vorwiegend darum, wie gut sich das Anmeldesystem bedienen lässt.\nVielen Dank!</string>
     <string name="user_data_age_title">Wie alt sind Sie?</string>
     <string name="user_data_input_age">Ihr Alter, z.B. 42</string>
     <string name="user_data_gender_title">Mit welchem Geschlecht identifizieren Sie sich?</string>
