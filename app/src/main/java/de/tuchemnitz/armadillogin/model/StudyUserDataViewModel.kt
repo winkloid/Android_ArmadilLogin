@@ -2,6 +2,7 @@ package de.tuchemnitz.armadillogin.model
 
 import android.app.Application
 import android.util.JsonWriter
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -28,18 +29,94 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
         private val JSON = "application/json".toMediaTypeOrNull()
     }
 
-    // private val studyDbApi = StudyDbApi.getInstance()
+    // variables for time measurement feature
+    /**
+     * Stores the system time when "Studie beginnen" button is clicked.
+     */
+    var userStartTime: Long? = null
+    /**
+     * Stores the system time when login process was completed successfully.
+     */
+    var userFinishedTime: Long? = null
 
-    // time measurement feature
-    var userStartTime: Long = 0
-    var userFinishedTime: Long = 0
+    /**
+     * Stores the difference between userFinishedTime and userStartTime.
+     */
     var userTime: Long = 0
+
+    /**
+     * Stores userTime converted from nanoseconds into seconds.
+     */
     var userTimeInSeconds: Double = 0.0
 
+    /**
+     * Stores system time when FIDO2 for Android API Intent for registering key is called.
+     */
+    var userRegisterStartTime: Long? = null
+
+    /**
+     * Stores system time when FIDO2 for Android API Intent for registering key was completed successfully.
+     */
+    var userRegisterFinishedTime: Long? = null
+
+    /**
+     * Stores difference between userRegisterFinishedTime and userRegisterStartTime
+     */
+    var userRegisterTime: Long = 0
+
+    /**
+     * Stores userRegisterTime in seconds.
+     */
+    var userRegisterTimeInSeconds: Double = 0.0
+
+    /**
+     * Stores system time when FIDO2 for Android API Intent for login with key is called.
+     */
+    var userLoginStartTime: Long? = null
+
+    /**
+     * Stores difference between userLoginFinishedTime and userLoginStartTime
+     */
+    var userLoginTime: Long = 0
+
+    /**
+     * Stores userLoginTime in seconds.
+     */
+    var userLoginTimeInSeconds: Double = 0.0
+
+    /**
+     * calulate time differences between finished and start times and convert results into seconds
+     */
     fun calculateUserTime() {
-        userTime = userFinishedTime - userStartTime
-        // round time in seconds to 2 digits after comma
-        userTimeInSeconds = round((userTime / 1000000000.0) * 100) / 100.0
+        Log.d(LOG_TAG, "$userRegisterStartTime")
+        Log.d(LOG_TAG, "$userRegisterFinishedTime")
+        Log.d(LOG_TAG, "$userLoginStartTime")
+        Log.d(LOG_TAG, "$userFinishedTime")
+        // calculate time the user need to complete some tasks
+        if(userFinishedTime != null && userStartTime != null) {
+            userTime = userFinishedTime!! - userStartTime!!
+        }
+
+        // for register and login time there are null values as standard values to make sure that the time is not measured again after a failed login or register attempt
+        if(userRegisterFinishedTime != null && userRegisterStartTime != null) {
+            userRegisterTime = userRegisterFinishedTime!! - userRegisterStartTime!!
+        }
+
+        if(userLoginStartTime != null && userFinishedTime != null) {
+            userLoginTime = userFinishedTime!! - userLoginStartTime!!
+        }
+
+        // convert time from nanoseconds to seconds rounded to 2 digits after comma
+        userTimeInSeconds = convertNanoToSec(userTime)
+        userRegisterTimeInSeconds = convertNanoToSec(userRegisterTime)
+        userLoginTimeInSeconds = convertNanoToSec(userLoginTime)
+    }
+
+    /**
+     * Convert given [time] from nanoseconds to seconds.
+     */
+    private fun convertNanoToSec(time: Long): Double {
+        return round((time / 1000000000.0) * 100) / 100.0
     }
 
     // personal user data for study and statistics
@@ -146,6 +223,8 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
             jsonWriter.name("experienceVariety").value(technicalExperienceVariety.value)
             jsonWriter.name("time").value(userTimeInSeconds)
             jsonWriter.name("nanotime").value(userTime)
+            jsonWriter.name("userRegisterTime").value(userRegisterTimeInSeconds)
+            jsonWriter.name("userLoginTime").value(userLoginTimeInSeconds)
             jsonWriter.endObject()
         }
 

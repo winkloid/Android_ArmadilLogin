@@ -64,6 +64,9 @@ class LoginKeyFragment : Fragment() {
 
     // sendLoginRequest and onActivityResult are used as shown in https://github.com/googlecodelabs/fido2-codelab
     fun sendLoginRequest() {
+        if (studyUserViewModel.userLoginStartTime == null) {
+            studyUserViewModel.userLoginStartTime = System.nanoTime()
+        }
         userViewModel.signInRequest().observeOnce(this) { pendingIntent ->
             startIntentSenderForResult(
                 pendingIntent.getIntentSender(),
@@ -108,7 +111,9 @@ class LoginKeyFragment : Fragment() {
                         // observe whether signInResponse already completed and suceeded and if so, go to next fragment
                         userViewModel.signInReady.observe(viewLifecycleOwner) { signInReady ->
                             if (signInReady) {
-                                studyUserViewModel.userFinishedTime = System.nanoTime()
+                                if(studyUserViewModel.userFinishedTime == null) {
+                                    studyUserViewModel.userFinishedTime = System.nanoTime()
+                                }
                                 studyUserViewModel.calculateUserTime()
                                 findNavController().navigate(R.id.action_navigation_login_key_to_navigation_user_overview)
                                 userViewModel.setSignInKey()
