@@ -14,10 +14,10 @@
     <string name="register_registerbutton">Registrieren</string>
     <string name="register_firstname">Vorname</string>
     <string name="register_lastname">Nachname</string>
-    <string name="register_input_firstname">Vorname</string>
-    <string name="register_input_lastname">Nachname</string>
+    <string name="register_input_firstname_hint">z.B. Max</string>
+    <string name="register_input_lastname_hint">z.B. Mustermann</string>
     <string name="register_email">E-Mail-Adresse</string>
-    <string name="register_input_email">E-Mail-Adresse</string>
+    <string name="register_input_email_hint">z.B. max.mustermann@tu-chemnitz.de</string>
     <string name="register_button_next">Weiter</string>
     <string name="register_username_title">Wie soll Ihr neues Konto heißen?</string>
     <string name="register_username_explanation">Das wird der Benutzername sein, mit dem Sie sich später wieder einloggen können, um in Ihren persönlichen Mitgliederbereich zu gelangen. Merken Sie sich ihn also gut oder schreiben Sie ihn auf.</string>
@@ -83,6 +83,7 @@
     <string name="settings_color_light">Heller Modus</string>
     <string name="settings_color_dark">Dunkler Modus</string>
     <string name="settings_color_system">Farbe an das System anpassen</string>
+    <string name="settings_color_description">Farbe der App anpassen</string>
 
     <!-- User Data Fragment Strings -->
     <string name="user_data_label">Ihre Angaben</string>

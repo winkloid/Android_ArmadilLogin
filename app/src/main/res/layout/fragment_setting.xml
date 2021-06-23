@@ -115,6 +115,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_settings_light"
+                            android:contentDescription="@string/settings_color_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{armadilloViewModel.colorMode.equals(0)}"
@@ -125,6 +126,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_settings_dark"
+                            android:contentDescription="@string/settings_color_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{armadilloViewModel.colorMode.equals(1)}"
@@ -135,6 +137,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_settings_system"
+                            android:contentDescription="@string/settings_color_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{armadilloViewModel.colorMode.equals(2)}"
