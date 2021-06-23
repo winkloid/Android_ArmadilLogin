@@ -62,12 +62,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp">
+                    android:layout_margin="8dp"
+                    android:focusable="true">
 
                     <TextView
                         android:id="@+id/textview_register_summary_name_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:focusable="false"
                         android:text="@string/register_summary_name"
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
                         app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
@@ -79,6 +81,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:focusable="false"
                         android:text="@{userDataModel.getFullName()}"
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                         app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
@@ -90,6 +93,7 @@
                         android:id="@+id/textview_register_summary_email_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:focusable="false"
                         android:layout_marginTop="16dp"
                         android:text="@string/register_summary_email"
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
@@ -102,6 +106,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:focusable="false"
                         android:text="@{userDataModel.email}"
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                         app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
@@ -114,6 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:focusable="false"
                         android:text="@string/register_summary_username"
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
                         app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
@@ -125,6 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:focusable="false"
                         android:text="@{userDataModel.username}"
                         android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                         app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
