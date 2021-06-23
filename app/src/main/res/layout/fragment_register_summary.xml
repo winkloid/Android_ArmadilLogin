@@ -50,71 +50,89 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textview_register_summary_title" />
 
-            <TextView
-                android:id="@+id/textview_register_summary_name_title"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carview_register_summary_data"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:text="@string/register_summary_name"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_explanation"
-                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_explanation">
 
-            <TextView
-                android:id="@+id/textview_register_summary_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{userDataModel.getFullName()}"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
-                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name_title"
-                tools:text="Klaus Uhr" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp">
 
-            <TextView
-                android:id="@+id/textview_register_summary_email_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:text="@string/register_summary_email"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name"
-                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+                    <TextView
+                        android:id="@+id/textview_register_summary_name_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_summary_name"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textview_register_summary_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{userDataModel.email}"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
-                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email_title"
-                tools:text="klaus.uhr@s1111.tu-chemnitz.de" />
+                    <TextView
+                        android:id="@+id/textview_register_summary_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{userDataModel.getFullName()}"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name_title"
+                        tools:text="Klaus Uhr" />
 
-            <TextView
-                android:id="@+id/textview_register_summary_username_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:text="@string/register_summary_username"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email"
-                app:subHeadlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
+                    <TextView
+                        android:id="@+id/textview_register_summary_email_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/register_summary_email"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_name" />
 
-            <TextView
-                android:id="@+id/textview_register_summary_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{userDataModel.username}"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
-                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_username_title"
-                tools:text="klausur" />
+                    <TextView
+                        android:id="@+id/textview_register_summary_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{userDataModel.email}"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email_title"
+                        tools:text="klaus.uhr@s1111.tu-chemnitz.de" />
+
+                    <TextView
+                        android:id="@+id/textview_register_summary_username_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/register_summary_username"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_email" />
+
+                    <TextView
+                        android:id="@+id/textview_register_summary_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{userDataModel.username}"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_register_summary_username_title"
+                        tools:text="klausur" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/button_register_summary_not_correct"
@@ -132,13 +150,13 @@
                 android:id="@+id/button_register_summary_correct"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:enabled="@{safeUnbox(!userDataModel.sendingUsername &amp;&amp; !userDataModel.sendingPassword)}"
                 android:onClick="@{() -> registerSummaryFragment.goToNextFragment()}"
                 android:text="@string/register_summary_correct"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/button_register_summary_not_correct"
-                app:layout_constraintTop_toBottomOf="@id/textview_register_summary_username" />
+                app:layout_constraintTop_toBottomOf="@id/carview_register_summary_data" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
