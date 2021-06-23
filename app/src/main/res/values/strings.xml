@@ -91,6 +91,7 @@
     <string name="user_data_age_title">Wie alt sind Sie?</string>
     <string name="user_data_input_age">Ihr Alter, z.B. 42</string>
     <string name="user_data_gender_title">Mit welchem Geschlecht identifizieren Sie sich?</string>
+    <string name="user_data_gender_description">Geschlecht</string>
     <string name="user_data_gender_female">weiblich</string>
     <string name="user_data_gender_male">männlich</string>
     <string name="user_data_gender_diverse">divers</string>
@@ -98,12 +99,14 @@
     <string name="user_data_technical_experience_title">Wie würden Sie Ihre Erfahrung mit Technik einschätzen?</string>
     <string name="user_data_technical_experience_explanation">Hierbei ist speziell Ihre Erfahrung und Fertigkeit mit mobilen Geräten wie Smartphones oder Tablets gemeint.</string>
     <string name="user_data_technical_experience_frequency_title"><b>Wie oft verwenden Sie Ihr Smartphone?</b></string>
+    <string name="user_data_technical_experience_frequency_description">Smartphone Nutzungshäufigkeit</string>
     <string name="user_data_technical_experience_1"><b>1</b> - ich besitze kein Smartphone</string>
     <string name="user_data_technical_experience_2"><b>2</b> - ich nutze mein Smartphone einmal in der Woche oder seltener</string>
     <string name="user_data_technical_experience_3"><b>3</b> - ich nutze mein Smartphone einige Male in der Woche</string>
     <string name="user_data_technical_experience_4"><b>4</b> - ich nutze mein Smartphone täglich</string>
     <string name="user_data_technical_experience_5"><b>5</b> - ich nutze mein Smartphone täglich mehrfach</string>
     <string name="user_data_technical_experience_variety_title"><b>Auf einer Skala von 1 bis 5. Wie breit sind Ihre Erfahrungen mit Apps gefächert?</b></string>
+    <string name="user_data_technical_experience_variety_description">Nutzung verschiedener Apps</string>
     <string name="user_data_technical_experience_variety_1"><b>1</b> - ich nutze keine Apps und kenne mich auch nicht mit typischen Benutzeroberflächen von Apps aus.</string>
     <string name="user_data_technical_experience_variety_2"><b>2</b></string>
     <string name="user_data_technical_experience_variety_3"><b>3</b></string>

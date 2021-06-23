@@ -64,6 +64,7 @@
 
                     <TextView
                         android:id="@+id/textview_user_data_age_title"
+                        android:labelFor="@id/user_data_input_age_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/user_data_age_title"
@@ -95,6 +96,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardview_user_data_gender"
+                android:contentDescription="@string/user_data_gender_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -126,6 +128,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_female"
+                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(1)}"
@@ -136,6 +139,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_male"
+                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(2)}"
@@ -146,6 +150,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_diverse"
+                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(3)}"
@@ -156,6 +161,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_not_specified"
+                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(0)}"
@@ -203,6 +209,7 @@
 
                     <TextView
                         android:id="@+id/textview_user_data_technical_experience_frequency_title"
+                        android:labelFor="@id/radiogroup_user_data_technical_experience_frequency"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -223,6 +230,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_1"
+                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(1)}"
@@ -233,6 +241,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_2"
+                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(2)}"
@@ -243,6 +252,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_3"
+                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(3)}"
@@ -253,6 +263,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_4"
+                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(4)}"
@@ -263,6 +274,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_5"
+                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(5)}"
@@ -273,6 +285,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_not_specified"
+                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(0)}"
@@ -284,6 +297,7 @@
 
                     <TextView
                         android:id="@+id/textview_user_data_technical_experience_variety_title"
+                        android:labelFor="@id/radiogroup_user_data_technical_experience_variety"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -303,6 +317,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_1"
+                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(1)}"
@@ -313,6 +328,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_2"
+                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(2)}"
@@ -323,6 +339,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_variety_3"
+                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(3)}"
@@ -333,6 +350,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_4"
+                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(4)}"
@@ -343,6 +361,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_5"
+                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(5)}"
@@ -353,6 +372,7 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_not_specified"
+                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(0)}"
