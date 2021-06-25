@@ -46,6 +46,7 @@ class RegisterLoginFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_LOGIN)
+        view?.announceForAccessibility(getString(R.string.register_login_accessibility_label))
     }
 
     fun goToRegisterFragment() {

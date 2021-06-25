@@ -44,4 +44,9 @@ class SettingFragment : Fragment() {
             sharedViewModel.setDyslexicFont(checked)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        view?.announceForAccessibility(getString(R.string.settings_accessibility_label))
+    }
 }

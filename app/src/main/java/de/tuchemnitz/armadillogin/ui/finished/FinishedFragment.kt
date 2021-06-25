@@ -46,6 +46,7 @@ class FinishedFragment : Fragment() {
         super.onResume()
         Log.d("D", "Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.FINISHED)
+        view?.announceForAccessibility(getString(R.string.finished_accessibility_label))
     }
 
     fun backToWelcome() {

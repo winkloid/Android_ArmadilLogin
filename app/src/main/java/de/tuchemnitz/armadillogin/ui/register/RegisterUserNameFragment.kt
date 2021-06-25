@@ -40,6 +40,7 @@ class RegisterUserNameFragment : Fragment() {
         if (!userViewModel.username.value.equals("")) {
             binding?.registerInputUsernameEditText?.setText(userViewModel.username.value.toString())
         }
+        view?.announceForAccessibility(getString(R.string.register_username_accessibility_label))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

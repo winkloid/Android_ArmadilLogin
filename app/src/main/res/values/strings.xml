@@ -2,14 +2,18 @@
     <string name="app_name">ArmadilLogin</string>
     <string name="title_home">Login</string>
     <string name="title_help">Hilfe</string>
+    <string name="help_accessibility_label">Hilfe-Tab</string>
     <string name="title_settings">Einstellungen</string>
     <string name="welcome_title">Willkommen!</string>
+    <string name="welcome_accessibility_label">Neue Seite: Willkommen</string>
     <string name="welcome_explanation">Vielen Dank für Ihre Teilnahme an dieser Studie. Diese App soll dabei helfen, zu ermitteln, wie ein einfaches, komfortables und trotzdem sicheres Login-System für alle aussehen könnte.</string>
     <string name="register_login_title">Registrieren oder einloggen?</string>
+    <string name="register_login_accessibility_label">Neue Seite: Auswahl zwischen Registrierung und Login</string>
     <string name="register_login_explanation">Möchten Sie  ein neues Konto anlegen oder sich mit einem Zugang einloggen, der bereits erstellt wurde?</string>
     <string name="register_login_registerbutton">Registrieren</string>
     <string name="register_login_loginbutton">Login</string>
     <string name="register_title">Wer sind Sie?</string>
+    <string name="register_accessibility_label">Neue Seite: Persönliche Angaben zur Registrierung</string>
     <string name="register_explanation">Bitte tragen Sie in die nachfolgenden Felder Ihren Vornamen, Nachnamen und Ihre E-Mail-Adresse ein. Um die Felder auszufüllen, tippen Sie sie an.</string>
     <string name="register_registerbutton">Registrieren</string>
     <string name="register_firstname">Vorname</string>
@@ -20,9 +24,11 @@
     <string name="register_input_email_hint">z.B. max.mustermann@tu-chemnitz.de</string>
     <string name="register_button_next">Weiter</string>
     <string name="register_username_title">Wie soll Ihr neues Konto heißen?</string>
+    <string name="register_username_accessibility_label">Neue Seite: Benutzername erstellen</string>
     <string name="register_username_explanation">Das wird der Benutzername sein, mit dem Sie sich später wieder einloggen können, um in Ihren persönlichen Mitgliederbereich zu gelangen. Merken Sie sich ihn also gut oder schreiben Sie ihn auf.</string>
     <string name="register_input_username">Benutzername</string>
     <string name="login_title">Wie heißt Ihr Konto?</string>
+    <string name="login_accessibility_label">Neue Seite: Einloggen</string>
     <string name="login_explanation">Willkommen zurück! Bitte geben Sie im nachfolgenden Feld Ihren Benutzernamen ein, den Sie bei der Registrierung angelegt haben.</string>
     <string name="login_input_username">Benutzername</string>
     <string name="login_button_next">Weiter</string>
@@ -32,6 +38,7 @@
     <string name="not_alphanumeric_string_error">Bitte verwenden Sie nur Buchstaben und Zahlen.</string>
     <string name="email_string_error">Keine gültige E-Mail-Adresse</string>
     <string name="register_summary_title">Stimmt alles so?</string>
+    <string name="register_summary_accessibility_label">Neue Seite: Überprüfen Sie Ihre Angaben</string>
     <string name="register_summary_explanation">Hier werden Ihnen noch einmal Ihre Eingaben angezeigt. Bitte überprüfen Sie, ob alles korrekt ist.</string>
     <string name="register_summary_name">Ihr Name lautet:</string>
     <string name="register_summary_email">Ihre E-Mail-Adresse lautet:</string>
@@ -39,21 +46,25 @@
     <string name="register_summary_correct">Bestätigen</string>
     <string name="register_summary_not_correct">Berichtigen</string>
     <string name="register_key_title">Noch ein letzter Schritt</string>
+    <string name="register_key_accessibility_label">Neue Seite: Einen Schlüssel registrieren.</string>
     <string name="register_key_explanation">Damit nur Sie sich in Ihren Mitgliederbereich einloggen können, muss die App in Zukunft Ihre Identität bestätigen können. Dafür müssen Sie sich kein kompliziertes Passwort merken, sondern nur eine Art Schlüssel bei sich tragen. Je nach Art des Schlüssels, legen Sie ihn auf die Rückseite Ihres Telefons auf oder stecken ihn in dessen Ladebuchse. Alternativ können Sie auch Ihr Smartphone selbst als Schlüssel verwenden. Innerhalb von Sekundenbruchteilen sind Sie dann angemeldet. Weitere Infos finden Sie im "Hilfe"-Tab der App.</string>
     <string name="register_key_confirm">Los Geht\'s!</string>
     <string name="register_summary_sending_username">Benutzername wird an Server gesendet.</string>
     <string name="register_key_cancelled">Abgebrochen!</string>
     <string name="register_finished_title">Erfolgreich registriert</string>
+    <string name="register_finished_accessibility_label">Neue Seite: Registrierung erfolgreich abgeschlossen</string>
     <string name="register_finished_explanation">Sie haben sich erfolgreich registriert. Drücken Sie den Knopf unten, um zum Start zurückzukehren und sich einzuloggen.</string>
     <string name="register_finished_label">Registrierung abgeschlossen</string>
     <string name="register_finished_to_start">Zurück zum Start</string>
     <string name="register_error_title">Registrieren gescheitert</string>
     <string name="register_error_label">Registrieren fehlgeschlagen</string>
+    <string name="register_error_accessibility_label">Neue Seite: Registrierung fehlgeschlagen</string>
     <string name="register_error_to_start">Zurück zum Start</string>
     <string name="register_error_try_again">Erneut versuchen</string>
     <string name="register_error_explanation">Es gab einen Fehler bei der Registrierung Ihres Schlüssels. Das kann unterschiedliche Gründe haben. Bitte informieren Sie sich dazu im "Hilfe"-Tab.</string>
     <string name="signin_key_cancelled">Abgebrochen!</string>
     <string name="login_key_label">Login</string>
+    <string name="login_key_accessibility_label">Neue Seite: Einloggen mit Ihrem Schlüssel</string>
     <string name="login_key_title">Mit Ihrem Schlüssel einloggen.</string>
     <string name="login_key_explanation">Betätigen Sie den Knopf unten, um sich mit Ihrem Schlüssel in Ihren Mitgliederbereich einzuloggen. Sie kennen diesen Prozess bereits vom Registrieren. Mehr Informationen dazu, wie Sie sich mit Ihrem Schlüssel einloggen, finden Sie im "Hilfe"-Tab.</string>
     <string name="login_key_confirm">Los geht\'s!</string>
@@ -66,6 +77,7 @@
     <string name="user_overview_data_sent_success">Daten erfolgreich gesendet!</string>
     <string name="user_overview_data_sent_error">Fehler beim Senden der Daten!</string>
     <string name="user_overview_label">Übersicht</string>
+    <string name="user_overview_accessibility_label">Neue Seite: Mitgliederbereich</string>
     <string name="user_overview_credential_title">Ihre registrierten Schlüssel</string>
     <string name="user_overview_credential_explanation">In dieser Übersicht finden Sie all Ihre registrierten Schlüssel. Bei realen Anwendungszwecken ist es sinnvoll, mindestens zwei Schlüssel zu registrieren, falls einer verloren geht.</string>
     <string name="user_overview_delete_credential">Schlüssel löschen</string>
@@ -76,6 +88,7 @@
 
     <!-- Settings -->
     <string name="settings_title">Einstellungen</string>
+    <string name="settings_accessibility_label">Einstellungs-Tab</string>
     <string name="settings_explanation">In dieser Ansicht können Sie diverse Einstellungen vornehmen. So können das Farbschema und die Schriftart hier eingestellt werden.</string>
     <string name="settings_font_title">Schriftart</string>
     <string name="settings_set_dyslexic_font">Legastheniker-Schriftart</string>
@@ -87,12 +100,13 @@
 
     <!-- User Data Fragment Strings -->
     <string name="user_data_label">Ihre Angaben</string>
+    <string name="user_data_accessibility_label">Neue Seite: Angaben zu Ihrer Person</string>
     <string name="user_data_title">Bevor Sie fortfahren...</string>
     <string name="user_data_explanation">Um wertvolle Erkenntnisse aus der Studie zu gewinnen, ist es hilfreich, die Teilnehmer möglichst genau einschätzen zu können. Daher bitte ich Sie, die nachfolgenden Fragen zu beantworten. Sie haben allerdings die freie Wahl, welche Angaben Sie machen möchten und welche nicht. Möchten Sie sich zu einer Frage nicht äußern, wählen Sie als Antwort entweder \"keine Angabe\" aus oder lassen Sie das entsprechende Textfeld leer. Alle Angaben werden anonymisiert gespeichert und können daher im Nachhinein nicht mehr mit Ihnen als Person in Verbindung gebracht werden. Während der Studie wird außerdem die Zeit gemessen, die Sie zum Registrieren und Einloggen benötigt haben. Lassen Sie sich davon nicht aus der Ruhe bringen, es geht vorwiegend darum, wie gut sich das Anmeldesystem bedienen lässt.\nVielen Dank!</string>
     <string name="user_data_age_title">Wie alt sind Sie?</string>
     <string name="user_data_input_age">Ihr Alter, z.B. 42</string>
     <string name="user_data_gender_title">Mit welchem Geschlecht identifizieren Sie sich?</string>
-    <string name="user_data_gender_description">Geschlecht</string>
+    <string name="user_data_gender_description">Geschlecht: </string>
     <string name="user_data_gender_female">weiblich</string>
     <string name="user_data_gender_male">männlich</string>
     <string name="user_data_gender_diverse">divers</string>
@@ -100,14 +114,14 @@
     <string name="user_data_technical_experience_title">Wie würden Sie Ihre Erfahrung mit Technik einschätzen?</string>
     <string name="user_data_technical_experience_explanation">Hierbei ist speziell Ihre Erfahrung und Fertigkeit mit mobilen Geräten wie Smartphones oder Tablets gemeint.</string>
     <string name="user_data_technical_experience_frequency_title"><b>Wie oft verwenden Sie Ihr Smartphone?</b></string>
-    <string name="user_data_technical_experience_frequency_description">Smartphone Nutzungshäufigkeit</string>
+    <string name="user_data_technical_experience_frequency_description">Smartphone Nutzungshäufigkeit: Option </string>
     <string name="user_data_technical_experience_1"><b>1</b> - ich besitze kein Smartphone</string>
     <string name="user_data_technical_experience_2"><b>2</b> - ich nutze mein Smartphone einmal in der Woche oder seltener</string>
     <string name="user_data_technical_experience_3"><b>3</b> - ich nutze mein Smartphone einige Male in der Woche</string>
     <string name="user_data_technical_experience_4"><b>4</b> - ich nutze mein Smartphone täglich</string>
     <string name="user_data_technical_experience_5"><b>5</b> - ich nutze mein Smartphone täglich mehrfach</string>
     <string name="user_data_technical_experience_variety_title"><b>Auf einer Skala von 1 bis 5. Wie breit sind Ihre Erfahrungen mit Apps gefächert?</b></string>
-    <string name="user_data_technical_experience_variety_description">Nutzung verschiedener Apps</string>
+    <string name="user_data_technical_experience_variety_description">Nutzung verschiedener Apps auf einer Skala von eins bis fünf: Option </string>
     <string name="user_data_technical_experience_variety_1"><b>1</b> - ich nutze keine Apps und kenne mich auch nicht mit typischen Benutzeroberflächen von Apps aus.</string>
     <string name="user_data_technical_experience_variety_2"><b>2</b></string>
     <string name="user_data_technical_experience_variety_3"><b>3</b></string>
@@ -119,6 +133,7 @@
 
     <!-- Finished Fragment Strings -->
     <string name="finished_label">Danke!</string>
+    <string name="finished_accessibility_label">Neue Seite: Studie erfolgreich abgeschlossen</string>
     <string name="finished_title">Vielen Dank!</string>
     <string name="finished_explanation">Die Studie ist abgeschlossen und Ihre Studienergebnisse wurden erfolgreich gespeichert.</string>
     <string name="finished_back_to_welcome">Zurück zur Willkommen-Seite</string>

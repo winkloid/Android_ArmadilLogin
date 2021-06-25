@@ -123,49 +123,50 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:contentDescription="@string/user_data_gender_description"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textview_user_data_gender_title">
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_female"
-                            android:contentDescription="@string/user_data_gender_description"
+                            android:contentDescription="@{(@string/user_data_gender_description).concat(@string/user_data_gender_female)}"
+                            android:text="@string/user_data_gender_female"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(1)}"
                             android:onClick="@{() -> studyUserModel.setGender(1)}"
-                            android:text="@string/user_data_gender_female"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_male"
-                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(2)}"
                             android:onClick="@{() -> studyUserModel.setGender(2)}"
+                            android:contentDescription="@{(@string/user_data_gender_description).concat(@string/user_data_gender_male)}"
                             android:text="@string/user_data_gender_male"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_diverse"
-                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(3)}"
                             android:onClick="@{() -> studyUserModel.setGender(3)}"
+                            android:contentDescription="@{(@string/user_data_gender_description).concat(@string/user_data_gender_diverse)}"
                             android:text="@string/user_data_gender_diverse"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_gender_not_specified"
-                            android:contentDescription="@string/user_data_gender_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.gender.equals(0)}"
                             android:onClick="@{() -> studyUserModel.setGender(0)}"
+                            android:contentDescription="@{(@string/user_data_gender_description).concat(@string/user_data_gender_not_specified)}"
                             android:text="@string/user_data_gender_not_specified"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
@@ -230,66 +231,66 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_1"
-                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(1)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceFrequency(1)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_frequency_description).concat(@string/user_data_technical_experience_1)}"
                             android:text="@string/user_data_technical_experience_1"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_2"
-                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(2)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceFrequency(2)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_frequency_description).concat(@string/user_data_technical_experience_2)}"
                             android:text="@string/user_data_technical_experience_2"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_3"
-                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(3)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceFrequency(3)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_frequency_description).concat(@string/user_data_technical_experience_3)}"
                             android:text="@string/user_data_technical_experience_3"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_4"
-                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(4)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceFrequency(4)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_frequency_description).concat(@string/user_data_technical_experience_4)}"
                             android:text="@string/user_data_technical_experience_4"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_5"
-                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(5)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceFrequency(5)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_frequency_description).concat(@string/user_data_technical_experience_5)}"
                             android:text="@string/user_data_technical_experience_5"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_not_specified"
-                            android:contentDescription="@string/user_data_technical_experience_frequency_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceFrequency.equals(0)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceFrequency(0)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_frequency_description).concat(@string/user_data_technical_experience_not_specified)}"
                             android:text="@string/user_data_technical_experience_not_specified"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
@@ -317,66 +318,66 @@
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_1"
-                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(1)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceVariety(1)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_variety_description).concat(@string/user_data_technical_experience_variety_1)}"
                             android:text="@string/user_data_technical_experience_variety_1"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_2"
-                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(2)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceVariety(2)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_variety_description).concat(@string/user_data_technical_experience_variety_2)}"
                             android:text="@string/user_data_technical_experience_variety_2"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_variety_3"
-                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(3)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceVariety(3)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_variety_description).concat(@string/user_data_technical_experience_variety_3)}"
                             android:text="@string/user_data_technical_experience_variety_3"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_4"
-                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(4)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceVariety(4)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_variety_description).concat(@string/user_data_technical_experience_variety_4)}"
                             android:text="@string/user_data_technical_experience_variety_4"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_5"
-                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(5)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceVariety(5)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_variety_description).concat(@string/user_data_technical_experience_variety_5)}"
                             android:text="@string/user_data_technical_experience_variety_5"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />
 
                         <RadioButton
                             android:id="@+id/radiobutton_user_data_technical_experience_variety_not_specified"
-                            android:contentDescription="@string/user_data_technical_experience_variety_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:checked="@{studyUserModel.technicalExperienceVariety.equals(0)}"
                             android:onClick="@{() -> studyUserModel.setTechnicalExperienceVariety(0)}"
+                            android:contentDescription="@{(@string/user_data_technical_experience_variety_description).concat(@string/user_data_technical_experience_not_specified)}"
                             android:text="@string/user_data_technical_experience_not_specified"
                             android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                             app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}" />

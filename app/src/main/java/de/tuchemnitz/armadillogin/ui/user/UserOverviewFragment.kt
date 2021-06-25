@@ -86,9 +86,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_OVERVIEW)
-        Log.d("USER", studyUserViewModel.userTime.toString())
-        Log.d("USER_START", studyUserViewModel.userStartTime.toString())
-        Log.d("USER_FINISHED", studyUserViewModel.userFinishedTime.toString())
+        view?.announceForAccessibility(getString(R.string.user_overview_accessibility_label))
     }
 
     fun finishStudy() {

@@ -60,6 +60,7 @@ class LoginKeyFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.LOGIN_KEY)
+        view?.announceForAccessibility(getString(R.string.login_key_accessibility_label))
     }
 
     // sendLoginRequest and onActivityResult are used as shown in https://github.com/googlecodelabs/fido2-codelab

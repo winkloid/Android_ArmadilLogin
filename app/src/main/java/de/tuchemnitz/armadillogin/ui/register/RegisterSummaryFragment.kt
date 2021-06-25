@@ -49,6 +49,7 @@ class RegisterSummaryFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_SUMMARY)
+        view?.announceForAccessibility(getString(R.string.register_summary_accessibility_label))
     }
 
     fun goBackToRegister() {
