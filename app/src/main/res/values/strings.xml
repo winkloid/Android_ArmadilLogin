@@ -73,6 +73,8 @@
     <string name="user_overview_title">Willkommen %s!</string>
     <string name="user_overview_explanation">Willkommen im Mitgliederbereich! Vielen Dank, dass Sie an der Studie teilgenommen haben. Tippen Sie auf die Schaltfläche unten, um die Teilnahme abzuschließen und Ihre benötigte Zeit, sowie Ihre Angaben zu Alter, Geschlecht und technischer Erfahrung abzuschicken.</string>
     <string name="user_overview_time_title">Ihre benötigte Zeit für die Registrierung und den Login:</string>
+    <string name="user_overview_register_time_title">Ihre benötigte Zeit für die Registrierung des Schlüssels:</string>
+    <string name="user_overview_login_time_title">Ihre benötigte Zeit für das Einloggen mit dem Schlüssel:</string>
     <string name="user_overview_finish_study">Studie abschließen</string>
     <string name="user_overview_data_sent_success">Daten erfolgreich gesendet!</string>
     <string name="user_overview_data_sent_error">Fehler beim Senden der Daten!</string>
