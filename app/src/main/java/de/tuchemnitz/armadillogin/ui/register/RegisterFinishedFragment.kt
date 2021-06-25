@@ -37,6 +37,7 @@ class RegisterFinishedFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_FINISHED)
+        view?.announceForAccessibility(getString(R.string.register_finished_accessibility_label))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

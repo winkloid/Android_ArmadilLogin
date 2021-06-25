@@ -48,6 +48,11 @@ class HelpFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        view?.announceForAccessibility(getString(R.string.help_accessibility_label))
+    }
+
     fun getHelpContext(): FragmentActivity? {
         return activity
     }

@@ -60,6 +60,7 @@ class RegisterKeyFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER_KEY)
+        view?.announceForAccessibility(getString(R.string.register_key_accessibility_label))
     }
 
     // sendRegisterRequest and onActivityResult are used as shown in https://github.com/googlecodelabs/fido2-codelab

@@ -48,6 +48,7 @@ class LoginFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.LOGIN)
+        view?.announceForAccessibility(getString(R.string.login_accessibility_label))
     }
 
     /**

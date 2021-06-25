@@ -30,31 +30,35 @@
 
             <TextView
                 android:id="@+id/textview_login_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:labelFor="@id/login_input_username_edit_text"
                 android:text="@string/login_title"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline3"
                 app:headlineDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textview_login_explanation"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/login_explanation"
                 android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
                 app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_login_title" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/login_textinput_username"
-                android:layout_width="160dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_input_username"
                 android:paddingTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_login_explanation">
 

@@ -45,6 +45,7 @@ class RegisterFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         sharedViewModel.setFragmentStatus(FragmentStatus.REGISTER1)
+        view?.announceForAccessibility(getString(R.string.register_accessibility_label))
 
         // check whether there already are user data different than default data in userViewModel
         // if so, the corresponding EditText fields are filled in

@@ -61,40 +61,108 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_title" />
 
-            <TextView
-                android:id="@+id/textview_user_overview_time_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/user_overview_time_title"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
-                app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_explanation" />
-
-            <TextView
-                android:id="@+id/textview_user_overview_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@{studyUserModel.userTimeInSeconds + ` Sekunden`}"
-                android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
-                app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time_title"
-                tools:text="benötigte Zeit" />
-
-            <Button
-                android:id="@+id/button_user_overview_finish_study"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_user_overview_finish_study"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:enabled="@{safeUnbox(!studyUserModel.sendingStudyData &amp;&amp; !studyUserModel.sentStudyData)}"
-                android:onClick="@{() -> userOverviewFragment.finishStudy()}"
-                android:text="@string/user_overview_finish_study"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time" />
+                app:layout_constraintTop_toBottomOf="@id/textview_user_overview_explanation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/textview_user_overview_time_title"
+                        android:focusable="false"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_overview_time_title"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/textview_user_overview_time"
+                        android:focusable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{studyUserModel.userTimeInSeconds + ` Sekunden`}"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time_title"
+                        tools:text="benötigte Zeit" />
+
+                    <TextView
+                        android:id="@+id/textview_user_overview_register_time_title"
+                        android:focusable="false"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/user_overview_register_time_title"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_time" />
+                    <TextView
+                        android:id="@+id/textview_user_overview_register_time"
+                        android:focusable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{studyUserModel.userRegisterTimeInSeconds + ` Sekunden`}"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_register_time_title"
+                        tools:text="benötigte Zeit" />
+
+                    <TextView
+                        android:id="@+id/textview_user_overview_login_time_title"
+                        android:focusable="false"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/user_overview_login_time_title"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Headline6"
+                        app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_register_time" />
+                    <TextView
+                        android:id="@+id/textview_user_overview_login_time"
+                        android:focusable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@{studyUserModel.userLoginTimeInSeconds + ` Sekunden`}"
+                        android:textAppearance="@style/TextAppearance.StandardTypographyStyles.Body1"
+                        app:bodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_user_overview_login_time_title"
+                        tools:text="benötigte Zeit" />
+
+                    <Button
+                        android:id="@+id/button_user_overview_finish_study"
+                        android:focusable="true"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:enabled="@{safeUnbox(!studyUserModel.sendingStudyData &amp;&amp; !studyUserModel.sentStudyData)}"
+                        android:onClick="@{() -> userOverviewFragment.finishStudy()}"
+                        android:text="@string/user_overview_finish_study"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textview_user_overview_login_time" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/textview_user_overview_credential_explanation"
@@ -118,7 +186,7 @@
                 app:bigBodyDyslexicEnabled="@{armadilloViewModel.dyslexicFont}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_user_overview_finish_study" />
+                app:layout_constraintTop_toBottomOf="@+id/cardview_user_overview_finish_study" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_user_overview_credentials"

@@ -47,6 +47,7 @@ class WelcomeFragment : Fragment() {
         super.onResume()
         Log.d("D", "Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
+        view?.announceForAccessibility(getString(R.string.welcome_accessibility_label))
     }
 
     fun goToNextView() {

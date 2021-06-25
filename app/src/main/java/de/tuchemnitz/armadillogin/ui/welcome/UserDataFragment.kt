@@ -49,6 +49,7 @@ class UserDataFragment : Fragment() {
         super.onResume()
         Log.d("D", "Resuming")
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_DATA)
+        view?.announceForAccessibility(getString(R.string.user_data_accessibility_label))
     }
 
     fun goToNextView() {
