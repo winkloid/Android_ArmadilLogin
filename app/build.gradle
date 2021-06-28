@@ -17,6 +17,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        // to get ?attr/colorOnPrimary to work androidx vector support is needed
+        vectorDrawables.useSupportLibrary = true
+
         // fido2 server config
         buildConfigField 'String', 'API_BASE_URL', "\"${getProperty('host')}/auth\""
         resValue 'string', 'host', getProperty('host')

@@ -58,6 +58,7 @@
                 android:enabled="@{safeUnbox(!userDataModel.signInKey)}"
                 android:onClick="@{() -> loginKeyFragment.sendLoginRequest()}"
                 android:text="@string/login_key_confirm"
+                app:drawableRightCompat="@drawable/ic_baseline_navigate_next_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_login_key_explanation" />

@@ -392,6 +392,7 @@
                 android:layout_marginTop="16dp"
                 android:onClick="@{() -> userDataFragment.goToNextView()}"
                 android:text="@string/user_data_confirm"
+                app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardview_user_data_technical_experience" />

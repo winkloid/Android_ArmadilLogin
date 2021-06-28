@@ -68,6 +68,8 @@
                 android:layout_marginEnd="16dp"
                 android:onClick="@{ () -> registerErrorFragment.backToStart()}"
                 android:text="@string/register_error_to_start"
+                app:drawableLeftCompat="@drawable/ic_baseline_settings_backup_restore_24"
+                android:drawableTint="?attr/colorPrimary"
                 app:layout_constraintEnd_toStartOf="@+id/button_register_error_try_again"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/button_register_error_try_again" />
@@ -79,6 +81,7 @@
                 android:layout_marginTop="20dp"
                 android:onClick="@{() -> registerErrorFragment.backToPrevious()}"
                 android:text="@string/register_error_try_again"
+                app:drawableLeftCompat="@drawable/ic_baseline_repeat_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/button_register_error_to_start"
                 app:layout_constraintTop_toBottomOf="@id/imageview_register_error" />

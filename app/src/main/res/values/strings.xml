@@ -7,6 +7,7 @@
     <string name="welcome_title">Willkommen!</string>
     <string name="welcome_accessibility_label">Neue Seite: Willkommen</string>
     <string name="welcome_explanation">Vielen Dank für Ihre Teilnahme an dieser Studie. Diese App soll dabei helfen, zu ermitteln, wie ein einfaches, komfortables und trotzdem sicheres Login-System für alle aussehen könnte.</string>
+    <string name="welcome_start">Starten</string>
     <string name="register_login_title">Registrieren oder einloggen?</string>
     <string name="register_login_accessibility_label">Neue Seite: Auswahl zwischen Registrierung und Login</string>
     <string name="register_login_explanation">Möchten Sie  ein neues Konto anlegen oder sich mit einem Zugang einloggen, der bereits erstellt wurde?</string>
