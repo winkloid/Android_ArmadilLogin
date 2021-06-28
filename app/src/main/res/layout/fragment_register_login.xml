@@ -22,7 +22,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:layout_margin="16dp">
 
             <TextView
                 android:id="@+id/textview_register_login_title"
@@ -47,22 +47,25 @@
 
             <Button
                 android:id="@+id/register_button"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="16dp"
                 android:onClick="@{() -> registerLoginFragment.goToRegisterFragment()}"
                 android:text="@string/register_login_registerbutton"
+                app:drawableLeftCompat="@drawable/ic_drawable_register"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textview_register_login_explanation" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="16dp"
                 android:onClick="@{() -> registerLoginFragment.goToLoginFragment()}"
                 android:text="@string/register_login_loginbutton"
-                app:layout_constraintEnd_toEndOf="@+id/register_button"
-                app:layout_constraintStart_toStartOf="@+id/register_button"
+                app:drawableLeftCompat="@drawable/ic_baseline_login_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_button" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

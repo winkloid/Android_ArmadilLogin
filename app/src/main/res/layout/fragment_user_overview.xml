@@ -156,6 +156,7 @@
                         android:enabled="@{safeUnbox(!studyUserModel.sendingStudyData &amp;&amp; !studyUserModel.sentStudyData)}"
                         android:onClick="@{() -> userOverviewFragment.finishStudy()}"
                         android:text="@string/user_overview_finish_study"
+                        app:drawableLeftCompat="@drawable/ic_baseline_check_24"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textview_user_overview_login_time" />

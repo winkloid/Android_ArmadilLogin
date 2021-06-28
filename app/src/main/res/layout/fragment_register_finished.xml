@@ -66,6 +66,7 @@
                 android:layout_marginTop="16dp"
                 android:onClick="@{() -> registerFinishedFragment.backToStart()}"
                 android:text="@string/register_finished_to_start"
+                app:drawableLeftCompat="@drawable/ic_baseline_settings_backup_restore_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageview_register_finished" />

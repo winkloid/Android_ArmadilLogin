@@ -67,11 +67,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:onClick="@{() -> registerUserNameFragment.goToNextView()}"
                 android:text="@string/register_login_registerbutton"
+                app:drawableLeftCompat="@drawable/ic_drawable_register"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_textinput_username" />
 

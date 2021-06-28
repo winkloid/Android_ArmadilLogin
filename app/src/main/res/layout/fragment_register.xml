@@ -141,11 +141,13 @@
 
             <Button
                 android:id="@+id/register_button_next"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:onClick="@{() -> registerFragment.goToNextView()}"
                 android:text="@string/register_button_next"
+                app:drawableRightCompat="@drawable/ic_baseline_navigate_next_24"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_textinput_email" />
         </androidx.constraintlayout.widget.ConstraintLayout>
