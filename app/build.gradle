@@ -82,6 +82,16 @@ dependencies {
 
 }
 
+tasks.dokkaHtml.configure {
+    outputDirectory.set(file("../documentation/html"))
+}
+
+tasks.withType(dokkaHtml.getClass()).configureEach {
+    pluginsMapConfiguration.set(
+            ["org.jetbrains.dokka.base.DokkaBase": """{ "separateInheritedMembers": true}"""]
+    )
+}
+
 dokkaHtml.configure {
     dokkaSourceSets {
         named("main") {
