@@ -57,7 +57,7 @@ class UserDataFragment : Fragment() {
         /**
          * Use data binding.
          *
-         * Use this fragment subclass as lifecycleOwner for data binding and assign the other variables to use them in fragment_user_data.xml.
+         * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other variables to use them in fragment_user_data.xml.
          * You can find these variables declared in the <data> section of fragment_user_data.xml.
          */
         binding?.apply {

@@ -49,7 +49,7 @@ class WelcomeFragment : Fragment() {
         /**
          * Use data binding.
          *
-         * Use this fragment subclass as lifecycleOwner for data binding and assign the other two variables to use them in fragment_welcome.xml.
+         * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other two variables to use them in fragment_welcome.xml.
          * You can find these variables declared in the <data> section of fragment_welcome.xml.
          */
         binding?.apply {

@@ -17,9 +17,11 @@ import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
- * A simple [Fragment] subclass.
- * Use the [UserOverviewFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * A [Fragment] and [DeleteConfirmationFragment.Listener] subclass used as user overview fragment.
+ *
+ * This class is used to display the times the user needed to complete the login and registration process.
+ * The user is also able to finish the study and send his or her user data to my study database by pressing a button.
+ * An overview of all registered FIDO2 keys is also displayed.
  */
 class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
 
@@ -28,10 +30,38 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
         private const val FRAGMENT_DELETE_CONFIRMATION = "delete_confirmation"
     }
 
+    /**
+     * Binding object instance. Refers to fragment_user_data.xml
+     */
     private var binding: FragmentUserOverviewBinding? = null
+
+    /**
+     * Shared [ArmadilloViewModel] for fragment status and settings.
+     *
+     * Manages the current fragment to display adapted resources in the Help tab. It also manages some variables to store user settings like color mode or font settings.
+     */
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
+
+    /**
+     * Shared [UserDataViewModel] for storing personal data during registration process.
+     *
+     * This data is not stored after the app is closed, nor does it serve the purpose of data collection at all.
+     * They are only used to make the registration process as genuine as possible by requesting data from the user that would also be requested during a real registration process.
+     * This data includes, among other things, name, e-mail address and username.
+     * In addition, the ViewModel interfaces with the FIDO2 API.
+     */
     private val userViewModel: UserDataViewModel by activityViewModels()
+
+    /**
+     * [UserOverviewViewModel] for retrieving and deleting keys of the user who is logged in.
+     */
     private val viewModel: UserOverviewViewModel by activityViewModels()
+
+    /**
+     * Shared [StudyUserDataViewModel] for study data.
+     *
+     * Saves all data provided by users and time data. It also provides functionality to securely transmit these data to my study database.
+     */
     private val studyUserViewModel: StudyUserDataViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -45,6 +75,13 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * Use data binding.
+         *
+         * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other variables to use them in fragment_user_overview.xml.
+         * You can find these variables declared in the <data> section of fragment_user_overview.xml.
+         */
         binding?.apply {
             lifecycleOwner = this@UserOverviewFragment
             userOverviewFragment = this@UserOverviewFragment
@@ -55,7 +92,7 @@ class UserOverviewFragment : Fragment(), DeleteConfirmationFragment.Listener {
         }
 
         // credentials recyclerview binding
-        // these lines are used as shown in https://github.com/googlecodelabs/fido2-codelab in HomeFragment
+        // these lines are used as shown at https://github.com/googlecodelabs/fido2-codelab in HomeFragment
         val credentialAdapter = CredentialAdapter(
             { credentialId ->
                 DeleteConfirmationFragment.newInstance(credentialId)
