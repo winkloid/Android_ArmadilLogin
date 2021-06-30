@@ -27,6 +27,11 @@ class DeleteConfirmationFragment : DialogFragment() {
     companion object {
         private const val ARG_CREDENTIAL_ID = "credential_id"
 
+        /**
+         * Creates a new instance of [DeleteConfirmationFragment].
+         *
+         * @param credentialId will be handed over to [DeleteConfirmationFragment].
+         */
         fun newInstance(credentialId: String) = DeleteConfirmationFragment().apply {
             arguments = Bundle().apply {
                 putString(ARG_CREDENTIAL_ID, credentialId)
@@ -34,6 +39,12 @@ class DeleteConfirmationFragment : DialogFragment() {
         }
     }
 
+    /**
+     * Show a delete confirmation dialog.
+     *
+     * Creates an [AlertDialog] which asks the user whether he or she really would like to delete the key.
+     * If so, [Listener.onDeleteConfirmed] will be called.
+     */
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val credentialId = arguments?.getString(ARG_CREDENTIAL_ID) ?: throw RuntimeException()
         return AlertDialog.Builder(requireContext())
@@ -54,6 +65,9 @@ class DeleteConfirmationFragment : DialogFragment() {
     }
 
     interface Listener {
+        /**
+         * Will be implemented by [UserOverviewFragment].
+         */
         fun onDeleteConfirmed(credentialId: String)
     }
 }
