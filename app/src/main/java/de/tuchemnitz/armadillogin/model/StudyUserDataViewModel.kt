@@ -240,6 +240,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
 
         /**
          * Execute the built HTTP request.
+         *
          * If this is not successful show an appropriate toast message.
          */
         val response: Response

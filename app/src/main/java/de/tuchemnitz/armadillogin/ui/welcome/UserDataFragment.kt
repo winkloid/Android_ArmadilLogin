@@ -17,7 +17,7 @@ import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
- * A [Fragment] subclass used as welcome fragment.
+ * A [Fragment] subclass used as user data fragment.
  *
  * This class is used to ask the user for several personal data (such as age, gender, technical experience) which could be potentially useful for my study. The provision of all data is voluntary.
  */
@@ -31,7 +31,7 @@ class UserDataFragment : Fragment() {
     /**
      * Shared [ArmadilloViewModel] for fragment status and settings.
      *
-     * Manages the current fragment to display adapted resources in the Help tab. It also manages some variables to store user settings like color mode or font settings.
+     * Manages the [FragmentStatus] value to display adapted resources in the Help tab. It also manages some variables to store user settings like color mode or font settings.
      */
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
@@ -69,7 +69,7 @@ class UserDataFragment : Fragment() {
     }
 
     /**
-     * Set fragment status in [sharedViewModel] and announce [UserDataFragment] to screen readers when it is resumed.
+     * Set [FragmentStatus] in [sharedViewModel] and announce [UserDataFragment] to screen readers when it is resumed.
      *
      * Changing the fragment status is necessary to display content in help section that is adapted to [UserDataFragment].
      * Announcing [UserDataFragment] when it is resumed increases the accessibility of the application.

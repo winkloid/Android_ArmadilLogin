@@ -30,7 +30,7 @@ class WelcomeFragment : Fragment() {
     /**
      * Shared [ArmadilloViewModel] for fragment status and settings.
      *
-     * Manages the current fragment to display adapted resources in the Help tab. It also manages some variables to store user settings like color mode or font settings.
+     * Manages the [FragmentStatus] value to display adapted resources in the Help tab. It also manages some variables to store user settings like color mode or font settings.
      */
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
@@ -60,7 +60,7 @@ class WelcomeFragment : Fragment() {
     }
 
     /**
-     * Set fragment status in [sharedViewModel] and announce [WelcomeFragment] to screen readers when it is resumed.
+     * Set [FragmentStatus] in [sharedViewModel] and announce [WelcomeFragment] to screen readers when it is resumed.
      *
      * Changing the fragment status is necessary to display content in help section that is adapted to [WelcomeFragment].
      * Announcing [WelcomeFragment] when it is resumed increases the accessibility of the application.
