@@ -51,15 +51,15 @@ class UserDataFragment : Fragment() {
         return fragmentBinding.root
     }
 
+    /**
+     * Call super.onViewCreated() and activate data binding.
+     *
+     * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other variables to use them in fragment_user_data.xml.
+     * You can find these variables declared in the <data> section of fragment_user_data.xml.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /**
-         * Use data binding.
-         *
-         * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other variables to use them in fragment_user_data.xml.
-         * You can find these variables declared in the <data> section of fragment_user_data.xml.
-         */
         binding?.apply {
             lifecycleOwner = this@UserDataFragment
             userDataFragment = this@UserDataFragment
@@ -68,19 +68,19 @@ class UserDataFragment : Fragment() {
         }
     }
 
+    /**
+     * Set fragment status in [sharedViewModel] and announce [UserDataFragment] to screen readers when it is resumed.
+     *
+     * Changing the fragment status is necessary to display content in help section that is adapted to [UserDataFragment].
+     * Announcing [UserDataFragment] when it is resumed increases the accessibility of the application.
+     */
     override fun onResume() {
         super.onResume()
 
-        /**
-         * Set fragment status in [sharedViewModel] to user data fragment.
-         *
-         * This is necessary to display content in help section that is adapted to [UserDataFragment].
-         */
+        // Set fragment status in sharedViewModel to user data fragment.
         sharedViewModel.setFragmentStatus(FragmentStatus.USER_DATA)
 
-        /**
-         * Announce [UserDataFragment] to screen readers when it is resumed.
-         */
+        // Announce UserDataFragment to screen readers when it is resumed.
         view?.announceForAccessibility(getString(R.string.user_data_accessibility_label))
     }
 

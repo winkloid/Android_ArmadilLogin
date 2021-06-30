@@ -14,6 +14,14 @@ import de.tuchemnitz.armadillogin.databinding.ItemCredentialBinding
 import de.tuchemnitz.armadillogin.fido2api.Credential
 import de.tuchemnitz.armadillogin.model.ArmadilloViewModel
 
+/**
+ * [RecyclerView] adapter used to display the retrieved list of credentials.
+ *
+ * The adapter manages the RecyclerView holders and binds the values from the retrieved list to the holders.
+ * If a holder is currently (re)usable, the current value is bound to it.
+ * If no holder is (re)usable, a new one is created and the current value is then bound to it.
+ * As soon as the user scrolls further and a Holder leaves the screen, it is no longer needed to display its current content and can be reused by binding a new content to it.
+ */
 class CredentialAdapter(
     private val onDeleteClicked: (String) -> Unit,
     private val lifecycleOwner: LifecycleOwner,

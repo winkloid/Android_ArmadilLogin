@@ -43,15 +43,15 @@ class WelcomeFragment : Fragment() {
         return fragmentBinding.root
     }
 
+    /**
+     * Call super.onViewCreated() and setup data binding.
+     *
+     * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other two variables to use them in fragment_welcome.xml.
+     * You can find these variables declared in the <data> section of fragment_welcome.xml.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /**
-         * Use data binding.
-         *
-         * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other two variables to use them in fragment_welcome.xml.
-         * You can find these variables declared in the <data> section of fragment_welcome.xml.
-         */
         binding?.apply {
             lifecycleOwner = this@WelcomeFragment
             welcomeFragment = this@WelcomeFragment
@@ -59,19 +59,19 @@ class WelcomeFragment : Fragment() {
         }
     }
 
+    /**
+     * Set fragment status in [sharedViewModel] and announce [WelcomeFragment] to screen readers when it is resumed.
+     *
+     * Changing the fragment status is necessary to display content in help section that is adapted to [WelcomeFragment].
+     * Announcing [WelcomeFragment] when it is resumed increases the accessibility of the application.
+     */
     override fun onResume() {
         super.onResume()
 
-        /**
-         * Set fragment status in [sharedViewModel] to welcome fragment.
-         *
-         * This is necessary to display content in help section that is adapted to [UserDataFragment].
-         */
+        // Set fragment status in sharedViewModel to welcome fragment.
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
 
-        /**
-         * Announce [WelcomeFragment] to screen readers when it is resumed.
-         */
+        // Announce [WelcomeFragment] to screen readers when it is resumed.
         view?.announceForAccessibility(getString(R.string.welcome_accessibility_label))
     }
 
