@@ -56,7 +56,7 @@ class RegisterUserNameFragment : Fragment() {
     }
 
     /**
-     * Set [FragmentStatus] in [sharedViewModel], announce [RegisterUserNameFragment] to screen readers when it is resumed and prefill edit text field if a username is already stored in [sharedViewModel].
+     * Set [FragmentStatus] in [sharedViewModel], announce [RegisterUserNameFragment] to screen readers when it is resumed and prefill edit text field if a username is already stored in [userViewModel].
      *
      * Changing the fragment status is necessary to display content in help section that is adapted to [RegisterUserNameFragment].
      * Announcing [RegisterUserNameFragment] when it is resumed increases the accessibility of the application.
