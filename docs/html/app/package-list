@@ -271,8 +271,6 @@ $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpDataXmlParser/readTextRes
 $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpDataXmlParser/readTitleRes/#org.xmlpull.v1.XmlPullParser/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-data-xml-parser/read-title-res.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpDataXmlParser/readXml/#org.xmlpull.v1.XmlPullParser/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-data-xml-parser/read-xml.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpDataXmlParser/skip/#org.xmlpull.v1.XmlPullParser/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-data-xml-parser/skip.html
-$dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpFragment.Companion///PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-fragment/-companion/index.html
-$dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpFragment.Companion/newInstance/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-fragment/-companion/new-instance.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpFragment///PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-fragment/index.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpFragment/HelpFragment/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-fragment/-help-fragment.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.help/HelpFragment/binding/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.help/-help-fragment/binding.html
@@ -351,7 +349,6 @@ $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFinishedFragment/
 $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFinishedFragment/onResume/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-finished-fragment/on-resume.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFinishedFragment/onViewCreated/#android.view.View#android.os.Bundle?/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-finished-fragment/on-view-created.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFinishedFragment/sharedViewModel/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-finished-fragment/shared-view-model.html
-$dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFinishedFragment/studyUserDataViewModel/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-finished-fragment/study-user-data-view-model.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFinishedFragment/userViewModel/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-finished-fragment/user-view-model.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFragment///PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-fragment/index.html
 $dokka.location:de.tuchemnitz.armadillogin.ui.register/RegisterFragment/RegisterFragment/#/PointingToDeclaration/app/de.tuchemnitz.armadillogin.ui.register/-register-fragment/-register-fragment.html

@@ -89,7 +89,7 @@ class CredentialAdapter(
      * If there is a (re)usable [CredentialViewHolder]: change its content.
      *
      * Change the content of the [CredentialViewHolder] by resetting the credential variable of the view holder instance.
-     * Also there is a observer to dyslexicFont value in [armadilloViewModel]. If the dyslexicFont value changes the font of every text resource in this ViewHolder instance will be changed immediately.
+     * Also there is a observer to dyslexicFont value in [armadilloViewModel]. If the dyslexicFont value changes, the font of every text resource in this ViewHolder instance will be changed immediately.
      */
     override fun onBindViewHolder(holder: CredentialViewHolder, position: Int) {
         holder.binding.credential = getItem(position)

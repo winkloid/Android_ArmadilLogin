@@ -14,16 +14,36 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
         private const val LOG_TAG = "HELP_VIEWMODEL"
     }
 
+    /**
+     * Contains /assets/helpdata.xml's content converted to [InputStream].
+     *
+     * This conversion is necessary to parse through it using [HelpDataXmlParser]
+     */
     private var parseInputStream: InputStream = application.assets.open("helpdata.xml")
+
+    /**
+     * List of help item resources.
+     *
+     * In this state, the resource IDs are encoded as resource ID [String]s. These have to be converted to resource IDs.
+     */
     private val parsedHelpList = HelpDataXmlParser().parse(parseInputStream)
+
+    /**
+     * Context of the application.
+     *
+     * This is necessary to work with resources that are linked to the application and to convert resource ID [String]s to resource ID values of the application.
+     */
     private val appContext = application
 
     /**
      * Iterates through [parsedHelpList] which was parsed from [assets/helpdata.xml].
+     *
      * Converts strings which are included in the elements of [parsedHelpList] to resource id values, brings them in a new list and returns this list.
+     *
+     * @param status Identifier of the current Fragment in Login tab.
+     * @return List of [HelpData] that only contains resources that match the identifier stored in [status] variable. This list no longer contains resource IDs encoded in strings, but actual resource IDs.
      */
     fun loadHelpData(status: FragmentStatus?): List<HelpData> {
-        Log.d(LOG_TAG, "parsedList: $parsedHelpList")
         val helpItems = mutableListOf<HelpData>()
 
         for (helpItem in parsedHelpList) {
@@ -58,7 +78,7 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
                     stringResourceId = R.string.help_not_found
                 }
 
-                // check if xmlImageResourceId is null - if not, convert string to resource id; if it is null, assign 0 to imageResourceId
+                // check if xmlImageResourceId is null - if not, convert string to resource id; if it is null, assign null to imageResourceId
                 if (!xmlImageResourceId.isNullOrBlank()) {
                     imageResourceId = appContext.resources.getIdentifier(
                         xmlImageResourceId,
@@ -72,17 +92,5 @@ class HelpViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
         return helpItems
-        /*return listOf<HelpData>(
-                HelpData(R.string.help1, R.drawable.image1),
-                HelpData(R.string.help2),
-                HelpData(R.string.help3),
-                HelpData(R.string.help4),
-                HelpData(R.string.help5, R.drawable.image2),
-                HelpData(R.string.help6),
-                HelpData(R.string.help7, R.drawable.image3),
-                HelpData(R.string.help8),
-                HelpData(R.string.help9),
-                HelpData(R.string.help10)
-        )*/
     }
 }
