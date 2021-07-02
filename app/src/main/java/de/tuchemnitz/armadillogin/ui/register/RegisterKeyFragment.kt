@@ -130,9 +130,9 @@ class RegisterKeyFragment : Fragment() {
     /**
      * Get result from registration intent and jump to [RegisterErrorFragment] or [RegisterFinishedFragment].
      *
-     * If the server's register response contains errors, jump to [RegisterErrorFragment].
+     * If the register response contains errors, jump to [RegisterErrorFragment].
      * If the response signals that the intent was canceled, show a corresponding toast message.
-     * If the server's response shows no errors, jump to [RegisterFinishedFragment].
+     * If the response shows no errors, jump to [RegisterFinishedFragment].
      */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == FIDO2_REGISTER_REQUEST_CODE) {
