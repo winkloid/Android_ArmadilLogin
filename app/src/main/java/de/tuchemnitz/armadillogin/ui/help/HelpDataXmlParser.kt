@@ -9,18 +9,36 @@ import org.xmlpull.v1.XmlPullParserException
 import java.io.IOException
 import java.io.InputStream
 
+/**
+ * This class will help to parse the helpdata.xml which is located in /assets folder.
+ *
+ * It will use an [XmlPullParser] instance to parse the file. This file includes links to all help resources which will be accessible via the help tab.
+ * The file has the following structure:
+ * <resources>                          // Indicate that this file contains resource links. However, this tag is necessary for android studio to not show any errors.
+ *     <helpitem>                       // Indicates the beginning of a help resource item
+ *          <tag>...</tag>              // One helpitem can contain many <tag> tags. Every <tag> contains a tag of a fragment for which the help resource will be shown in help tab.
+ *          <titleres>...</titleres>    // Contains resource name of the text resource that contains the title of this particular help item.
+ *          <textres>...</textres>      // Contains resource name of the text resource that contains the text for this particular help resource.
+ *          <imgres>...</imgres>        // Contains resource name of the image resource that contains the image for this particular help resource.
+ *     </helpitem>                      // marks the end of the helpitem
+ * </resources>                         // marks end of file
+ */
 class HelpDataXmlParser {
 
     companion object {
         private const val LOG_TAG = "XML_PARSER"
     }
 
-    // don't use Xml namespaces
+    /**
+     * Indicates that I won't use XML namespaces in this class.
+     */
     private val namespace: String? = null
 
 
     /**
      * Initializes [XmlPullParser], starts parsing process and invokes [readXml]
+     *
+     * @param inputStream is the /assets/helpdata.xml converted to inputStream. This is necessary to apply [XmlPullParser] on it.
      */
     @Throws(XmlPullParserException::class, IOException::class)
     fun parse(inputStream: InputStream?): List<HelpDataTagged> {
@@ -35,9 +53,12 @@ class HelpDataXmlParser {
 
     /**
      * Process the Xml file.
+     *
      * Searches all helpitem tags and calls functions to process nested tags.
-     * Calls [readHelpItem] when helpitem tag is found to read and process everything inside opening and closing helpitem tag
-     * Calls [skip] to skip all other tags
+     * Calls [readHelpItem] when helpitem tag is found to read and process everything which is inside the opening and closing helpitem tags
+     * Calls [skip] to skip all other (unknown) tags.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
      */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readXml(parser: XmlPullParser): List<HelpDataTagged> {
@@ -63,8 +84,11 @@ class HelpDataXmlParser {
 
     /**
      * Parses contents of one helpItem.
-     * If a tag, textres or imgres tag is found, corresponding read methods are called.
+     *
+     * If a <tag>, <textres> or <imgres> tag is found, corresponding read methods are called.
      * Returns [HelpDataTagged] instance.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
      */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readHelpItem(parser: XmlPullParser): HelpDataTagged {
@@ -92,6 +116,14 @@ class HelpDataXmlParser {
         return HelpDataTagged(titleResId, stringResourceId, imageResourceId, tagList)
     }
 
+    /**
+     * Parse a <tag> tag.
+     *
+     * Convert the parsed [String] to [FragmentStatus] values.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
+     * @return The [FragmentStatus] value of one fragment for which the help resource will be shown in help tab.
+     */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readTagList(parser: XmlPullParser): FragmentStatus {
         parser.require(XmlPullParser.START_TAG, namespace, "tag")
@@ -114,6 +146,14 @@ class HelpDataXmlParser {
         }
     }
 
+    /**
+     * Parse the resource name of the help item's titile.
+     *
+     * Uses [readText] to read text between <titleres> tags.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
+     * @return [String] that contains the resource name of the help item's title.
+     */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readTitleRes(parser: XmlPullParser): String {
         parser.require(XmlPullParser.START_TAG, namespace, "titleres")
@@ -123,6 +163,14 @@ class HelpDataXmlParser {
         return titleResAsString
     }
 
+    /**
+     * Parse the resource name of the help item's help text.
+     *
+     * Uses [readText] to read text between <textres> tags.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
+     * @return [String] that contains the resource name of the help item's text.
+     */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readTextRes(parser: XmlPullParser): String {
         parser.require(XmlPullParser.START_TAG, namespace, "textres")
@@ -132,6 +180,14 @@ class HelpDataXmlParser {
         return textResAsString
     }
 
+    /**
+     * Parse the resource name of the help item's title image.
+     *
+     * Uses [readText] to read text between <imgres> tags.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
+     * @return [String] that contains the resource name of the help item's title image.
+     */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readImgRes(parser: XmlPullParser): String {
         parser.require(XmlPullParser.START_TAG, namespace, "imgres")
@@ -141,6 +197,12 @@ class HelpDataXmlParser {
         return imgResAsString
     }
 
+    /**
+     * Reads the text between opening and closing XML tags.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
+     * @return an empty [String] ("") if there is no text between the XML tags and the text if there is any text between the tags.
+     */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun readText(parser: XmlPullParser): String {
         var result = ""
@@ -153,7 +215,10 @@ class HelpDataXmlParser {
 
     /**
      * Skips all xml tags which are not important.
-     * Tracks depth to skip also nested tags
+     *
+     * Tracks depth to skip also nested tags.
+     *
+     * @param parser is the [XmlPullParser] instance that was created in [parse] method.
      */
     @Throws(XmlPullParserException::class, IOException::class)
     private fun skip(parser: XmlPullParser) {

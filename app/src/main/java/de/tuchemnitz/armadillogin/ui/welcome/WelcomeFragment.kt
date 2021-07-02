@@ -16,13 +16,22 @@ import de.tuchemnitz.armadillogin.model.StudyUserDataViewModel
 import de.tuchemnitz.armadillogin.model.UserDataViewModel
 
 /**
- * A simple [Fragment] subclass.
- * Use the [WelcomeFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * A [Fragment] subclass used as welcome fragment.
+ *
+ * This class should briefly inform the user about the purpose of the app. It only shows a short information text and a button to continue.
  */
 class WelcomeFragment : Fragment() {
 
+    /**
+     * Binding object instance. Refers to fragment_welcome.xml
+     */
     private var binding: FragmentWelcomeBinding? = null
+
+    /**
+     * Shared [ArmadilloViewModel] for fragment status and settings.
+     *
+     * Manages the [FragmentStatus] value to display adapted resources in the Help tab. It also manages some variables to store user settings like color mode or font settings.
+     */
     private val sharedViewModel: ArmadilloViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -34,8 +43,15 @@ class WelcomeFragment : Fragment() {
         return fragmentBinding.root
     }
 
+    /**
+     * Call super.onViewCreated() and setup data binding.
+     *
+     * Use this [Fragment] subclass as lifecycleOwner for data binding and assign the other two variables to use them in fragment_welcome.xml.
+     * You can find these variables declared in the <data> section of fragment_welcome.xml.
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding?.apply {
             lifecycleOwner = this@WelcomeFragment
             welcomeFragment = this@WelcomeFragment
@@ -43,13 +59,27 @@ class WelcomeFragment : Fragment() {
         }
     }
 
+    /**
+     * Set [FragmentStatus] in [sharedViewModel] and announce [WelcomeFragment] to screen readers when it is resumed.
+     *
+     * Changing the fragment status is necessary to display content in help section that is adapted to [WelcomeFragment].
+     * Announcing [WelcomeFragment] when it is resumed increases the accessibility of the application.
+     */
     override fun onResume() {
         super.onResume()
-        Log.d("D", "Resuming")
+
+        // Set fragment status in sharedViewModel to welcome fragment.
         sharedViewModel.setFragmentStatus(FragmentStatus.WELCOME)
+
+        // Announce [WelcomeFragment] to screen readers when it is resumed.
         view?.announceForAccessibility(getString(R.string.welcome_accessibility_label))
     }
 
+    /**
+     * Jump to UserDataFragment.
+     *
+     * If the button in [WelcomeFragment] is clicked, [findNavController] is called to navigate to next fragment.
+     */
     fun goToNextView() {
         findNavController().navigate(R.id.action_navigation_welcome_to_navigation_user_data)
     }
