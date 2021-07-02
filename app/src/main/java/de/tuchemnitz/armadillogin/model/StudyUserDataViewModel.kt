@@ -21,6 +21,12 @@ import java.io.StringWriter
 import java.util.concurrent.TimeUnit
 import kotlin.math.round
 
+/**
+ * Stores all data collected in the study and includes functionality to send the data.
+ *
+ * Stores the time the user needs to complete the registration and login process and the personal data the user provided for the study.
+ * Once the study is finished the data will be sent to an PHP script which is connected to an MySQL database to store the data permanently.
+ */
 class StudyUserDataViewModel(application: Application) : AndroidViewModel(application) {
 
     companion object {
@@ -31,6 +37,8 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
 
     // variables for time measurement feature
     /**
+     * Stores the system start time of the study.
+     *
      * Stores the system time when "Studie beginnen" button is clicked.
      */
     var userStartTime: Long? = null
@@ -40,12 +48,14 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     var userFinishedTime: Long? = null
 
     /**
-     * Stores the difference between userFinishedTime and userStartTime.
+     * Stores the difference between [userFinishedTime] and [userStartTime].
+     *
+     * In nanoseconds.
      */
     var userTime: Long = 0
 
     /**
-     * Stores userTime converted from nanoseconds into seconds.
+     * Stores [userTime] converted from nanoseconds into seconds.
      */
     var userTimeInSeconds: Double = 0.0
 
@@ -60,12 +70,12 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     var userRegisterFinishedTime: Long? = null
 
     /**
-     * Stores difference between userRegisterFinishedTime and userRegisterStartTime
+     * Stores difference between [userRegisterFinishedTime] and [userRegisterStartTime]
      */
     var userRegisterTime: Long = 0
 
     /**
-     * Stores userRegisterTime in seconds.
+     * Stores [userRegisterTime] in seconds.
      */
     var userRegisterTimeInSeconds: Double = 0.0
 
@@ -75,29 +85,28 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     var userLoginStartTime: Long? = null
 
     /**
-     * Stores difference between userLoginFinishedTime and userLoginStartTime
+     * Stores difference between [userFinishedTime] and [userLoginStartTime]
      */
     var userLoginTime: Long = 0
 
     /**
-     * Stores userLoginTime in seconds.
+     * Stores [userLoginTime] in seconds.
      */
     var userLoginTimeInSeconds: Double = 0.0
 
     /**
-     * calulate time differences between finished and start times and convert results into seconds
+     * Calculate time differences between finished and start times and convert results into seconds.
+     *
+     * Call [convertNanoToSec] to convert unit of time values from nanoseconds to seconds.
      */
     fun calculateUserTime() {
-        Log.d(LOG_TAG, "$userRegisterStartTime")
-        Log.d(LOG_TAG, "$userRegisterFinishedTime")
-        Log.d(LOG_TAG, "$userLoginStartTime")
-        Log.d(LOG_TAG, "$userFinishedTime")
-        // calculate time the user need to complete some tasks
+
+        // calculate time the user need to complete the whole registration and login process
+        // there are null values as standard values to make sure that the time is not measured again after a failed login or register attempt
         if(userFinishedTime != null && userStartTime != null) {
             userTime = userFinishedTime!! - userStartTime!!
         }
 
-        // for register and login time there are null values as standard values to make sure that the time is not measured again after a failed login or register attempt
         if(userRegisterFinishedTime != null && userRegisterStartTime != null) {
             userRegisterTime = userRegisterFinishedTime!! - userRegisterStartTime!!
         }
@@ -114,6 +123,8 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
 
     /**
      * Convert given [time] from nanoseconds to seconds.
+     *
+     * To get a value that has been rounded to two decimal places using the [round] method, multiply it by 100 first and divide it by 100 after the [round] method was called.
      */
     private fun convertNanoToSec(time: Long): Double {
         return round((time / 1000000000.0) * 100) / 100.0
@@ -122,6 +133,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     // personal user data for study and statistics
     /**
      * Represents the age of the user.
+     *
      * null - not specified
      * else - the actual age
      */
@@ -134,6 +146,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
 
     /**
      * Represents the gender of the user.
+     *
      * 0 - not specified
      * 1 - Female
      * 2 - Male
@@ -143,7 +156,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     val gender: LiveData<Int> = _gender
 
     /**
-     * Sets the gender specified by the user immediately when user selects it from radio group in UserDataFragment.
+     * Sets the gender specified by the user immediately when user selects it from radio group in [UserDataFragment][de.tuchemnitz.armadillogin.ui.welcome.UserDataFragment].
      */
     fun setGender(genderInput: Int) {
         _gender.value = genderInput
@@ -151,6 +164,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
 
     /**
      * Represents usage frequency of smartphones by the user.
+     *
      * 0 - not specified
      * 1 - I don't have a smartphone
      * 2 - I use it once a week or less
@@ -171,6 +185,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
 
     /**
      * Represents usage frequency of technical devices of the user.
+     *
      * 0 - not specified
      * 1 - I don't use apps, and I'm not familiar with typical app user interfaces.
      * 5 - I use apps for a wide variety of application purposes, know at least most of the settings, and often find my way around new apps on my own without problems
@@ -182,7 +197,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
         _technicalExperienceVariety.value = technicalExperienceInput
     }
     /**
-     * Is true while data are being sent to Firestore Database.
+     * Is true while data are being sent to MySQL Database via PHP script.
      */
     private var _sendingStudyData = MutableLiveData(false)
     val sendingStudyData: LiveData<Boolean> = _sendingStudyData
@@ -194,6 +209,12 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     val sentStudyData: LiveData<Boolean> = _sentStudyData
 
 
+    /**
+     * HTTP client.
+     *
+     * This client will be used to connect to the PHP script to which the study data will be sent.
+     * This script will then send the data to my study database.
+     */
     private val client = OkHttpClient.Builder()
         .addInterceptor(AddHeaderInterceptor())
         .readTimeout(30, TimeUnit.SECONDS)
@@ -202,12 +223,12 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
         .build()
 
     /**
-     * Implements functionality to send user study data to Database at TU Chemnitz URZ.
+     * Implements functionality to send user study data to Database.
+     *
      * While the function is running, the value of [_sendingStudyData] is true.
-     * After the function successfully finished sending data, the value of [_sentStudyData] becomes true.
+     * After the function successfully finished sending data, the value of [_sentStudyData] will be set true.
      */
     fun sendData() {
-
         _sendingStudyData.value = true
 
         /**
