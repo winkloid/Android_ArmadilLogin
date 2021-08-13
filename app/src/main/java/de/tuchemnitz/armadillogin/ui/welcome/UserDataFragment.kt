@@ -101,7 +101,11 @@ class UserDataFragment : Fragment() {
         }
     }
 
-
+    /**
+     * Checks if the values entered by the user in the EditText fields are correct.
+     *
+     * If so, true is returned so that [goToNextView] can call the NavigationController to navigate to the next fragment.
+     */
     private fun checkValues(): Boolean {
         val ageCorrect = checkAge()
         val participationNumberCorrect = checkParticipationNumber()
@@ -134,6 +138,13 @@ class UserDataFragment : Fragment() {
         }
     }
 
+    /**
+     * Checks whether the edit text field for the participation number actually contains a valid participation number.
+     *
+     * If there is no user input in this field an error is thrown that asks the user to provide a participation number.
+     * If the provided user input is not a valid participation number an error is thrown that informs the user about this issue.
+     * The same error is shown if the user provides a participation number that is too lng (longer than 8 characters).
+     */
     private fun checkParticipationNumber(): Boolean {
         val participationNumberInput= binding?.userDataInputParticipationNumberEditText?.text
         if (participationNumberInput.isNullOrBlank()) {
@@ -141,6 +152,10 @@ class UserDataFragment : Fragment() {
             return false
         }
         else if (!participationNumberInput.toString().contains("PART")) {
+            binding?.userDataInputParticipationNumberEditText?.error = getString((R.string.user_data_wrong_participation_number_error))
+            return false
+        }
+        else if (participationNumberInput.toString().length > 8) {
             binding?.userDataInputParticipationNumberEditText?.error = getString((R.string.user_data_wrong_participation_number_error))
             return false
         }
