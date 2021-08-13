@@ -48,7 +48,6 @@ class ArmadilloViewModel : ViewModel() {
      */
     val status: LiveData<FragmentStatus> = _status
 
-
     /**
      * Stores whether dyslexic mode is enabled or not.
      *
