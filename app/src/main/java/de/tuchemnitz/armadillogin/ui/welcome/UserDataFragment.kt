@@ -101,6 +101,13 @@ class UserDataFragment : Fragment() {
         }
     }
 
+
+    private fun checkValues(): Boolean {
+        val ageCorrect = checkAge()
+        val participationNumberCorrect = checkParticipationNumber()
+        return ageCorrect && participationNumberCorrect
+    }
+
     /**
      * Checks whether the edit text field for the user's age contains numbers only.
      *
@@ -109,7 +116,7 @@ class UserDataFragment : Fragment() {
      *
      * @return true if provided data in age edit text field are numbers only and false if the user provided also non-numeric characters.
      */
-    private fun checkValues(): Boolean {
+    private fun checkAge(): Boolean {
         val ageInput = binding?.userDataInputAgeEditText?.text
         if (ageInput.isNullOrBlank()) {
             studyUserViewModel.setAge(null)
@@ -125,5 +132,18 @@ class UserDataFragment : Fragment() {
                 return false
             }
         }
+    }
+
+    private fun checkParticipationNumber(): Boolean {
+        val participationNumberInput= binding?.userDataInputParticipationNumberEditText?.text
+        if (participationNumberInput.isNullOrBlank()) {
+            binding?.userDataInputParticipationNumberEditText?.error = getString(R.string.user_data_no_participation_number_error)
+            return false
+        }
+        else if (!participationNumberInput.toString().contains("PART")) {
+            binding?.userDataInputParticipationNumberEditText?.error = getString((R.string.user_data_wrong_participation_number_error))
+            return false
+        }
+        else return true
     }
 }
