@@ -196,6 +196,19 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
     fun setTechnicalExperienceVariety(technicalExperienceInput: Int) {
         _technicalExperienceVariety.value = technicalExperienceInput
     }
+
+    /**
+     * Stores the Participation code of the participant.
+     */
+    private var participationNumber = "PART000"
+
+    /**
+     * Receives participant code of the participant from [UserDataFragment][de.tuchemnitz.armadillogin.ui.welcome.UserDataFragment].
+     */
+    fun setParticipationNumber(partNumber: String) {
+        participationNumber = partNumber
+    }
+
     /**
      * Is true while data are being sent to MySQL Database via PHP script.
      */
@@ -246,6 +259,7 @@ class StudyUserDataViewModel(application: Application) : AndroidViewModel(applic
             jsonWriter.name("nanotime").value(userTime)
             jsonWriter.name("userRegisterTime").value(userRegisterTimeInSeconds)
             jsonWriter.name("userLoginTime").value(userLoginTimeInSeconds)
+            jsonWriter.name("participationNumber").value(participationNumber)
             jsonWriter.endObject()
         }
 

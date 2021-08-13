@@ -133,6 +133,10 @@
     <string name="user_data_technical_experience_not_specified">Keine Angabe.</string>
     <string name="user_data_confirm">Studie starten!</string>
     <string name="user_data_no_age_error">Bitte geben Sie Ihr Alter ein oder lassen Sie das Feld leer, wenn Sie sich dazu nicht äußern möchten.</string>
+    <string name="user_data_participation_number_title">Bitte geben Sie Ihren Teilnahmecode ein.</string>
+    <string name="user_data_input_participation_number">z.B.: ABCD123</string>
+    <string name="user_data_no_participation_number_error">Bitte geben Sie Ihren Teilnahmecode ein, um an der Studie teilzunehmen.</string>
+    <string name="user_data_wrong_participation_number_error">Fehler: Ungültiger Teilnahmecode.</string>
 
     <!-- Finished Fragment Strings -->
     <string name="finished_label">Danke!</string>

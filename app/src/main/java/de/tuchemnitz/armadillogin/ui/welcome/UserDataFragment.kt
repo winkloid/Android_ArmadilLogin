@@ -92,12 +92,20 @@ class UserDataFragment : Fragment() {
     fun goToNextView() {
         val valuesCorrect = checkValues()
         if (valuesCorrect) {
+            studyUserViewModel.setParticipationNumber(binding?.userDataInputParticipationNumberEditText?.text.toString())
             // only capture and store system time if it has not been captured before
             if(studyUserViewModel.userStartTime == null) {
                 studyUserViewModel.userStartTime = System.nanoTime()
             }
             findNavController().navigate(R.id.action_navigation_user_data_to_navigation_register_login)
         }
+    }
+
+
+    private fun checkValues(): Boolean {
+        val ageCorrect = checkAge()
+        val participationNumberCorrect = checkParticipationNumber()
+        return ageCorrect && participationNumberCorrect
     }
 
     /**
@@ -108,7 +116,7 @@ class UserDataFragment : Fragment() {
      *
      * @return true if provided data in age edit text field are numbers only and false if the user provided also non-numeric characters.
      */
-    private fun checkValues(): Boolean {
+    private fun checkAge(): Boolean {
         val ageInput = binding?.userDataInputAgeEditText?.text
         if (ageInput.isNullOrBlank()) {
             studyUserViewModel.setAge(null)
@@ -124,5 +132,18 @@ class UserDataFragment : Fragment() {
                 return false
             }
         }
+    }
+
+    private fun checkParticipationNumber(): Boolean {
+        val participationNumberInput= binding?.userDataInputParticipationNumberEditText?.text
+        if (participationNumberInput.isNullOrBlank()) {
+            binding?.userDataInputParticipationNumberEditText?.error = getString(R.string.user_data_no_participation_number_error)
+            return false
+        }
+        else if (!participationNumberInput.toString().contains("PART")) {
+            binding?.userDataInputParticipationNumberEditText?.error = getString((R.string.user_data_wrong_participation_number_error))
+            return false
+        }
+        else return true
     }
 }
