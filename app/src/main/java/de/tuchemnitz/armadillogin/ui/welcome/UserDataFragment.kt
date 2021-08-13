@@ -92,6 +92,7 @@ class UserDataFragment : Fragment() {
     fun goToNextView() {
         val valuesCorrect = checkValues()
         if (valuesCorrect) {
+            studyUserViewModel.setParticipationNumber(binding?.userDataInputParticipationNumberEditText?.text.toString())
             // only capture and store system time if it has not been captured before
             if(studyUserViewModel.userStartTime == null) {
                 studyUserViewModel.userStartTime = System.nanoTime()
