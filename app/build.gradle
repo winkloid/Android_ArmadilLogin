@@ -5,6 +5,9 @@ plugins {
     id 'org.jetbrains.dokka'
 }
 
+task wrapper(type: Wrapper){
+    gradleVersion = '7.2'
+}
 
 android {
     compileSdkVersion 30
